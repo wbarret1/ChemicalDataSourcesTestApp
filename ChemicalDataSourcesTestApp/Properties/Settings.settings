@@ -1,7 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)">
-  <Profiles>
-    <Profile Name="(Default)" />
-  </Profiles>
-  <Settings />
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ChemicalDataSourcesTestApp.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ChemicalDataSourcesTestApp_gov_nih_nlm_chemspell_SpellAidService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://chemspell.nlm.nih.gov/axis/SpellAid.jws</Value>
+    </Setting>
+    <Setting Name="ChemicalDataSourcesTestApp_gov_nih_nlm_ncbi_pubchem_PUG" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://pubchem.ncbi.nlm.nih.gov/pug_soap/pug_soap.cgi</Value>
+    </Setting>
+  </Settings>
 </SettingsFile>
