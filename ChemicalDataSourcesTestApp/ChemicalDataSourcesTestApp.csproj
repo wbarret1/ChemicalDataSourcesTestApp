@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActorClasses.cs" />
     <Compile Include="AIHA.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -60,12 +61,27 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="GermanSubstances.cs" />
     <Compile Include="IDLH.cs" />
+    <Compile Include="NistChemicalList.cs" />
     <Compile Include="NISTClasses.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pugRest.cs" />
+    <Compile Include="SelectChemicalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectChemicalForm.Designer.cs">
+      <DependentUpon>SelectChemicalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpellAidXMLSchema.cs" />
+    <Compile Include="SynonymXMLSchema.cs" />
     <Compile Include="TRILists.cs" />
     <Compile Include="Web References\gov.nih.nlm.chemspell\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -80,6 +96,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +109,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="SelectChemicalForm.resx">
+      <DependentUpon>SelectChemicalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Online data for Greenscope.docx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -100,6 +123,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SynonymXMLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web References\gov.nih.nlm.chemspell\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -168,6 +194,7 @@
     <Content Include="species.txt" />
     <Content Include="tri_chemical_list_for_ry15_11_5_2015_1.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
