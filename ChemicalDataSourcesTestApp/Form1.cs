@@ -97,6 +97,10 @@ namespace ChemicalDataSourcesTestApp
         string m_hsdbDocumentURL = string.Empty;
         string m_iloChemicalSafetyCardURL = string.Empty;
         string m_NioshChemicalSafetyCardURL = string.Empty;
+        string enthalpy = string.Empty;
+        string entropy = string.Empty;
+        string cp = string.Empty;
+        string wgk = string.Empty;
 
 
         //string url = string.Empty;
@@ -123,6 +127,12 @@ namespace ChemicalDataSourcesTestApp
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
             string[] compoundNames = {
                  "N-Butanol",
@@ -214,20 +224,24 @@ namespace ChemicalDataSourcesTestApp
                 m_HeatOfVaporizationUnit = string.Empty;
                 m_HeatOfCombustion = string.Empty;
                 m_HeatOfCombustionUnit = string.Empty;
-                string enthalpy = string.Empty;
-                string entropy = string.Empty;
-                string cp = string.Empty;
+                enthalpy = string.Empty;
+                entropy = string.Empty;
+                cp = string.Empty;
+                wgk = string.Empty;
 
-                this.GetInformation(compoundNames[i], casNos[i]);
+                this.GetLocalInformation(compoundNames[i], casNos[i]);
+                this.GetPUGInformation(compoundNames[i], casNos[i]);
+                this.GetICSCInformation(compoundNames[i], casNos[i]);
+                this.GetTOXNETInformation(compoundNames[i], casNos[i]);
                 this.GetToxData(compoundNames[i], casNos[i]);
-                string wgk = GermanWGKSubstanceList.WGK(casNos[i]);
                 this.GetNISTLiquidData(casNos[i], ref enthalpy, ref entropy, ref cp);
                 this.GetNISTGasData(casNos[i]);
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
+
             string[] casNos = {
                 "71-36-3",
                 "108-31-6",
@@ -266,19 +280,80 @@ namespace ChemicalDataSourcesTestApp
                 //    //}
 
                 //}
+
             }
             //WindowsFormsApplication1.HSDB.DocListDoc doc = new HSDB.DocListDoc();
             //doc.DOCNO = 35;
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
+            m_casNo = "71-43-2";
+            string url = "http://actorws.epa.gov/actorws/physchemdb/dev/properties/" + m_casNo + ".json";
+            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            System.Net.WebResponse response = request.GetResponse();
+            System.Runtime.Serialization.Json.DataContractJsonSerializer jSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(ActorPhysicalChemicalProperties.Rootobject));
+            ActorPhysicalChemicalProperties.Rootobject actorPhysChem = (ActorPhysicalChemicalProperties.Rootobject)jSerializer.ReadObject(response.GetResponseStream());
+            string[] names = new string[actorPhysChem.DataList.list.Length];
+            string[] sources = new string[actorPhysChem.DataList.list.Length];
+            string[] descriptions = new string[actorPhysChem.DataList.list.Length];
+            string[] modelClasses = new string[actorPhysChem.DataList.list.Length];
+            string[] resultTypes = new string[actorPhysChem.DataList.list.Length];
+            string[] rawResults = new string[actorPhysChem.DataList.list.Length];
+            float[] resultMeans = new float[actorPhysChem.DataList.list.Length];
+            float[] resultMins = new float[actorPhysChem.DataList.list.Length];
+            float[] resultMaxs = new float[actorPhysChem.DataList.list.Length];
+            string[] resultUnits = new string[actorPhysChem.DataList.list.Length];
+            for (int i = 0; i < actorPhysChem.DataList.list.Length; i++)
+            {
+                names[i] = actorPhysChem.DataList.list[i].name;
+                sources[i] = actorPhysChem.DataList.list[i].source;
+                descriptions[i] = actorPhysChem.DataList.list[i].description;
+                modelClasses[i] = actorPhysChem.DataList.list[i].modelClass;
+                resultTypes[i] = actorPhysChem.DataList.list[i].resultType;
+                rawResults[i] = actorPhysChem.DataList.list[i].rawResult;
+                resultMeans[i] = actorPhysChem.DataList.list[i].resultMean;
+                resultMins[i] = actorPhysChem.DataList.list[i].resultMin;
+                resultMaxs[i] = actorPhysChem.DataList.list[i].resultMax;
+                resultUnits[i] = actorPhysChem.DataList.list[i].resultUnit;
+            }
 
+            url = "http://actorws.epa.gov/actorws/dsstox/v02/properties.json?casrn=" + m_casNo;
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            response = request.GetResponse();
+            System.Runtime.Serialization.Json.DataContractJsonSerializer dssToxjSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(ActorDSSTox.Rootobject));
+            ActorDSSTox.Rootobject dssToxData = (ActorDSSTox.Rootobject)dssToxjSerializer.ReadObject(response.GetResponseStream());
+            int gsid = dssToxData.DataRow.gsid;
+            string casrn = dssToxData.DataRow.casrn;
+            string imageURL = dssToxData.DataRow.imageURL;
+            string preferredName = dssToxData.DataRow.preferredName;
+            string casType = dssToxData.DataRow.casType;
+            string smiles = dssToxData.DataRow.smiles;
+            string chemtype = dssToxData.DataRow.chemtype;
+            string inchi = dssToxData.DataRow.inchi;
+            string inchiKey = dssToxData.DataRow.inchiKey;
+            string chiralStereo = dssToxData.DataRow.chiralStereo;
+            string dblStereo = dssToxData.DataRow.dblStereo;
+            string organicForm = dssToxData.DataRow.organicForm;
+            string iupac = dssToxData.DataRow.iupac;
+            string molFormula = dssToxData.DataRow.molFormula;
+
+            url = "http://actorws.epa.gov/actorws/edsp21/v02/regulatory/" + m_casNo + ".json";
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            response = request.GetResponse();
+            System.Runtime.Serialization.Json.DataContractJsonSerializer regulatorySerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(ActorRegulatory.Rootobject));
+            ActorRegulatory.Rootobject actorRegulatory = (ActorRegulatory.Rootobject)regulatorySerializer.ReadObject(response.GetResponseStream());
+            string[] regulatoryNames = new string[actorRegulatory.DataList.list.Length];
+            string[] regulatorySources = new string[actorRegulatory.DataList.list.Length];
+            string[] regulatoryDescriptions = new string[actorRegulatory.DataList.list.Length];
+            string[] regulatoryUrls = new string[actorRegulatory.DataList.list.Length];
+            for (int i = 0; i < actorRegulatory.DataList.list.Length; i++)
+            {
+                regulatoryNames[i] = actorRegulatory.DataList.list[i].name;
+                regulatorySources[i] = actorRegulatory.DataList.list[i].source;
+                regulatoryDescriptions[i] = actorRegulatory.DataList.list[i].description;
+                regulatoryUrls[i] = actorRegulatory.DataList.list[i].url;
+            }
         }
 
         void GetNISTLiquidData(string casNo, ref string enthalpy, ref string entropy, ref string cp)
@@ -430,7 +505,8 @@ namespace ChemicalDataSourcesTestApp
             }
         }
 
-        void GetInformation(string compoundName, string casNo)
+ 
+        void GetLocalInformation(string compoundName, string casNo)
         {
             m_ERPG2 = AIHA.ERPG2(casNo);
             m_ERPG3 = AIHA.ERPG3(casNo);
@@ -438,8 +514,11 @@ namespace ChemicalDataSourcesTestApp
             hazardous = ListOfLists.IsHAzardous(casNo);
             triList = TRIList.IsTRIChemical(casNo);
             triPBTList = TRIList.IsPBTChemical(casNo);
+            wgk = GermanWGKSubstanceList.WGK(casNo);
+        }
 
-
+        void GetPUGInformation(string compoundName, string casNo)
+        {
             atomsReference = "http://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compoundName + "/JSON";
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(atomsReference);
             System.Net.WebResponse response = request.GetResponse();
@@ -458,7 +537,10 @@ namespace ChemicalDataSourcesTestApp
                 if (atom == 15) numPhosphorous = numPhosphorous + 1;
                 if (atom == 16) numSulfur = numSulfur + 1;
             }
+        }
 
+        void GetICSCInformation(string compoundName, string casNo)
+        {
             string icscNumber = string.Empty;
 
             System.Collections.Generic.List<string> ICSCnumbers = new System.Collections.Generic.List<string>(0);
@@ -486,8 +568,8 @@ namespace ChemicalDataSourcesTestApp
                 m_iloChemicalSafetyCardURL = "http://www.ilo.org/dyn/icsc/showcard.display?p_lang=en&p_card_id=" + icscNumber + "&p_version=1";
                 m_NioshChemicalSafetyCardURL = "http://www.cdc.gov/niosh/ipcsneng/neng" + icscNumber + ".html";
 
-                request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(m_iloChemicalSafetyCardURL);
-                response = request.GetResponse();
+                System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(m_iloChemicalSafetyCardURL);
+                System.Net.WebResponse response = request.GetResponse();
                 System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream());
                 string output = reader.ReadToEnd();
 
@@ -596,10 +678,13 @@ namespace ChemicalDataSourcesTestApp
                 logKow = m1.Groups[1].Value;
                 logKowReference = m_iloChemicalSafetyCardURL;
             }
+        }
 
+        void GetTOXNETInformation(string compoundName, string casNo)
+        {
             // http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?./temp/~oiB60G:1
             string uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2";
-            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
+            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
             string postData = "queryxxx=" + casNo;
             postData += "&chemsyn=1";
             postData += "&database=hsdb";
@@ -615,7 +700,7 @@ namespace ChemicalDataSourcesTestApp
             {
                 stream.Write(data, 0, data.Length);
             }
-            response = (System.Net.HttpWebResponse)request.GetResponse();
+            System.Net.HttpWebResponse response = (System.Net.HttpWebResponse)request.GetResponse();
             string responseString = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
             string s1 = responseString.Replace("<br>", "");
             System.Xml.XmlDocument document = new System.Xml.XmlDocument();
