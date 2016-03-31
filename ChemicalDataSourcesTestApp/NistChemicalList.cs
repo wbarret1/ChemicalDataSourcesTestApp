@@ -11,22 +11,36 @@ namespace ChemicalDataSourcesTestApp
     static class NISTChemicalList
     {
         static private System.Collections.Generic.List<Species> speciesList;
+        static private System.Collections.Generic.List<string> m_CompoundNames;
+
         static NISTChemicalList()
         {
             speciesList = new System.Collections.Generic.List<Species>();
+            m_CompoundNames = new List<string>();
             try
             {
+                Species specie = null;
                 System.IO.StringReader reader = new System.IO.StringReader(Properties.Resources.species);
                 string nextLine = reader.ReadLine();
                 while (nextLine != null)
                 {
-                    speciesList.Add(new Species(nextLine));
+                    specie = new Species(nextLine);
+                    speciesList.Add(specie);
+                    m_CompoundNames.Add(specie.SpeciesName);
                     nextLine = reader.ReadLine();
                 }
             }
             catch (System.Exception obj)
             {
                 obj.GetType();
+            }
+        }
+
+        static public string[] CompoundNames
+        {
+            get
+            {
+                return m_CompoundNames.ToArray<string>();
             }
         }
 

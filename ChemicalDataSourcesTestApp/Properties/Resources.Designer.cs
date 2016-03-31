@@ -154,6 +154,16 @@ namespace ChemicalDataSourcesTestApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Image1 {
+            get {
+                object obj = ResourceManager.GetObject("Image1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Abamectin	ABAMECTIN AVERMECTIN B1	71751412	71751-41-2 				313								
         ///Acenaphthene	ACENAPHTHENE	83329	83-32-9 			100									
         ///Acenaphthylene	ACENAPHTHYLENE	208968	208-96-8 			&quot;5,000&quot;									
@@ -166,6 +176,16 @@ namespace ChemicalDataSourcesTestApp.Properties {
         internal static string list_of_lists {
             get {
                 return ResourceManager.GetString("list_of_lists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nfpa_diamond {
+            get {
+                object obj = ResourceManager.GetObject("nfpa_diamond", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
