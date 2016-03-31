@@ -161,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="2015 ERPG Levels.txt" />
+    <Content Include="annex_vi_clp_table_en.txt" />
     <Content Include="DE_Hazardous_Water_AID_1.txt" />
     <Content Include="ICSCnumberByCAS.txt" />
     <Content Include="idlh.txt" />
