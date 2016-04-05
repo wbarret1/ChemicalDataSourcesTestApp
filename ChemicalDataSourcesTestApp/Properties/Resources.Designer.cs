@@ -80,6 +80,19 @@ namespace ChemicalDataSourcesTestApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 001-001-00-9	hydrogen	215-605-7	1333-74-0	Flam. Gas 1Press. Gas	H220	GHS02GHS04Dgr	H220	EUH001		U	CLP00
+        ///001-002-00-4	aluminium lithium hydride	240-877-9	16853-85-3	Water-react. 1Skin Corr. 1A	H260H314	GHS02GHS05Dgr	H260H314				CLP00/ATP01
+        ///001-003-00-X	sodium hydride	231-587-3	7646-69-7	Water-react. 1	H260	GHS02Dgr	H260				CLP00
+        ///001-004-00-5	calcium hydride	232-189-2	7789-78-8	Water-react. 1	H260	GHS02Dgr	H260				CLP00
+        ///003-001-00-4	lithium	231-102-5	7439-93-2	Water-react. 1Skin Corr. 1B	H260H314	GHS02GHS [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string annex_vi_clp_table_en {
+            get {
+                return ResourceManager.GetString("annex_vi_clp_table_en", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Acetaldehyd	1084805	75-07-0	1541	1	WGK 1: low hazard to waters
         ///Acetamid	1084806	60-35-5	1541	1	WGK 1: low hazard to waters
         ///Acetanhydrid	1084807	108-24-7	1541	1	WGK 1: low hazard to waters
@@ -92,6 +105,18 @@ namespace ChemicalDataSourcesTestApp.Properties {
         internal static string DE_Hazardous_Water_AID_1 {
             get {
                 return ResourceManager.GetString("DE_Hazardous_Water_AID_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1	001-001-00-9	215-605-7	1333-74-0	hydrogen	53968	http://echa.europa.eu/information-on-chemicals/cl-inventory-database/-/discli/details/53968
+        ///2	001-002-00-4	240-877-9	16853-85-3	aluminium lithium hydride	110445	http://echa.europa.eu/information-on-chemicals/cl-inventory-database/-/discli/details/110445
+        ///3	001-003-00-X	231-587-3	7646-69-7	sodium hydride	25621	http://echa.europa.eu/information-on-chemicals/cl-inventory-database/-/discli/details/25621
+        ///4	001-004-00-5	232-189-2	7789-78-8	calcium hydride	126837 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string europeanChemicalList {
+            get {
+                return ResourceManager.GetString("europeanChemicalList", resourceCulture);
             }
         }
         

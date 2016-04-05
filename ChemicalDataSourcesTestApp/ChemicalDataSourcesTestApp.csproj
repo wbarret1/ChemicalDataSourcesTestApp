@@ -61,6 +61,7 @@
       <DependentUpon>ACToRForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AIHA.cs" />
+    <Compile Include="EuropeanChemicalInventory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,8 +208,18 @@
     <Content Include="2015 ERPG Levels.txt" />
     <Content Include="annex_vi_clp_table_en.txt" />
     <Content Include="DE_Hazardous_Water_AID_1.txt" />
+    <None Include="europeanChemicalList.txt" />
     <Content Include="ICSCnumberByCAS.txt" />
     <Content Include="idlh.txt" />
+    <Content Include="images\ghs01.gif" />
+    <Content Include="images\ghs02.gif" />
+    <Content Include="images\ghs03.gif" />
+    <Content Include="images\ghs04.gif" />
+    <Content Include="images\ghs05.gif" />
+    <Content Include="images\ghs06.gif" />
+    <Content Include="images\ghs07.gif" />
+    <Content Include="images\ghs08.gif" />
+    <Content Include="images\ghs09.gif" />
     <Content Include="list_of_lists.txt" />
     <None Include="Resources\Image1.bmp" />
     <Content Include="nfpa_diamond.png" />

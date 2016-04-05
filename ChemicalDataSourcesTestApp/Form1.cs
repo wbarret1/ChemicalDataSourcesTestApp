@@ -124,11 +124,32 @@ namespace ChemicalDataSourcesTestApp
 
         private void findButton_Click(object sender, EventArgs e)
         {
+            this.label2.Visible = false;
+            this.label2.Visible = false;
+            this.label4.Visible = false;
+            this.label5.Visible = false;
+            this.label6.Visible = false;
+            this.label7.Visible = false;
+            this.label8.Visible = false;
+            this.label9.Visible = false;
+            this.label10.Visible = false;
+            this.label11.Visible = false;
+            this.label12.Visible = false;
+            this.label13.Visible = false;
+            this.label14.Visible = false;
+            this.label15.Visible = false;
+            this.label16.Visible = false;
+            this.label17.Visible = false;
+            this.label18.Visible = false;
+            this.label19.Visible = false;
+            this.label20.Visible = false;
+
             if (string.IsNullOrEmpty(this.chemicalTextBox.Text)) return;
             m_CompoundName = this.chemicalTextBox.Text;
             this.listBox1.Items.Clear();
             this.findCompound(ref m_CompoundName, ref m_casNo);
             this.AddChemicalInformation(m_CompoundName, m_casNo);
+            string[] pictograms = EuropeanChemicalInventory.Pictograms(m_casNo);
 
         }
 
@@ -136,6 +157,7 @@ namespace ChemicalDataSourcesTestApp
         {
             gov.nih.nlm.chemspell.SpellAidService service = new gov.nih.nlm.chemspell.SpellAidService();
             string response = service.getSugList(compoundName, "All databases");
+            response = response.Replace("&", "&amp;");
             var XMLReader = new System.Xml.XmlTextReader(new System.IO.StringReader(response));
             System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(Synonym));
             if (serializer.CanDeserialize(XMLReader))
@@ -195,6 +217,39 @@ namespace ChemicalDataSourcesTestApp
                 this.nfpaInstabilityLabel.Visible = true;
                 this.pictureBox2.SendToBack();
             }
+            this.label12.Text = "Signal Word: " + EuropeanChemicalInventory.SignalWord(m_casNo);
+            string[] pictograms = EuropeanChemicalInventory.Pictograms(casNo);
+            if (pictograms.Length > 0)
+            {
+                this.pictureBox3.Image = this.imageList2.Images[pictograms[0]];
+                this.label13.Visible = true;
+                this.label13.Text = pictograms[0];
+            }
+            if (pictograms.Length > 1)
+            {
+                this.pictureBox4.Image = this.imageList2.Images[pictograms[1]];
+                this.label14.Visible = true;
+                this.label14.Text = pictograms[1];
+            }
+            if (pictograms.Length > 2)
+            {
+                this.pictureBox5.Image = this.imageList2.Images[pictograms[2]];
+                this.label15.Visible = true;
+                this.label15.Text = pictograms[2];
+            }
+            if (pictograms.Length > 3)
+            {
+                this.pictureBox6.Image = this.imageList2.Images[pictograms[3]];
+                this.label16.Visible = true;
+                this.label16.Text = pictograms[3];
+            }
+            if (pictograms.Length > 4)
+            {
+                this.pictureBox7.Image = this.imageList2.Images[pictograms[4]];
+                this.label17.Visible = true;
+                this.label17.Text = pictograms[4];
+            }
+            this.GetEuropeanInfo(m_casNo);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -817,13 +872,15 @@ namespace ChemicalDataSourcesTestApp
                 m1 = System.Text.RegularExpressions.Regex.Match(output, pattern1,
                            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
                           TimeSpan.FromSeconds(1));
-                nfpaHealth = m1.Groups[1].Value;
-                nfpaHealthReference = m_iloChemicalSafetyCardURL;
-                nfpaFire = m1.Groups[2].Value;
-                nfpaFireReference = m_iloChemicalSafetyCardURL;
-                nfpaReactivity = m1.Groups[3].Value;
-                nfpaReactivityReference = m_iloChemicalSafetyCardURL;
-
+                if (m1.Groups.Count > 1)
+                {
+                    nfpaHealth = m1.Groups[1].Value;
+                    nfpaHealthReference = m_iloChemicalSafetyCardURL;
+                    nfpaFire = m1.Groups[2].Value;
+                    nfpaFireReference = m_iloChemicalSafetyCardURL;
+                    nfpaReactivity = m1.Groups[3].Value;
+                    nfpaReactivityReference = m_iloChemicalSafetyCardURL;
+                }
                 pattern1 = "Octanol/water partition coefficient as log Pow: (?<1>\\S+)</span>";
                 m1 = System.Text.RegularExpressions.Regex.Match(output, pattern1,
                            System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
@@ -1128,15 +1185,27 @@ namespace ChemicalDataSourcesTestApp
                 response = (System.Net.HttpWebResponse)request.GetResponse();
                 string nfpaResponseString = safetyReader.ReadToEnd();
                 int index = nfpaResponseString.IndexOf("Health: ");
-                nfpaHealth = nfpaResponseString.Substring(index + 8, 1);
+                if (index > 0)
+                {
+                    nfpaHealth = nfpaResponseString.Substring(index + 8, 1);
+                }
                 index = nfpaResponseString.IndexOf("Flammability: ");
-                nfpaFire = nfpaResponseString.Substring(index + 14, 1);
+                if (index > 0)
+                {
+                    nfpaFire = nfpaResponseString.Substring(index + 14, 1);
+                }
                 index = nfpaResponseString.IndexOf("Reactivity: ");
-                nfpaReactivity = nfpaResponseString.Substring(index + 12, 1);
-                if (index == -1)
+                if (index > 0)
+                {
+                    nfpaReactivity = nfpaResponseString.Substring(index + 12, 1);
+                }
+                if (index > 0)
                 {
                     index = nfpaResponseString.IndexOf("instability: ");
-                    nfpaReactivity = nfpaResponseString.Substring(index + 13, 1);
+                    if (index == -1)
+                    {
+                        nfpaReactivity = nfpaResponseString.Substring(index + 13, 1);
+                    }
                 }
             }
         }
@@ -1466,6 +1535,56 @@ namespace ChemicalDataSourcesTestApp
         {
             ACToRForm form = new ACToRForm(m_casNo);
             form.ShowDialog();
+        }
+
+        void GetEuropeanInfo(string casNo)
+        {
+            this.label18.Visible = true;
+            this.label19.Visible = true;
+            this.label20.Visible = true;
+            this.label18.Text = "Risk Phrases: ";
+            foreach (string str in europeanChemicalList.Rphrase(m_casNo))
+            {
+                this.label18.Text = this.label18.Text + str + " ";
+            }
+            this.label19.Text = "Safety Phrases: ";
+            foreach (string str in europeanChemicalList.sPhrase(m_casNo))
+            {
+                this.label19.Text = this.label19.Text + str + " ";
+            }
+            this.label20.Text = "Indications of Danger: ";
+            foreach (string str in europeanChemicalList.IndicationOfDanger(m_casNo))
+            {
+                this.label20.Text = this.label20.Text + str + " ";
+            }
+            //string url = europeanChemicalList.Link(m_casNo);
+            //System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            //System.Net.WebResponse response = request.GetResponse();
+            //System.IO.StringReader reader = new System.IO.StringReader(new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd());
+            //HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
+            //document.Load(reader);
+            //System.Xml.XPath.XPathNavigator navigator = document.CreateNavigator();
+            //System.Xml.XPath.XPathNavigator node = navigator.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]");
+            //string[] rPhrases = node.Value.Trim().Split(' ');
+            //node = navigator.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]");
+            //string[] sPhrases = node.Value.Trim().Split(' ');
+            //node = navigator.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[4]");
+            //string[] indicationOfDanger = node.Value.Trim().Split(' ');
+            ////string pattern = "(?<1>R\\d+[/\\d+]*)";
+            ////System.Text.RegularExpressions.MatchCollection matchColl = System.Text.RegularExpressions.Regex.Matches(text, pattern,
+            ////    System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            ////    TimeSpan.FromSeconds(1));
+            ////bool c = text.Contains(" C ");
+            ////bool t = text.Contains("T");
+            ////bool tPlus = text.Contains("T+");
+            ////bool xi = text.Contains("Xi");
+            ////bool xn = text.Contains("Xn");
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(europeanChemicalList.Link(m_casNo));
+            return;
         }
     }
 }
