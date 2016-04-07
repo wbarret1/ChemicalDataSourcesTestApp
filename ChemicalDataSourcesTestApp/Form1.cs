@@ -30,8 +30,13 @@ namespace ChemicalDataSourcesTestApp
 
     public partial class Form1 : Form
     {
-        string m_casNo = string.Empty;
+        List<SpellAidChemical> chemicalList;
         string m_CompoundName = string.Empty;
+        string m_casNo = string.Empty;
+        string m_molecularFormula;
+        string m_molecularFormulareference;
+
+
         int m_CID = 0;
         string ecClass = string.Empty;
         string ecClassReference = string.Empty;
@@ -85,7 +90,6 @@ namespace ChemicalDataSourcesTestApp
         int numOxygen = 0;
         int numPhosphorous = 0;
         int numSulfur = 0;
-        string atomsReference = string.Empty;
         string m_HeatOfCombustion = string.Empty;
         string m_HeatOfCombustionUnit = string.Empty;
         string m_HeatOfCombustionConditions = string.Empty;
@@ -109,20 +113,87 @@ namespace ChemicalDataSourcesTestApp
         public Form1()
         {
             InitializeComponent();
-            speciesList = new System.Collections.Generic.List<Species>();
-            try
+            this.label2.Text = string.Empty;
+            var source = new AutoCompleteStringCollection();
+            source.AddRange(NISTChemicalList.CompoundNames);
+            this.chemicalTextBox.AutoCompleteCustomSource = source;
+            this.chemicalTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            this.chemicalTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+
+        private void findButton_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(this.chemicalTextBox.Text)) return;
+            m_CompoundName = this.chemicalTextBox.Text;
+            this.listBox1.Items.Clear();
+            this.findCompound(ref m_CompoundName, ref m_casNo);
+            this.AddChemicalInformation(m_CompoundName, m_casNo);
+
+        }
+
+        private void findCompound(ref string compoundName, ref string CasNo)
+        {
+            gov.nih.nlm.chemspell.SpellAidService service = new gov.nih.nlm.chemspell.SpellAidService();
+            string response = service.getSugList(compoundName, "All databases");
+            var XMLReader = new System.Xml.XmlTextReader(new System.IO.StringReader(response));
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(Synonym));
+            if (serializer.CanDeserialize(XMLReader))
             {
-                System.IO.StringReader reader = new System.IO.StringReader(Properties.Resources.species);
-                string nextLine = reader.ReadLine();
-                while (nextLine != null)
+                // Synonyms means more than one name for the same chemical/CAS Number.
+                Synonym synonym = (Synonym)serializer.Deserialize(XMLReader);
+                CasNo = synonym.Chemical[0].CAS;
+                foreach (SynonymChemical chemical in synonym.Chemical)
                 {
-                    speciesList.Add(new Species(nextLine));
-                    nextLine = reader.ReadLine();
+                    this.listBox1.Items.Add(chemical.Name);
+                    if (CasNo != chemical.CAS)
+                    {
+                        System.Windows.Forms.MessageBox.Show(compoundName + "has a synonym with a different CAS Number.");
+                        return;
+                    }
                 }
+                return;
             }
-            catch (System.Exception obj)
+            serializer = new System.Xml.Serialization.XmlSerializer(typeof(SpellAid));
+            if (serializer.CanDeserialize(XMLReader))
             {
-                obj.GetType();
+                SpellAid aid = (SpellAid)serializer.Deserialize(XMLReader);
+                Form3 selector = new Form3();
+                selector.chemicals = aid;
+                selector.ShowDialog();
+                compoundName = selector.SelectedChemical;
+                this.findCompound(ref compoundName, ref CasNo);
+                return;
+            }
+            CasNo = string.Empty;
+        }
+
+        void AddChemicalInformation(string compoundName, string casNo)
+        {
+            this.GetPUGInformation(compoundName, casNo);
+            this.GetICSCInformation(compoundName, casNo);
+            this.GetTOXNETInformation(compoundName, casNo);
+            this.label2.Text = "CAS Number: " + casNo;
+            this.label2.Visible = true;
+            this.label11.Text = "Molecular Formula = " + this.m_molecularFormula;
+            this.label11.Visible = true;
+            this.label4.Text = "Boiling Point = " + this.bpValue + " " + this.bpUnit;
+            this.label4.Visible = true;
+            this.label5.Text = "Melting Point = " + this.mpValue + " " + this.mpUnit;
+            this.label5.Visible = true;
+            this.label6.Text = "Flash Point = " + this.flashPtValue + " " + this.flashPtUnit;
+            this.label6.Visible = true;
+            this.pictureBox1.Image = Form1.PUGGetCompoundImage(compoundName, casNo);
+            if (nfpaHealth != string.Empty)
+            {
+                this.pictureBox2.Visible = true;
+                this.nfpaHealthLabel.Text = nfpaHealth;
+                this.nfpaHealthLabel.Visible = true;
+                this.nfpaFlammabilityLabel.Text = nfpaFire;
+                this.nfpaFlammabilityLabel.Visible = true;
+                this.nfpaInstabilityLabel.Text = nfpaReactivity;
+                this.nfpaInstabilityLabel.Visible = true;
+                this.pictureBox2.SendToBack();
             }
         }
 
@@ -219,7 +290,6 @@ namespace ChemicalDataSourcesTestApp
                 numOxygen = 0;
                 numPhosphorous = 0;
                 numSulfur = 0;
-                atomsReference = string.Empty;
                 m_HeatOfVaporization = string.Empty;
                 m_HeatOfVaporizationUnit = string.Empty;
                 m_HeatOfCombustion = string.Empty;
@@ -285,10 +355,78 @@ namespace ChemicalDataSourcesTestApp
             //WindowsFormsApplication1.HSDB.DocListDoc doc = new HSDB.DocListDoc();
             //doc.DOCNO = 35;
         }
+        void GetACToRData(string casNo)
+        {
+            string url = "http://actorws.epa.gov/actorws/physchemdb/dev/properties/" + m_casNo + ".json";
+            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            System.Net.WebResponse response = request.GetResponse();
+            System.Runtime.Serialization.Json.DataContractJsonSerializer jSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(ActorPhysicalChemicalProperties.Rootobject));
+            ActorPhysicalChemicalProperties.Rootobject actorPhysChem = (ActorPhysicalChemicalProperties.Rootobject)jSerializer.ReadObject(response.GetResponseStream());
+            string[] names = new string[actorPhysChem.DataList.list.Length];
+            string[] sources = new string[actorPhysChem.DataList.list.Length];
+            string[] descriptions = new string[actorPhysChem.DataList.list.Length];
+            string[] modelClasses = new string[actorPhysChem.DataList.list.Length];
+            string[] resultTypes = new string[actorPhysChem.DataList.list.Length];
+            string[] rawResults = new string[actorPhysChem.DataList.list.Length];
+            float[] resultMeans = new float[actorPhysChem.DataList.list.Length];
+            float[] resultMins = new float[actorPhysChem.DataList.list.Length];
+            float[] resultMaxs = new float[actorPhysChem.DataList.list.Length];
+            string[] resultUnits = new string[actorPhysChem.DataList.list.Length];
+            for (int i = 0; i < actorPhysChem.DataList.list.Length; i++)
+            {
+                names[i] = actorPhysChem.DataList.list[i].name;
+                sources[i] = actorPhysChem.DataList.list[i].source;
+                descriptions[i] = actorPhysChem.DataList.list[i].description;
+                modelClasses[i] = actorPhysChem.DataList.list[i].modelClass;
+                resultTypes[i] = actorPhysChem.DataList.list[i].resultType;
+                rawResults[i] = actorPhysChem.DataList.list[i].rawResult;
+                resultMeans[i] = actorPhysChem.DataList.list[i].resultMean;
+                resultMins[i] = actorPhysChem.DataList.list[i].resultMin;
+                resultMaxs[i] = actorPhysChem.DataList.list[i].resultMax;
+                resultUnits[i] = actorPhysChem.DataList.list[i].resultUnit;
+            }
+
+            url = "http://actorws.epa.gov/actorws/dsstox/v02/properties.json?casrn=" + m_casNo;
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            response = request.GetResponse();
+            System.Runtime.Serialization.Json.DataContractJsonSerializer dssToxjSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(ActorDSSTox.Rootobject));
+            ActorDSSTox.Rootobject dssToxData = (ActorDSSTox.Rootobject)dssToxjSerializer.ReadObject(response.GetResponseStream());
+            int gsid = dssToxData.DataRow.gsid;
+            string casrn = dssToxData.DataRow.casrn;
+            string imageURL = dssToxData.DataRow.imageURL;
+            string preferredName = dssToxData.DataRow.preferredName;
+            string casType = dssToxData.DataRow.casType;
+            string smiles = dssToxData.DataRow.smiles;
+            string chemtype = dssToxData.DataRow.chemtype;
+            string inchi = dssToxData.DataRow.inchi;
+            string inchiKey = dssToxData.DataRow.inchiKey;
+            string chiralStereo = dssToxData.DataRow.chiralStereo;
+            string dblStereo = dssToxData.DataRow.dblStereo;
+            string organicForm = dssToxData.DataRow.organicForm;
+            string iupac = dssToxData.DataRow.iupac;
+            string molFormula = dssToxData.DataRow.molFormula;
+
+            url = "http://actorws.epa.gov/actorws/edsp21/v02/regulatory/" + m_casNo + ".json";
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            response = request.GetResponse();
+            System.Runtime.Serialization.Json.DataContractJsonSerializer regulatorySerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(ActorRegulatory.Rootobject));
+            ActorRegulatory.Rootobject actorRegulatory = (ActorRegulatory.Rootobject)regulatorySerializer.ReadObject(response.GetResponseStream());
+            string[] regulatoryNames = new string[actorRegulatory.DataList.list.Length];
+            string[] regulatorySources = new string[actorRegulatory.DataList.list.Length];
+            string[] regulatoryDescriptions = new string[actorRegulatory.DataList.list.Length];
+            string[] regulatoryUrls = new string[actorRegulatory.DataList.list.Length];
+            for (int i = 0; i < actorRegulatory.DataList.list.Length; i++)
+            {
+                regulatoryNames[i] = actorRegulatory.DataList.list[i].name;
+                regulatorySources[i] = actorRegulatory.DataList.list[i].source;
+                regulatoryDescriptions[i] = actorRegulatory.DataList.list[i].description;
+                regulatoryUrls[i] = actorRegulatory.DataList.list[i].url;
+            }
+        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
-            m_casNo = "71-43-2";
             string url = "http://actorws.epa.gov/actorws/physchemdb/dev/properties/" + m_casNo + ".json";
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
             System.Net.WebResponse response = request.GetResponse();
@@ -505,7 +643,7 @@ namespace ChemicalDataSourcesTestApp
             }
         }
 
- 
+
         void GetLocalInformation(string compoundName, string casNo)
         {
             m_ERPG2 = AIHA.ERPG2(casNo);
@@ -519,7 +657,7 @@ namespace ChemicalDataSourcesTestApp
 
         void GetPUGInformation(string compoundName, string casNo)
         {
-            atomsReference = "http://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compoundName + "/JSON";
+            string atomsReference = "http://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compoundName + "/JSON";
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(atomsReference);
             System.Net.WebResponse response = request.GetResponse();
             System.Runtime.Serialization.Json.DataContractJsonSerializer pugSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(pugRest.Rootobject));
@@ -536,6 +674,21 @@ namespace ChemicalDataSourcesTestApp
                 if (atom == 8) numOxygen = numOxygen + 1;
                 if (atom == 15) numPhosphorous = numPhosphorous + 1;
                 if (atom == 16) numSulfur = numSulfur + 1;
+            }
+        }
+
+        public static Image PUGGetCompoundImage(string compoundName, string casNo)
+        {
+            string imageReference = "http://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/" + compoundName + "/PNG";
+            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(imageReference);
+            try
+            {
+                System.Net.WebResponse response = request.GetResponse();
+                return Image.FromStream(response.GetResponseStream());
+            }
+            catch (System.Exception p_Ex)
+            {
+                return Properties.Resources.Image1;
             }
         }
 
@@ -711,12 +864,24 @@ namespace ChemicalDataSourcesTestApp
             //// Whole Document
             m_hsdbDocumentURL = "http://toxgate.nlm.nih.gov/cgi-bin/sis/search2/r?dbs+hsdb:@term+@DOCNO+" + document.FirstChild["Id"].InnerText.Split(' ')[0];
 
+            // Molecular Formula 
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:mf");
+            response = (System.Net.HttpWebResponse)request.GetResponse();
+            string mfResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
+            string pattern = "Molecular Formula:</h3>\n<br>\n\\s*(?<1>\\S+)\\s*<br><code><NOINDEX>(?<2>[^\\n]*)</NOINDEX>";
+            System.Text.RegularExpressions.Match m = System.Text.RegularExpressions.Regex.Match(mfResposne, pattern,
+                       System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+                      TimeSpan.FromSeconds(1));
+            this.m_molecularFormula = m.Groups[1].Value;
+            this.m_molecularFormulareference = m.Groups[2].Value;
+
+
             // AutoIgnition temperature 
             request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:auto");
             response = (System.Net.HttpWebResponse)request.GetResponse();
             string autoResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
-            string pattern = "Autoignition Temperature:</h3>\n<br>\n\\s*(?<1>\\S+)\\s*Deg\\s*(?<2>\\S+)\\s*\\((?<4>\\S+)\\s*deg\\s*(?<5>\\S+)\\s*\\)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-            System.Text.RegularExpressions.Match m = System.Text.RegularExpressions.Regex.Match(autoResposne, pattern,
+            pattern = "Autoignition Temperature:</h3>\n<br>\n\\s*(?<1>\\S+)\\s*Deg\\s*(?<2>\\S+)\\s*\\((?<4>\\S+)\\s*deg\\s*(?<5>\\S+)\\s*\\)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
+            m = System.Text.RegularExpressions.Regex.Match(autoResposne, pattern,
                        System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
                       TimeSpan.FromSeconds(1));
             if (m.Groups.Count == 1)
@@ -1183,6 +1348,124 @@ namespace ChemicalDataSourcesTestApp
                 ld50DermalValue = ld50Dermal.ToString();
                 ld50DermalReference = ld50DermalMatch.Groups[4].Value;
             }
+        }
+
+        private void nioshCDSCButton_Click(object sender, EventArgs e)
+        {
+            string icscNumber = string.Empty;
+
+            System.Collections.Generic.List<string> ICSCnumbers = new System.Collections.Generic.List<string>(0);
+            System.Collections.Generic.List<string> caNoss = new System.Collections.Generic.List<string>(0);
+            try
+            {
+                System.IO.StringReader strReader = new System.IO.StringReader(Properties.Resources.ICSCnumberByCAS);
+                string nextLine = strReader.ReadLine();
+                while (!string.IsNullOrEmpty(nextLine))
+                {
+                    string[] split = nextLine.Split('*');
+                    ICSCnumbers.Add(split[0]);
+                    caNoss.Add(split[1].Remove(0, 1));
+                    if (split[1].Remove(0, 1) == m_casNo)
+                    {
+                        icscNumber = split[0];
+                        break;
+                    }
+                    nextLine = strReader.ReadLine();
+                }
+            }
+            catch (System.Exception obj)
+            {
+                obj.GetType();
+            }
+
+            if (!string.IsNullOrEmpty(icscNumber))
+            {
+                System.Diagnostics.Process.Start("http://www.cdc.gov/niosh/ipcsneng/neng" + icscNumber + ".html");
+                return;
+            }
+            System.Windows.Forms.MessageBox.Show("There is no NIOSH Chemical Safety Data Card for " + m_CompoundName);
+        }
+
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ToxnetHSDBButton_Click_1(object sender, EventArgs e)
+        {
+            string uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2";
+            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
+            string postData = "queryxxx=" + m_casNo;
+            postData += "&chemsyn=1";
+            postData += "&database=hsdb";
+            postData += "&Stemming=1";
+            postData += "&and=1";
+            postData += "&second_search=1";
+            postData += "&gateway=1";
+            var data = Encoding.ASCII.GetBytes(postData);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+            using (var stream = request.GetRequestStream())
+            {
+                stream.Write(data, 0, data.Length);
+            }
+            System.Net.WebResponse response = (System.Net.HttpWebResponse)request.GetResponse();
+            string responseString = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
+            string s1 = responseString.Replace("<br>", "");
+            var XMLReader = new System.Xml.XmlTextReader(new System.IO.StringReader(s1));
+            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(QueryResult));
+            if (serializer.CanDeserialize(XMLReader))
+            {
+                // Synonyms means more than one name for the same chemical/CAS Number.
+                QueryResult result = (QueryResult)serializer.Deserialize(XMLReader);
+                uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?" + result.TemporaryFile;
+                string[] ids = result.Id.Split(' ');
+                System.Diagnostics.Process.Start("http://toxgate.nlm.nih.gov/cgi-bin/sis/search2/r?dbs+hsdb:@term+@DOCNO+" + ids[0]);
+            }
+        }
+
+        private void internationalChemSafetyDataCardutton_Click(object sender, EventArgs e)
+        {
+            string icscNumber = string.Empty;
+
+            System.Collections.Generic.List<string> ICSCnumbers = new System.Collections.Generic.List<string>(0);
+            System.Collections.Generic.List<string> caNoss = new System.Collections.Generic.List<string>(0);
+            try
+            {
+                System.IO.StringReader strReader = new System.IO.StringReader(Properties.Resources.ICSCnumberByCAS);
+                string nextLine = strReader.ReadLine();
+                while (!string.IsNullOrEmpty(nextLine))
+                {
+                    string[] split = nextLine.Split('*');
+                    ICSCnumbers.Add(split[0]);
+                    caNoss.Add(split[1].Remove(0, 1));
+                    if (split[1].Remove(0, 1) == m_casNo)
+                    {
+                        icscNumber = split[0];
+                        break;
+                    }
+                    nextLine = strReader.ReadLine();
+                }
+            }
+            catch (System.Exception obj)
+            {
+                obj.GetType();
+            }
+
+            if (!string.IsNullOrEmpty(icscNumber))
+            {
+                System.Diagnostics.Process.Start("http://www.ilo.org/dyn/icsc/showcard.display?p_lang=en&p_card_id=" + icscNumber + "&p_version=1");
+                return;
+            }
+            System.Windows.Forms.MessageBox.Show("There is no International Chemical Safety Data Card for " + m_CompoundName);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ACToRForm form = new ACToRForm(m_casNo);
+            form.ShowDialog();
         }
     }
 }

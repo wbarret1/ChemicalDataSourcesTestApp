@@ -1,0 +1,137 @@
+<?xml version="1.0" ?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:ncbi="http://www.ncbi.nlm.nih.gov"
+  xmlns="http://pubchem.ncbi.nlm.nih.gov/hierarchy_data"
+  targetNamespace="http://pubchem.ncbi.nlm.nih.gov/hierarchy_data"
+  elementFormDefault="qualified"
+  attributeFormDefault="unqualified">
+
+<!--
+ $Id: hierarchy_data.xsd 360743 2012-04-25 19:57:40Z thiessen $
+ ===========================================================================
+
+                            PUBLIC DOMAIN NOTICE
+               National Center for Biotechnology Information
+
+  This software/database is a "United States Government Work" under the
+  terms of the United States Copyright Act.  It was written as part of
+  the author's official duties as a United States Government employee and
+  thus cannot be copyrighted.  This software/database is freely available
+  to the public for use. The National Library of Medicine and the U.S.
+  Government have not placed any restriction on its use or reproduction.
+
+  Although all reasonable efforts have been taken to ensure the accuracy
+  and reliability of the software and data, the NLM and the U.S.
+  Government do not and cannot warrant the performance or results that
+  may be obtained by using this software or data. The NLM and the U.S.
+  Government disclaim all warranties, express or implied, including
+  warranties of performance, merchantability or fitness for any particular
+  purpose.
+
+  Please cite the author in any work or product based on this material.
+
+ ===========================================================================
+
+  Definitions for hierarchical data for PubChem annotations
+
+  by NCBI PubChem Group
+
+  National Center for Biotechnology Information
+  National Institutes of Health
+  Bethesda, MD 20894 USA
+
+ ===========================================================================
+-->
+
+
+<xs:element name="Hierarchies">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element ref="Hierarchy" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Hierarchy">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="SourceName" type="xs:string"/>
+      <xs:element name="SourceID" type="xs:string"/>
+      <xs:element name="RootID" type="xs:string"/>
+      <xs:element name="HID" type="xs:int" minOccurs="0"/>
+      <xs:element ref="Information" minOccurs="0"/>
+      <xs:element ref="Node" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="Flags" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Node">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="NodeID" type="xs:string"/>
+      <xs:element name="ParentID" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="PathToRoot" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element ref="Information" minOccurs="0"/>
+      <xs:element ref="XRefs" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="PathToRoot">
+  <xs:complexType>
+    <xs:sequence>
+      <!-- sequence of ancestors starting with the node's immediate parent, ending (typically) with root -->
+      <xs:element name="AncestorID" type="xs:string" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Information">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="Name" type="xs:string" minOccurs="0"/>
+      <xs:element name="Description" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="Comments" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="URL" type="xs:string" minOccurs="0"/>
+      <xs:element name="HNID" type="xs:int" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="XRefs">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="XRef_Source" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="XRef_SourceName" type="xs:string"/>
+            <xs:element name="XRef_SourceID" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="XRef_PubChemSID" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="XRef_PubChemCID" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="XRef_PubChemAID" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="XRef_Synonym" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+<xs:element name="Flags">
+  <xs:complexType>
+    <xs:sequence>
+      <!-- whether to automatically match source name+id XRef to PubChem SID; default yes/true -->
+      <xs:element name="AutoMatchSourceToSID" minOccurs="0" type="xs:boolean"/>
+      <!-- whether to automatically match PubChem SID to standardized CID; default yes/true -->
+      <xs:element name="AutoMatchSIDToCID" minOccurs="0" type="xs:boolean"/>
+      <!-- whether to automatically construct paths from each node to root; default yes/true -->
+      <xs:element name="AutoConstructPaths" minOccurs="0" type="xs:boolean"/>
+      <!-- whether to treat node IDs as MeSH IDs and match to PubChem SID/CID; default no/false -->
+      <xs:element name="AutoMatchMeSHToSCID" minOccurs="0" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

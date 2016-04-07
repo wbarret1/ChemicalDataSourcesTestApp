@@ -1,0 +1,714 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>TOXNET</title>
+<meta name="description" content="Toxicology, environmental health, and chemical databases and other information resources from the Toxicology and Environmental Health Information Program, National Library of Medicine, National Institutes of Health">
+
+  <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="/newtoxnet/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/newtoxnet/js/tipsy/tipsy.css">
+  <link rel="stylesheet" href="/newtoxnet/js/superbox/jquery.superbox.css">
+  <link rel="stylesheet" href="/newtoxnet/css/style.css">
+  <script src="/newtoxnet/js/libs/modernizr-2.5.3.min.js"></script>
+
+<script language="JavaScript">
+
+
+var gAutoPrint = false; // Flag for whether or not to automatically call the print function
+
+
+function printSpecial()
+{
+	if (document.getElementById != null)
+	{
+		var html = '<HTML>\n<HEAD>\n';
+
+
+                html += '\n</HEAD>\n<BODY>\n';
+		
+		var printReadyElem = document.getElementById("record-main");
+		
+		if (printReadyElem != null)
+		{
+				html += printReadyElem.innerHTML;
+		}
+		else
+		{
+			alert("Could not find the printReady section in the HTML");
+			return;
+		}
+			
+		html += '\n</BO' + 'DY>\n</HT' + 'ML>';
+		
+		var printWin = window.open("Print","printSpecial", 'width=1000,height=600,left=500,top=200,toolbar=yes,menubar=yes,scrollbars=yes');
+		printWin.document.open();
+		printWin.document.write(html);
+		printWin.document.close();
+		if (gAutoPrint)
+			printWin.print();
+	}
+	else
+	{
+		alert("Sorry, the print ready feature is only available in modern browsers.");
+	}
+}
+
+</script>
+</head>
+<body onload="$('#record-main').html('Loading...').load(
+'/cgi-bin/sis/search2/f?./temp/~TnanVl:1:FULL')">
+
+<div id="details" style="display:none">
+<b>Databases:</b><br>
+HSDB<p>
+<b>Query:</b><br>
+35 [DOCNO] <p>
+Records containing the term <strong>35  </strong>
+</div>
+<div id="download" style="display:none">
+<form action="/cgi-bin/sis/download2.txt" name="downloadform" method="post" >
+<label>Download  this record in <input name="DownloadCount" type="hidden"  value="1"><input name="DownloadStart" type="hidden"  value="1"><select name="DownloadFormat" size="2" style="vertical-align:top">
+<option value="f" selected>Full
+</select></label>
+<br/>
+<p><b>Custom Formats</b><p>
+<label><input type=checkbox name=DownloadFormat value="orvw">  Overview
+</label><br><label><input type=checkbox name=DownloadFormat value="na,@rn">  Substance Identification
+</label><br><label><input type=checkbox name=DownloadFormat value="toxs,@care,@htox,@htxv,@seri,@warn,@meds,@popl,@rtex,@body,@avdi,@rfd">  Human Health Effects
+</label><br><label><input type=checkbox name=DownloadFormat value="emt,@antr">  Emergency Medical Treatment
+</label><br><label><input type=checkbox name=DownloadFormat value="toxs,@care,@ntox,@ntp,@ntxv,@etxv,@test,@tcat">  Animal Toxicity Studies
+</label><br><label><input type=checkbox name=DownloadFormat value="metb,@ade,@bhl,@actn,@intc">  Metabolism/Pharmacokenetics
+</label><br><label><input type=checkbox name=DownloadFormat value="ther,@warn,@intc,@idio,@tolr,@rfd,@mxdo,@bion">  Pharmacology
+</label><br><label><input type=checkbox name=DownloadFormat value="envs,@rtex,@body,@avdi,@nats,@arts,@fate,@biod,@abio,@bioc,@koc,@vws,@watc,@effl,@seds,@atmc,@food,@plnt,@fish,@anml,@milk,@oevc">  Environmental Fate & Exposure
+</label><br><label><input type=checkbox name=DownloadFormat value="fifr,@adi,@tsca,@cerc,@rcra,@astd,@cwa,@fdws,@fdwg,@sdws,@sdwg,@sstd,@fda,@atol">  Environmental Standards and Regulations
+</label><br><label><input type=checkbox name=DownloadFormat value="mf,@mw,@cofo,@odor,@tast,@bp,@mp,@corr,@ctp,@den,@dsc,@htc,@htv,@owpc,@ph,@sol,@spec,@surf,@vapd,@vap,@evap,@visc,@ocpp">  Chemical/ Physical Properties
+</label><br><label><input type=checkbox name=DownloadFormat value="hazs,@dot,@odrt,@ghs,@seri,@fpot,@nfpa,@flmt,@flpt,@auto,@firp,@toxc,@ofhz,@expl,@reac,@dcmp,@poly,@ohaz,@idlh,@equp,@oprm,@ssl,@ship,@strg,@clup,@disp,@radl">  Chemical Safety & Handling
+</label><br><label><input type=checkbox name=DownloadFormat value="osha,@tlv,@nrec,@idlh,@osrg">  Occupational Exposure Standards
+</label><br><label><input type=checkbox name=DownloadFormat value="use,@mfs,@mmfg,@omin,@form,@imp,@cpat,@prod,@impt,@expt">   Manufacturing Use/information
+</label><br><label><input type=checkbox name=DownloadFormat value="clab,@alab,@samp">  Laboratory Methods
+</label><br><label><input type=checkbox name=DownloadFormat value="rpts,@hist">  Special References
+</label><br><label><input type=checkbox name=DownloadFormat value="relt,@sy,@asch,@form,@shpn,@stcc,@hazn,@wln,@rtec">  Synonyms and Identifiers
+</label><br><label><input type=checkbox name=DownloadFormat value="DOCNO,@rvdt">  Administrative Information   
+</label><br><input type="hidden" name="TempFile" value="./temp/~TnanVl"><label><input type="submit" class="btn btn-apply-search" value="Download"></label>
+</form>
+</div>
+<div id="permalink" name="permalink" style="display:none">
+   <b>Permanent Link to this record is:</b>
+   <p></p>
+   <p>
+http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/r?dbs+hsdb:@term+@DOCNO+35</div>
+<div class="container">
+        <header id="branding">
+  <h1 id="site-title"><a href="http://www.nlm.nih.gov"  title="U.S. National Library of Medicine" rel="NLM home">U.S. National Library of Medicine</a></h1>
+  <h1 id="site-title2"><a href="/newtoxnet/index.html"  title="TOXNET - TOXICOLOGY DATA NETWORK" rel="home">TOXNET - TOXICOLOGY DATA NETWORK</a></h1>
+                <nav id="access" role="article">
+                        <ul id="menu-main-menu" class="menu">
+                                <li><a href="/pda/">Mobile</a></li>
+                                <li><a href="/newtoxnet/toxnetallsearch.html">Help</a></li>
+                                <li><a href="/newtoxnet/faq.html">FAQs</a></li>
+                                <li><a href="http://www.nlm.nih.gov/pubs/factsheets/toxnetfs.html">TOXNET Fact Sheet</a></li>
+                                <!--<li><a href="/html/toxnet_update.html">Recent Updates</a></li>-->
+                                <li><a href="http://sis.nlm.nih.gov/enviro/manuals.html">Training Manual &amp; Schedule</a></li>
+                        </ul>
+                </nav>
+        </header>
+
+        <div id="main" role="main">
+                <ul class="breadcrumb">
+                        <li>
+                                <a href="/newtoxnet/">TOXNET Home</a> <span class="divider">&gt;</span>
+                        </li>
+                        <li>
+<a href="/newtoxnet/hsdb.htm">  HSDB Home > </a>                        </li>
+                        <li>
+                                <a href=
+/cgi-bin/sis/search2/d?./temp/~TnanVl:0:@od@@@>HSDB Search Results</a> <span class="divider">&gt;</span>
+
+                        </li>
+                        <li class="active">Full Record</li>
+                </ul>
+                <div class="container-fluid">
+                        <div id="record-search-body" class="clearfix">
+                                <form class="form-search form-horizontal" action="/cgi-bin/sis/search2" method="post">
+                                        <input type="text" class="input-medium search-query" value="
+@term @DOCNO 35" style="width:400px;" name="queryxxx" title="search box">
+          <input type="hidden" name="chemsyn" value="0">
+          <input type="hidden" name="pubmed" value="0">
+          <input type="hidden" name="and" value="0">
+          <input type="hidden" name="Stemming" value="0">
+<!--            <input type="hidden" name="chemsyn" value="1">
+                <input type="hidden" name="and" value="1">
+                <input type="hidden" name="Stemming" value="1">
+                <input type="hidden" name="pubmed" value="1">-->
+
+
+<input type="hidden" name="database"
+value="hsdb">                                        <button type="submit" class="btn btn-search">Search</button>
+                                </form>
+                        </div>
+                        <div id="record-page-top-links" class="clearfix">
+                                <ul class="left">
+                                        <li><a href="#details" rel="superbox[content][500x700]">Search Details</a></li>
+                                        <li><a href="
+/cgi-bin/sis/search2/h?./temp/~TnanVl:" rel="superbox[iframe][500x600]">History</a></li>
+                                </ul>
+                                <ul class="right">
+                                        <li><a href=
+"#" style="display: none" name="prevpage" id="prevpage">&laquo; Previous Record</a></li>
+                                        <li><a href=
+"#" style="display: none" name="nextpage"  id="nextpage" >Next  Record &raquo;</a></li>
+                                </ul>
+                        </div>
+                        <div id="record-page-header" class="clearfix">					
+<h2>
+HSDB: BENZENE </h2>
+</h2>
+<!--TOX_SKIP-->
+                                <h4>CASRN:
+71-43-2 </h4>
+<!--MULTI-->                    <span class="record-description">This record appears in multiple databases.</span>
+<!--END_SKIP-->
+                        </div>
+                        <div class="record-page-controllers clearfix">
+                        <form>
+                                <ul>
+<!--RELATED-->
+<!--TOX_SKIP-->
+                                        <li class="database-selection"><label for="other" style="display:inline-block">View record in another database:</label>
+                                                <select id="other" name="other" style="width:120px;" onChange="location = this.options[this.selectedIndex].value;">
+<option value="#">HSDB
+<option value="/cgi-bin/sis/search2/r?dbs+iris:@term+@rn+71-43-2:@odhsdb@/cgi-bin/sis/search2/f?./temp/~TnanVl:1@">IRIS
+<option value="/cgi-bin/sis/search2/r?dbs+iter:@term+@rn+71-43-2:@odhsdb@/cgi-bin/sis/search2/f?./temp/~TnanVl:1@">ITER
+<option value="/cgi-bin/sis/search2/r?dbs+ccris:@term+@rn+71-43-2:@odhsdb@/cgi-bin/sis/search2/f?./temp/~TnanVl:1@">CCRIS
+<option value="/cgi-bin/sis/search2/r?dbs+genetox:@term+@rn+71-43-2:@odhsdb@/cgi-bin/sis/search2/f?./temp/~TnanVl:1@">GENETOX
+<option value="/cgi-bin/sis/search2/r?dbs+ctd:@term+@rn+71-43-2:@odhsdb@/cgi-bin/sis/search2/f?./temp/~TnanVl:1@">CTD
+                                                </select>
+                                        </li>
+<!--END_SKIP-->
+                                        <li class="download">
+                                                <a href="#download" class="download" rel="superbox[content][500x550]">
+Download this Record</a>
+                                        </li>
+                                        <li class="print">
+                                                <a href="javascript:void(printSpecial())" class="print">Print</a>
+                                        </li>
+                                        <li class="save-record">
+<div id="search-result-table">
+<span><a  href="/cgi-bin/sis/search2/d?./temp/~TnanVl:1:@sa0+`/newtoxnet/saverecord.json" class="save-record">
+Select Record</a></span>
+</div>
+                                        </li>
+							<li class="mylist"><a href="
+/cgi-bin/sis/search2/s?./temp/~TnanVl:" rel="superbox[iframe][800x400]" class="view-save-record"> My List</a></li>
+							<li class="mylist"><a href="#permalink"  class="permalink" rel="superbox[content][700x100]" > Permalink</a></li>
+                                </ul>
+                        </form>
+                        </div>
+
+
+
+                         <div id="record-contents">  
+<!--TOX_SKIP-->
+                     <div id="record-left-controllers">
+<!--HIDE_TOC-->
+<!-- Hidden if large CTD   <div id="record-left-controllers">  -->
+                                        <a href="javascript:;" class="link-bar">Click</a>
+                                        <div class="controllers-contents">
+                                                <h3>Table of Contents</h3>
+                                           <div style="float:right">
+                                                <a href="javascript:;" class="expand-all">Expand all</a><br/><a href="javascript:;" class="collapse-all">Collapse all</a>
+                                                 <br/>
+                                           </div>
+                                <form  action="/cgi-bin/sis/search2" method="post">
+                                 <input class="btn btn-apply-search" type="submit" value="Show Selected Items">
+                                 <input type="button" class="btn btn-apply-search clear-form"   value="Clear" onClick="
+window.location.href = '/cgi-bin/sis/search2/c?./temp/~TnanVl:1:';"><br/>
+<!--                                            <hr>-->
+<input type="hidden" name="dselect" value="./temp/~TnanVl">
+<input type="hidden" name="item" value="1"><ul>
+   <li>
+   <label>      <input type="checkbox" class="new-line" name="dfield" value="FULL">
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:FULL">Full Record</a>
+   </label>     <p>
+   </li>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="orvw" title="Overview" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:orvw">Overview</a></span>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="human" title="Human Health Effects" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:human">Human Health Effects</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="toxs" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:toxs">Toxicity Summary</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="care" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:care">Evidence for Carcinogenicity</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="htox" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:htox">Human Toxicity Excerpts</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="htxv" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:htxv">Human Toxicity Values</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="seri" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:seri">Skin, Eye and Respiratory Irritations</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="warn" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:warn">Drug Warnings</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="meds" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:meds">Medical  Surveillance</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="popl" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:popl">Populations at Special Risk</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="rtex" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:rtex">Probable Routes of Human Exposure</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="body" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:body">Body Burden</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="avdi" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:avdi">Average Daily Intake</a>
+</label>   </li>
+   <li>
+<label>      <input type="che...1:ghs">Globally Harmonized System</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="odrt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:odrt">Odor Threshold</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="seri" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:seri">Skin, Eye and Respiratory Irritations</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="fpot" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:fpot">Fire Potential</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="nfpa" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:nfpa">NFPA Hazard Classification</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="flmt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:flmt">Flammable Limits</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="flpt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:flpt">Flash Point</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="auto" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:auto">Autoignition Temperature</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="firp" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:firp">Fire Fighting Procedures</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="ofhz" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:ofhz">Firefighting Hazards</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="expl" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:expl">Explosive Limits & Potential</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="reac" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:reac">Hazardous Reactivities & Incompatibilities</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="ohaz" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:ohaz">Other Hazardous Reaction</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="idlh" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:idlh">Immediately Dangerous to Life or Health</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="equp" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:equp">Protective Equipment & Clothing</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="oprm" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:oprm">Preventive Measures</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="ssl" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:ssl">Stability/Shelf Life</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="ship" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:ship">Shipment Methods and Regulations</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="strg" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:strg">Storage Conditions</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="clup" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:clup">Cleanup Methods</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="disp" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:disp">Disposal Methods</a>
+</label>   </li>
+   </ul>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="oest" title="Occupational Exposure Standards" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:oest">Occupational Exposure Standards</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="osha" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:osha">OSHA Standards</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="tlv" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:tlv">Threshold Limit Values</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="nrec" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:nrec">NIOSH Recommendations</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="idlh" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:idlh">Immediately Dangerous to Life or Health</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="osrg" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:osrg">Other Standards Regulations and Guidelines</a>
+</label>   </li>
+   </ul>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="manf" title="Manufacturing/Use Information" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:manf">Manufacturing/Use Information</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="use" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:use">Uses</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="mfs" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:mfs">Manufacturers</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="mmfg" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:mmfg">Methods of Manufacturing</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="omin" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:omin">General Manufacturing Information</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="form" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:form">Formulations/Preparations</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="imp" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:imp">Impurities</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="cpat" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:cpat">Consumption Patterns</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="prod" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:prod">U. S. Production</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="impt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:impt">U. S. Imports</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="expt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:expt">U. S. Exports</a>
+</label>   </li>
+   </ul>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="labm" title="Laboratory Methods" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:labm">Laboratory Methods</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="clab" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:clab">Clinical Laboratory Methods</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="alab" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:alab">Analytic Laboratory Methods</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="samp" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:samp">Sampling Procedures</a>
+</label>   </li>
+   </ul>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="sref" title="Special References" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:sref">Special References</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="rpts" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:rpts">Special Reports</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="hist" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:hist">History and Incidents</a>
+</label>   </li>
+   </ul>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="syni" title="Synonyms and Identifiers" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:syni">Synonyms and Identifiers</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="relt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:relt">Related HSDB Records</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="sy" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:sy">Synonyms</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="form" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:form">Formulations/Preparations</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="shpn" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:shpn">Shipping Name/ Number DOT/UN/NA/IMO</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="stcc" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:stcc">Standard Transportation Number</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="hazn" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:hazn">EPA Hazardous Waste Number</a>
+</label>   </li>
+   </ul>
+<li>
+<span class="top-level"><input type="checkbox" name="dfield" value="adm" title="Administrative Information" >
+<a class="expand" href="javascript:;">Expand</a>
+<a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:adm">Administrative Information</a></span>
+<ul class="sub-list">
+   <li>
+<label>      <input type="checkbox" name="dfield" value="DOCNO" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:DOCNO">Hazardous Substances Databank Number</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="date" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:date">Last Revision Date</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="rvdt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:rvdt">Last Review Date</a>
+</label>   </li>
+   <li>
+<label>      <input type="checkbox" name="dfield" value="updt" >
+      <a class="controllers-link" href="/cgi-bin/sis/search2/f?./temp/~TnanVl:1:updt">Update History</a>
+</label>   </li>
+   </ul>
+</li>
+</ul>
+                                                <hr>
+                                 <input class="btn btn-apply-search" type="submit" value="Show Selected Items">
+                                 <input type="button" class="btn btn-apply-search clear-form"   value="Clear" onClick="
+window.location.href = '/cgi-bin/sis/search2/c?./temp/~TnanVl:1:';">
+                                                </form>
+                                        </div>
+                                </div>
+<!--END_SKIP-->
+                                <div id="record-main" 
+>
+                                <!-- //////////// START of RECORD ---->
+
+<!-- //////////// END of RECORD ---->
+                                </div>
+<!-- /////RESULT-FOOT.TEMPLATE ////-->
+			</div>
+
+		</div>
+
+	</div>
+
+	<footer id="footer" class="clearfix">
+
+		<nav id="footer-access" role="article">
+
+			<ul id="footer-menu" class="menu">
+
+				<li><a href="http://www.nlm.nih.gov/pubs/factsheets/toxnetfs.html">About</a></li>
+
+				<li><a href="http://sis.nlm.nih.gov/siscontact.html">Contact Us</a></li>
+
+				<li><a href="http://sis.nlm.nih.gov/index.html">SIS Home</a></li>
+
+				<li><a href="http://www.nlm.nih.gov/copyright.html">Copyright</a></li>
+
+				<li><a href="http://www.nlm.nih.gov/privacy.html">Privacy</a></li>
+
+				<li><a href="http://www.nlm.nih.gov/accessibility.html">Accessibility</a></li>
+
+				<li><a href="http://www.nlm.nih.gov/plugins.html">Viewers and Players</a></li>
+
+			</ul>
+
+		</nav>
+
+		<div class="siteinfo">
+
+			<a href="http://www.nlm.nih.gov/">U.S. National Library of Medicine</a> 8600 Rockville Pike, Bethesda, MD 20894<br>
+
+		<a href="http://www.nih.gov/">National Institutes of Health, Health &amp; Human Services</a></div>
+
+	</footer>
+
+</div><!--class="container" -->
+
+
+
+<!--END_SAVE_SKIP-->
+
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+  <script>window.jQuery || document.write('<script src="/newtoxnet/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+
+
+
+
+
+	<script src="/newtoxnet/js/bootstrap.min.js"></script>
+
+  <script src="/newtoxnet/js/plugins.js"></script>
+
+	<script src="/newtoxnet/js/tipsy/jquery.tipsy.js"></script>
+
+	<script src="/newtoxnet/js/superbox/jquery.superbox-min.js"></script>
+
+	<script src="/newtoxnet/js/autocomplete/jquery.autocomplete.js"></script>
+
+
+
+  <script src="/newtoxnet/js/script.js"></script>
+
+  <script src="/newtoxnet/js/script3.js"></script>
+
+
+
+
+
+	<script type="text/javascript">
+
+                $('#nav-toggle').click(function(ev){
+
+
+
+                   $('#advanced-elements-individual-database').toggle();
+
+                   $(this).html(($('#nav-toggle').text()=='Show search options')?'Hide search options':'Show search options');
+
+                 });
+
+		$(function(){
+
+			$.superbox.settings = {
+
+				boxId: "superbox", // Id attribute of the "superbox" element
+
+				boxClasses: "", // Class of the "superbox" element
+
+				overlayOpacity: .6, // Background opaqueness
+
+				loadTxt: "Loading...", // Loading text
+
+				closeTxt: "Close" // "Close" button text
+
+			};
+
+			$.superbox();
+
+		});
+
+
+
+        $(function(){
+
+           $(".search-query").focus(function(){
+
+              if (this.value == $.trim(this.defaultValue) ) this.value = this.defaultValue;
+
+              else if (this.value == '') this.value = this.defaultValue;
+
+           })
+
+        });
+
+        $("#home-search-body-advanced .search-query").blur(function(){
+
+    if ($.trim(this.defaultValue) == this.value) {this.value = ''; }
+
+    else if (this.value == '') this.defaultValue = '';
+
+        })
+
+        $("#home-search-body-advanced .search-query").focus(function(){
+
+    if ($.trim(this.defaultValue) == this.value) {this.value = '';}
+
+    else if (this.value == '') this.value = this.defaultValue;
+
+        })
+
+        //input text treatment.
+
+        $("input.default-clear").blur(function(){
+
+    if ($.trim(this.defaultValue) == this.value) this.value = '';
+
+    else if (this.value == '') this.defaultValue = '';
+
+        })
+
+        $("input.default-clear").focus(function(){
+
+    if ($.trim(this.defaultValue) == this.value) this.value = '';
+
+    else if (this.value == '') this.defaultValue = '';
+
+        })
+
+
+
+	</script>
+
+
+
+        <div id="dropmenu-mask" style="display:none;"></div>
+
+</body>
+
+</html>
+

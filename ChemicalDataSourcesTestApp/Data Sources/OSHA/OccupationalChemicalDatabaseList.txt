@@ -1,0 +1,801 @@
+Chemical Name	CAS #	Formula	Synonyms	Get Report
+P-NITROCHLOROBENZENE	100-00-5	C6H4ClNO2	p-Chloronitrobenzene; 4-Chloronitrobenzene; 1-Chloro-4-nitrobenzene; 4-Nitrochlorobenzene; PCNB; PNCB	Get Report 
+P-NITROANILINE	100-01-6	C6H6N2O2	para-Aminonitrobenzene; 4-Nitroaniline; 4-Nitrobenzenamine; p-Nitrophenylamine; PNA	Get Report 
+TEREPHTHALIC ACID	100-21-0	C8H6O4		Get Report 
+P-DINITROBENZENE	100-25-4	C6H4N2O4	"para-Dinitrobenzene; 1,4-Dinitrobenzene"	Get Report 
+2-DIETHYLAMINOETHANOL	100-37-8	C6H15NO	"Diethylaminoethanol; 2-Diethylaminoethyl alcohol; N,N-Diethylethanolamine; Diethyl-(2-hydroxyethyl)amine; 2-Hydroxytriethylamine"	Get Report 
+VINYLCYCLOHEXENE	100-40-3	C8H12	4-Vinyl cyclohexene	Get Report 
+ETHYL BENZENE	100-41-4	C8H10	Ethylbenzol; Phenylethane	Get Report 
+STYRENE	100-42-5	C8H8	Ethenyl benzene; Phenylethylen; Styrene monomer; Styrene monomer inhibited; Styrol; Vinyl benzene	Get Report 
+BENZYL CHLORIDE	100-44-7	C7H7Cl	Chloromethylbenzene; alpha-Chlorotoluene	Get Report 
+N-METHYLANILINE	100-61-8	C7H9N	MA; (Methylamino)benzene; N-Methyl aniline; Methylphenylamine; N-Phenylmethylamine	Get Report 
+PHENYLHYDRAZINE	100-63-0	C6H8N2	Hydrazinobenzene; Monophenylhydrazine	Get Report 
+N-ETHYL MORPHOLINE	100-74-3	C6H13NO	4-Ethylmorpholine	Get Report 
+NITROUS OXIDE	10024-97-2	N2O	Dinitrogen monoxide; Hyponitrous acid anhydride; Laughing gas	Get Report 
+SULFUR CHLORIDE	10025-67-9	Cl2S2	Sulfur monochloride; Sulfur subchloride; Thiosulfurous dichloride	Get Report 
+PHOSPHORUS OXYCHLORIDE	10025-87-3	Cl3OP	Phosphorus chloride; Phosphorus oxytrichloride; Phosphoryl chloride	Get Report 
+PHOSPHORUS PENTACHLORIDE	10026-13-8	Cl5P	Pentachlorophosphorus; Phosphoric chloride; Phosphorus perchloride	Get Report 
+OZONE	10028-15-6	O3	Triatomic oxygen	Get Report 
+HYDROGEN BROMIDE	10035-10-6	BrH	"Anhydrous hydrogen bromide; Aqueous hydrogen bromide (i.e., Hydrobromic acid)"	Get Report 
+CHLORINE DIOXIDE	10049-04-4	ClO2	Chlorine oxide; Chlorine peroxide	Get Report 
+"4,4'-METHYLENE BIS(2-CHLOROANILINE)"	101-14-4	C13H12Cl2N2	"DACPM; 3,3'-Dichloro-4,4'-diaminodiphenylmethane; MBOCA; 4,4'-Methylenebis(o-chloro aniline); 4,4'-Methylenebis(2-chlorobenzenamine); MOCA"	Get Report 
+METHYLENE BISPHENYL ISOCYANATE (MDI)	101-68-8	C15H10N2O2	"4,4'-Diphenylmethane diisocyanate; MDI; Methylene bis(4-phenyl isocyanate); Methylene di-p-phenylene ester of isocyanic acid"	Get Report 
+4-4' METHYLENE DIANILINE	101-77-9	C13H14N2	"4,4'-Diaminodiphenylmethane; para, para'-Diaminodiphenyl-methane; Dianilinomethane; 4,4'-Diphenylmethanediamine; MDA"	Get Report 
+DIPHENYL OXIDE (VAPOR)	101-84-8	C12H10O	Diphenyl ether; Diphenyl oxide; Phenoxy benzene; Phenyl oxide	Get Report 
+NITRIC OXIDE	10102-43-9	NO	Mononitrogen monoxide; Nitrogen monoxide	Get Report 
+NITROGEN DIOXIDE	10102-44-0	NO2	Dinitrogen tetroxide (N2O4); Nitrogen peroxide	Get Report 
+FERROCENE	102-54-5	C10H10Fe	bis(Cyclopentadienyl)iron; Ferrocene; Iron dicyclopentadienyl	Get Report 
+TRIETHANOLAMINE	102-71-6	C6H15NO3	"2,2',2""-Nitrilotriethanol"	Get Report 
+DIBUTYLAMINOETHANOL	102-81-8	C10H23NO	"Dibutylaminoethanol; 2-Dibutylaminoethanol; 2-Di-N-butylaminoethanol; 2-Di-N-butylaminoethyl alcohol; N,N-Dibutylethanolamine"	Get Report 
+"COBALT CARBONYL, as Co"	10210-68-1	C8Co2O8	di-mu-Carbonylhexacarbonyldicobalt; Cobalt octacarbonyl; Cobalt tetracarbonyl dimer; Dicobalt carbonyl; Dicobalt Octacarbonyl; Octacarbonyldicobalt	Get Report 
+HEPTACHLOR EPOXIDE	1024-57-3	C10H5Cl7O		Get Report 
+BORON TRIBROMIDE	10294-33-4	BBr3	Boron bromide; Tribromoborane	Get Report 
+P-ANISIDINE	104-94-9	C7H9NO	para-Aminoanisole; 4-Anisidine; p-Methoxyaniline	Get Report 
+SEC-BUTYL ACETATE	105-46-4	C6H12O2	sec-Butyl ester of acetic acid; 1-Methylpropyl acetate	Get Report 
+CAPROLACTAM (Particulate)	105-60-2	C6H11NO	Aminocaproic lactam; epsilon-Caprolactam; Hexahydro-2H-azepin-2-one; 2-Oxohexamethyleneimine	Get Report 
+CAPROLACTAM (Vapor)	105-60-2	C6H11NO	Aminocaproic lactam; epsilon-Caprolactam; Hexahydro-2H-azepin-2-one; 2-Oxohexamethyleneimine	Get Report 
+CAPROLACTAM	105-60-2	C6H11NO	Aminocaproic lactam; epsilon-Caprolactam; Hexahydro-2H-azepin-2-one; 2-Oxohexamethyleneimine	Get Report 
+ETHYL BUTYL KETONE	106-35-4	CH3CH2CO[CH2]3CH3	Butyl ethyl ketone; 3-Heptanone	Get Report 
+P-XYLENE	106-42-3	C8H10	"1,4-Dimethylbenzene; para-Xylene; p-Xylol"	Get Report 
+P-CRESOL	106-44-5	C7H8O	para-Cresol; 4-Cresol; p-Cresylic acid; 1-Hydroxy-4-methylbenzene; 4-Hydroxytoluene; 4-Methyl phenol	Get Report 
+P-DICHLOROBENZENE	106-46-7	C6H4Cl2	"p-DCB; 1,4-Dichlorobenzene; para-Dichlorobenzene; Dichlorocide"	Get Report 
+4-CHLOROANILINE	106-47-8	C6H6ClN	p-Aminochlorobenzene; 1-Amino-4-chlorobenzene; p-Chloroaniline; p-Chlorobenzenamine; 4-Chlorobenazmine	Get Report 
+P-TOLUIDINE	106-49-0	C7H9N	4-Aminotoluene; 4-Methylaniline; 4-Methylbenzenamine; 4-Toluidine; Tolylamine	Get Report 
+P-PHENYLENEDIAMINE	106-50-3	C6H8N2	"4-Aminoaniline; 1,4-Benzenediamine; p-Diaminobenzene; 1,4-Diaminobenzene; 1,4-Phenylene diamine"	Get Report 
+BENZOQUINONE	106-51-4	C6H4O2	"1,4-Benzoquinone; p-Benzoquinone; 1,4-Cyclohexadiene dioxide; p-Quinone"	Get Report 
+VINYL CYCLOHEXENE DIOXIDE	106-87-6	C8H12O2	"1-Epoxyethyl-3,4-epoxy-cyclohexane; 4-Vinylcyclohexene diepoxide; 4-Vinyl-1-cyclohexene dioxide"	Get Report 
+"1-CHLORO-2,3-EPOXYPROPANE"	106-89-8	C3H5ClO	2-Chloropropylene oxide; beta-Chloropropylene oxide; Epichlorohydrin	Get Report 
+ALLYL GLYCIDYL ETHER	106-92-3	C6H10O2	"AGE; 1-Allyloxy-2,3-epoxypropane; Glycidyl allyl ether; [(2-Propenyloxy)methyl] oxirane"	Get Report 
+ETHYLENE DIBROMIDE	106-93-4	C2H4Br2	"1,2-Dibromoethane; Ethylene bromide; Glycol dibromide"	Get Report 
+BUTANE	106-97-8	C4H10	normal-Butane; Butyl hydride; Diethyl; Methylethylmethane	Get Report 
+"1,3 BUTADIENE"	106-99-0	C4H6	"Biethylene; Bivinyl, Butadiene; Divinyl, Erythrene; Vinylethylene"	Get Report 
+ACROLEIN	107-02-8	C3H4O	"Acraldehyde; Acrolein, inhibited; Acrylaldehyde,;Acrylic aldehyde; Allyl aldehyde; Propenal; 2-Propenal"	Get Report 
+N-PROPYLMERCAPTAN	107-03-9	C3H8S	3-Mercaptopropane; Propane-1-thiol; Propyl mercaptan; n-Propyl mercaptan	Get Report 
+ALLYL CHLORIDE	107-05-1	C3H5Cl	3-Chloropropene; 1-Chloro-2-propene; 3-Chloropropylene	Get Report 
+ETHYLENE DICHLORIDE	107-06-2	C2H4Cl2	"1,2-Dichloroethane; Ethylene chloride; Glycol dichloride"	Get Report 
+ETHYLENE CHLOROHYDRIN	107-07-3	C2H5ClO	2-Chloroethanol; 2-Chloroethyl alcohol; Ethylene chlorhydrin	Get Report 
+PROPIONITRILE	107-12-0	C3H5N	Cyanoethane; Ethyl cyanide; Propanenitrile; Propionic nitrile; Propiononitrile	Get Report 
+ACRYLONITRILE	107-13-1	C3H3N	Acrylonitrile inhibited; Acrylonitrile monomer; AN; Cyanoethylene; Propenenitrile; 2-Propenenitrile; VCN; Vinyl cyanide	Get Report 
+ETHYLENEDIAMINE	107-15-3	C2H8N2	"1,2-Diaminoethane; 1,2-Ethanediamine; Ethylenediamine (anhydrous)"	Get Report 
+GLYCOLONITRILE	107-16-4	HOCH2CN	Cyanomethanol; Formaldehyde cyanohydrin; Glycolic nitrile; Glyconitrile; Hydroxyacetonitrile	Get Report 
+ALLYL ALCOHOL	107-18-6	C3H6O	AA; Allylic alcohol; Propenol; 1-Propen-3-ol; 2-Propenol; Vinyl carbinol	Get Report 
+PROPARGYL ALCOHOL	107-19-7	C3H4O	1-Propyn-3-ol; 2-Propyn-1-ol; 2-Propynyl alcohol	Get Report 
+2-CHLOROETHANAL	107-20-0	C2H3ClO	Chloroacetaldehyde (40% aqueous solution); 2-Chloroacetaldehyde; 2-Chloroethanal	Get Report 
+ETHYLENE GLYCOL	107-21-1	C2H6O2	"1,2-Dihydroxyethane; 1,2-Ethanediol; Glycol; Glycol alcohol; Monoethylene glycol"	Get Report 
+GLYOXAL	107-22-2	C2H2O2		Get Report 
+METHYL CHLOROMETHYL ETHER	107-30-2	C2H5ClO	Chlorodimethyl ether; Chloromethoxymethane; CMME; Dimethylchloroether; Methylchloromethyl ether	Get Report 
+METHYL FORMATE	107-31-3	C2H4O2	Methyl ester of formic acid; Methyl methanoate	Get Report 
+HEXYLENE GLYCOL	107-41-5	C6H14O2	"2,4-Dihydroxy-2-methylpentane; 2-Methyl-2,4-pentanediol; 4-Methyl-2,4-pentanediol; 2-Methylpentane-2,4-diol"	Get Report 
+TETRAETHYL PYROPHOSPHATE	107-49-3	C8H20O7P2	Ethyl pyrophosphate; TEPP; Tetron	Get Report 
+DIBUTYL PHOSPHATE	107-66-4	(C4H9O)2(OH)PO	Dibutyl acid o-phosphate; Di-n-butyl hydrogen phosphate; Dibutyl phosphoric acid	Get Report 
+2-METHYLPENTANE	107-83-5	C6H14	"Diethylmethylmethane; Diisopropyl; 2,2-Dimethylbutane; 2,3-Dimethylbutane; Isohexane; 2-Methylpentane; 3-Methylpentane"	Get Report 
+METHYL PROPYL KETONE	107-87-9	C5H10O	Ethyl acetone; Methyl propyl ketone; MPK	Get Report 
+1-METHOXY-2-PROPANOL	107-98-2	C4H10O2	Dowtherm209; 1-Methoxy-2-hydroxypropane; 1-Methoxy-2-propanol; 2-Methoxy-1-methylethanol; Propylene glycol methyl ether	Get Report 
+1-NITROPROPANE	108-03-2	CH3CH2CH2NO2	Nitropropane; 1-NP	Get Report 
+VINYL ACETATE	108-05-4	C4H6O2	1-Acetoxyethylene; Ethenyl acetate; Ethenyl ethanoate; VAC; Vinyl acetate monomer; Vinyl ethanoate	Get Report 
+METHYL ISOBUTYL KETONE	108-10-1	C6H12O	Isobutyl methyl ketone; Methyl isobutyl ketone; 4-Methyl 2-pentanone; MIBK	Get Report 
+METHYL ISOBUTYL CARBINOL	108-11-2	C6H14O	Isobutylmethylcarbinol; Methyl amyl alcohol; 4-Methyl-2-pentanol; MIBC	Get Report 
+DIISOPROPYLAMINE	108-18-9	C6H15N	DIPA; N-(1-Methylethyl)-2-propanamine	Get Report 
+DIISOPROPYL ETHER	108-20-3	C6H14O	Diisopropyl ether; Diisopropyl oxide; 2-Isopropoxy propane	Get Report 
+ISOPROPYL ACETATE	108-21-4	C5H10O2	Isopropyl ester of acetic acid; 1-Methylethyl ester of acetic acid; 2-Propyl acetate	Get Report 
+ACETIC ANHYDRIDE	108-24-7	C4H6O3	Acetic acid anhydride; Acetic oxide; Acetyl oxide; Ethanoic anhydride	Get Report 
+MALEIC ANHYDRIDE	108-31-6	C4H2O3	"cis-Butenedioic anhydride; 2,5-Furanedione; Maleic acid anhydride; Toxilic anhydride"	Get Report 
+M-XYLENE	108-38-3	C8H10	"1,3-Dimethylbenzene; meta-Xylene; m-Xylol"	Get Report 
+M-TOLUIDINE	108-44-1	C7H9N	3-Amino-1-methylbenzene; 1-Aminophenylmethane; m-Aminotoluene; 3-Methylaniline; 3-Methylbenzenamine; 3-Toluidine; m-Tolylamine	Get Report 
+"1,3-PHENYLENEDIAMINE"	108-45-2	C6H8N2		Get Report 
+RESORCINOL	108-46-3	C6H6O2	"1,3-Benzenediol; m-Benzenediol; 1,3-Dihydroxybenzene; m-Dihydroxybenzene; 3-Hydroxyphenol; m-Hydroxyphenol"	Get Report 
+DIISOBUTYL KETONE	108-83-8	C9H18O	"DIBK; sym-Diisopropyl acetone; 2,6-Dimethyl-4-heptanone; Isovalerone; Valerone"	Get Report 
+METHYLAMYL ACETATE	108-84-9	C8H16O2	"1,3-Dimethylbutyl acetate; sec-Hexyl acetate; Methylisoamyl acetate"	Get Report 
+METHYLCYCLOHEXANE	108-87-2	C7H14	Cyclohexylmethane; Hexahydrotoluene	Get Report 
+TOLUENE	108-88-3	C7H8	Methyl benzene; Methyl benzol; Phenyl methane; Toluol	Get Report 
+CHLOROBENZENE	108-90-7	C6H5Cl	Benzene chloride; Chlorobenzol; MCB; Monochlorobenzene; Phenyl chloride	Get Report 
+CYCLOHEXYLAMINE	108-91-8	C6H13N	Aminocyclohexane; Aminohexahydrobenzene; Hexahydroaniline; Hexahydrobenzenamine	Get Report 
+CYCLOHEXANOL	108-93-0	C6H12O	Anol; Cyclohexyl alcohol; Hexahydrophenol; Hexalin; Hydralin; Hydroxycyclohexane	Get Report 
+CYCLOHEXANONE	108-94-1	C6H10O	Anone; Cyclohexyl ketone; Pimelic ketone	Get Report 
+PHENOL	108-95-2	C6H6O	Carbolic acid; Hydroxybenzene; Monohydroxybenzene; Phenyl alcohol; Phenyl hydroxide	Get Report 
+PHENYL MERCAPTAN	108-98-5	C6H6S	Mercaptobenzene; Phenyl mercaptan; Thiophenol	Get Report 
+ETHYLENE GLYCOL ISOPROPYL ETHER	109-59-1	C5H12O2	Ethylene glycol isopropyl ether; beta-Hydroxyethyl isopropyl ether; Isopropyl Cellosolve; Isopropyl glycol	Get Report 
+N-PROPYL ACETATE	109-60-4	C5H10O2	Propylacetate; n-Propyl ester of acetic acid	Get Report 
+PENTANE	109-66-0	C5H12	Pentane; normal-Pentane	Get Report 
+N-BUTYLAMINE	109-73-9	C4H11N	1-Aminobutane; Butylamine	Get Report 
+N-BUTYRONITRILE	109-74-0	CH3CH2CH2CN	Butanenitrile; Butyronitrile; 1-Cyanopropane; Propyl cyanide; n-Propyl cyanide	Get Report 
+MALONONITRILE	109-77-3	C3H2N2	Cyanoacetonitrile; Dicyanomethane; Malonic dinitrile	Get Report 
+BUTYL MERCAPTAN	109-79-5	C4H10S	Butanethiol; 1-Butanethiol; n-Butanethiol; 1-Mercaptobutane	Get Report 
+ETHYLENE GLYCOL MONOMETHYL ETHER	109-86-4	C3H8O2	Ethylene glycol monomethyl ether; EGME; Glycol monomethyl ether; 2-Methoxyethanol; Methyl Cellosolve	Get Report 
+METHYLAL	109-87-5	C3H8O2	Dimethoxymethane; Formal; Formaldehyde dimethylacetal; Methoxymethyl methyl ether; Methylene dimethyl ether	Get Report 
+DIETHYLAMINE	109-89-7	C4H11N	"Diethamine; N,N-Diethylamine; N-Ethylethanamine"	Get Report 
+ETHYL FORMATE	109-94-4	C3H6O2	Ethyl ester of formic acid; Ethyl methanoate	Get Report 
+TETRAHYDROFURAN	109-99-9	C4H8O	"Diethylene oxide; 1,4-Epoxybutane; Tetramethylene oxide; THF"	Get Report 
+5-METHYLHEXAN-2-ONE	110-12-3	C7H14O	Isoamyl methyl ketone; Isopentyl methyl ketone; 2-Methyl-5-hexanone; 5-Methyl-2-hexanone; MIAK	Get Report 
+ISOBUTYL ACETATE	110-19-0	C6H12O2	Isobutyl ester of acetic acid; 2-Methylpropyl acetate; 2-Methylpropyl ester of acetic acid; -Methylpropyl ethanoate	Get Report 
+AMYL METHYL KETONE	110-43-0	C7H14O	Amyl methyl ketone; n-Amyl methyl ketone; 2-Heptanone	Get Report 
+ETHYLENE GLYCOL MONOMETHYL ETHER ACETATE	110-49-6	C5H10O3	Ethylene glycol monomethyl ether acetate; EGMEA; Glycol monomethyl ether acetate; Methyl Cellosolve acetate; 2-Methoxyethyl acetate	Get Report 
+N-HEXANE	110-54-3	C6H14	Hexane; Hexyl hydride; normal-Hexane	Get Report 
+SUCCINITRILE	110-61-2	C4H4N2	"Butanedinitrile; 1,2-Dicyanoethane; Dinile; Ethylene cyanide; Ethylene dicyanide; Succinic dinitrile"	Get Report 
+VALERALDEHYDE	110-62-3	C5H10O	Amyl aldehyde; Pentanal; Valeral; Valeraldehyde; Valeric aldehyde	Get Report 
+PENTYLMERCAPTAN	110-66-7	C5H12S	Amyl hydrosulfide; Amyl mercaptan; Amyl sulfhydrate; Pentyl mercaptan	Get Report 
+ETHYLENE GLYCOL MONOETHYL ETHER	110-80-5	C4H10O2	2-Ethoxyethanol; Cellosolve; EGEE; Ethylene glycol monoethyl ether	Get Report 
+CYCLOHEXANE	110-82-7	C6H12	Benzene hexahydride; Hexahydrobenzene; Hexamethylene; Hexanaphthene	Get Report 
+CYCLOHEXENE	110-83-8	C6H10	Benzene tetrahydride; Tetrahydrobenzene	Get Report 
+PYRIDINE	110-86-1	C5H5N	Azabenzene; Azine	Get Report 
+MORPHOLINE	110-91-8	C4H9NO	"Diethylene imidoxide; Diethylene oximide; Tetrahydro-1,4-oxazine; Tetrahydro-p-oxazine"	Get Report 
+CHLORODIPHENYL (54% CHLORINE)	11097-69-1	C6H3Cl2C6H2Cl3 (approx)	Aroclor1254; PCB; Polychlorinated biphenyl	Get Report 
+ETHYLENE GLYCOL MONOETHYL ETHER ACETATE	111-15-9	C6H12O3	2-Ethoxyethyl acetate; Cellosolve acetate; EGEEA; Ethylene glycol monoethyl ether acetate; Glycol monoethyl ether acetate	Get Report 
+GLUTARALDEHYDE SOLUTION	111-30-8	C5H8O2	"Glutaric dialdehyde; 1,5-Pentanedial"	Get Report 
+N-HEXYLMERCAPTAN	111-31-9	CH3[CH2]5SH	1-Hexanethiol; Hexyl mercaptan; n-Hexyl mercaptan; n-Hexylthiol	Get Report 
+DIETHYLENETRIAMINE	111-40-0	C4H13N3	"N-(2-Aminoethyl)1,2-ethanediamine; bis(2-Aminoethyl)amine; DETA; 2,2'-Diaminodiethylamine"	Get Report 
+DIETHANOLAMINE	111-42-2	C4H11NO2	"DEA; Di(2-hydroxyethyl)amine; 2,2'-Dihydroxydiethyamine; Diolamine; bis(2-Hydroxyethyl)amine; 2,2'-Iminodiethanol"	Get Report 
+"2,2'-DICHLORODIETHYL ETHER"	111-44-4	C4H8Cl2O	"bis(2-Chloroethyl)ether; 2,2'-Dichlorodiethyl ether; 2,2'-Dichloroethyl ether"	Get Report 
+OCTANE	111-65-9	C8H18	n-Octane; normal-Octane	Get Report 
+ADIPONITRILE	111-69-3	C6H8N2	"1,4-Dicyanobutane; Hexanedinitrile; Tetramethylene cyanide"	Get Report 
+ETHYLENE GLYCOL MONOBUTYL ETHER	111-76-2	C6H14O2	2-Butoxyethanol; Butyl Cellosolve; Butyl oxitol; Dowanol EB; EGBE; Ektasolve; EB; Jeffersol EB	Get Report 
+NONANE	111-84-2	C9H20	n-Nonane; Nonyl hydride	Get Report 
+N-OCTYLMERCAPTAN	111-88-6	C8H18S	"1-Mercaptooctane, n-Octyl mercaptan; Octylthiol; 1-Octylthiol"	Get Report 
+ETHYLENE GLYCOL MONOBUTYL ETHER ACETATE	112-07-2	C8H16O3	2-Butoxyethyl acetate; 2-Butoxyethanol acetate; Butyl Cellosolve acetate; Butyl glycol acetate; EGBEA; Ektasolve EB acetate	Get Report 
+DODECYLMERCAPTAN	112-55-0	C12H26S	Dodecyl mercaptan; 1-Dodecyl mercaptan; n-Dodecyl mercaptan; Lauryl mercaptan; n-Lauryl mercaptan; 1-Mercaptododecane	Get Report 
+PROPANE SULTONE	1120-71-4	C3H6O3S	"3-Hydroxy-1-propanesulphonic acid sultone; 1,3-Propane sultone"	Get Report 
+AMORPHOUS SILICA	112926-00-8	SiO2		Get Report 
+PROPOXUR	114-26-1	CH3NHCOOC6H4OCH(CH3)2	Aprocarb; o-Isopropoxyphenyl-N-methylcarbamate; N-Methyl-2-isopropoxyphenyl-carbamate	Get Report 
+PROPYLENE	115-07-1	C3H6		Get Report 
+ENDOSULFAN	115-29-7	C9H6Cl6O3S	"Benzoepin; Endosulphan; 6,7,8,9,10-Hexachloro-1,5,5a,6,9,9a-hexachloro-6,9-methano-2,4,3-benzo-dioxathiepin-3-oxide; Thiodan"	Get Report 
+PENTAERYTHRITOL	115-77-5	C5H12O4	"2,2-bis(Hydroxymethyl)-1,3-propanediol; Methane tetramethylol; Monopentaerythritol; PE; Tetrahydroxymethylolmethane; Tetramethylolmethane"	Get Report 
+TRIPHENYL PHOSPHATE	115-86-6	C18H15O4P	Phenyl phosphate; TPP; Triphenyl ester of phosphoric acid	Get Report 
+FENSULFOTHION	115-90-2	C11H17O4PS2	"Dasanit; O,O-Diethyl O-(p-methylsulfinyl)phenyl)phosphorothioate; Terracur P"	Get Report 
+TETRAFLUOROETHYLENE	116-14-3	C2F4		Get Report 
+DI(2-ETHYLHEXYL) PHTHALATE	117-81-7	C24H38O4	DEHP; Di(2-ethylhexyl)phthalate; DOP; bis-(2-Ethylhexyl)phthalate; Octyl phthalate	Get Report 
+"1,3-DICHLORO-5,5-DIMETHYLHYDANTOIN"	118-52-5	C5H6Cl2N2O2	Dactin; DDH; Halane	Get Report 
+HEXACHLOROBENZENE	118-74-1	C6Cl6		Get Report 
+TRINITROTOLUENE	118-96-7	C7H5N3O6	"1-Methyl-2,4,6-trinitrobenzene; TNT; Trinitrotoluene; sym-Trinitrotoluene; Trinitrotoluol"	Get Report 
+"T-BUTYL CHROMATE, as Cr03"	1189-85-1	C8H18CrO4	di-tert-Butyl ester of chromic acid	Get Report 
+O-DIANISIDINE-BASED DYES	119-90-4	C14H16N2O2	"Dianisidine; 3,3'-Dianisidine; 3,3'-Dimethoxybenzidine"	Get Report 
+"3,3'-DIMETHYLBENZIDINE"	119-93-7	C14H16N2	"4,4'-Diamino-3,3'-dimethylbiphenyl; Diaminoditolyl; 3,3'-Dimethylbenzidine; 3,3'-Dimethyl-4,4'-diphenyldiamine; 3,3'-Tolidine"	Get Report 
+O-TOLIDINE	119-93-7	C14H16N2	"4,4'-Diamino-3,3'-dimethylbiphenyl; Diaminoditolyl; 3,3'-Dimethylbenzidine; 3,3'-Dimethyl-4,4'-diphenyldiamine; 3,3'-Tolidine"	Get Report 
+O-TOLIDINE-BASED DYES	119-93-7D	Varies		Get Report 
+CATECHOL	120-80-9	C6H6O2	"1,2-Benzenediol; o-Benzenediol; 1,2-Dihydroxybenzene; o-Dihydroxybenzene; 2-Hydroxyphenol; Pyrocatechol"	Get Report 
+"1,2,4-TRICHLOROBENZENE"	120-82-1	C6H3Cl3	"unsym-Trichlorobenzene; 1,2,4-Trichlorobenzol"	Get Report 
+MICA (CONTAINING LESS THAN 1% QUARTZ)	12001-26-2	No formula	Biotite; Lepidolite; Margarite; Muscovite; Phlogopite; Roscoelite; Zimmwaldite	Get Report 
+ASBESTOS - CROCIDOLITE	12001-28-4	Hydrated mineral silicates		Get Report 
+ASBESTOS - CHRYSOTILE	12001-29-5	Hydrated mineral silicates		Get Report 
+NICKEL SUBSULFIDE	12035-72-2	Ni3S2		Get Report 
+"TUNGSTEN CARBIDE (CONTAINING >0.3% Ni), as Ni"	12070-12-1	CW/Co/Ni/Ti	Cemented tungsten carbide; Cemented WC; Hard metal [Note: The tungsten carbide (WC) content is generally 85-95% & the cobalt	Get Report 
+"TUNGSTEN CARBIDE (CONTAINING >2% Co), as Co"	12070-12-1	CW/Co/Ni/Ti	Cemented tungsten carbide; Cemented WC; Hard metal [Note: The tungsten carbide (WC) content is generally 85-95% & the cobalt	Get Report 
+MANGANESE CYCLOPENTADIENYLTRICARBONYL	12079-65-1	C5H5Mn(CO)3	Cyclopentadienylmanganese tricarbonyl; Cyclopentadienyl tricarbonyl manganese; MCT	Get Report 
+"2,4 DINITROTOLUENE"	121-14-2	C7H6N2O4	Dinitrotoluol; DNT; Methyldinitrobenzene [Note: Various isomers of DNT exist]	Get Report 
+TRIETHYLAMINE	121-44-8	C6H15N	TEA	Get Report 
+TRIMETHYL PHOSPHITE	121-45-9	C3H9O3P	Methyl phosphite; Trimethoxyphosphine; Trimethyl ester of phosphorous acid	Get Report 
+"N,N-DIMETHYLANILINE"	121-69-7	C8H11N	"N,N-Dimethylbenzeneamine; N,N-Dimethylphenylamine [Note: Also known as Dimethylaniline which is a correct synonym for Xylidine.]"	Get Report 
+MALATHION	121-75-5	C10H19O6PS2	"S-[1,2-bis(ethoxycarbonyl) ethyl]O,O-dimethyl-phosphorodithioate; Diethyl (dimethoxyphosphinothioylthio) succinate"	Get Report 
+"CYCLOTRIMETHYLENE TRINITRAMINE, [DESENSITIZED]"	121-82-4	C3H6N6O6	"Cyclonite; Cyclotrimethylenetrinitramine; Hexahydro-1,3,5-trinitro-s-triazine; RDX; Trimethylenetrinitramine; 1,3,5-Trinitro-1,3,5-triazacyclohexane"	Get Report 
+METHYLCYCLOPENTADIENYL MANGANESE TRICARBONYL	12108-13-3	C9H7MnO3	CI-2; Combustion Improver-2; Manganese tricarbonylmethylcyclopentadienyl; 2-Methylcyclopentadienyl manganese tricarbonyl; MMT	Get Report 
+AMMONIUM CHLORIDE	12125-02-9	ClH4N	Ammonium chloride; Ammonium muriate fume; Sal ammoniac fume	Get Report 
+ASBESTOS - AMOSITE	12172-73-5	Hydrated mineral silicates		Get Report 
+"BORATES, TETRA, SODIUM SALTS, PENTAHYDRATE"	12179-04-3	Na2B4O7 . 5H2O	Borax pentahydrate; Sodium borate pentahydrate; Sodium tetraborate pentahydrate	Get Report 
+DIPHENYLAMINE	122-39-4	C12H11N	Anilinobenzene; DPA; Phenylaniline; N-Phenylaniline; N-Phenylbenzenamine	Get Report 
+PHENYL GLYCIDYL ETHER	122-60-1	C9H10O2	"1,2-Epoxy-3-phenoxy propane; Glycidyl phenyl ether; PGE; Phenyl 2,3-epoxypropyl ether"	Get Report 
+DIPROPYL KETONE	123-19-3	C7H14O	Butyrone; DPK; 4-Heptanone; Heptan-4-one; Propyl ketone	Get Report 
+HYDROQUINONE	123-31-9	C6H6O2	"p-Benzenediol; 1,4-Benzenediol; Dihydroxybenzene; 1,4-Dihydroxybenzene; Quinol"	Get Report 
+DIACETONE ALCOHOL	123-42-2	C6H12O2	Diacetone; 4-Hydroxy-4-methyl-2-pentanone; 2-Methyl-2-pentanol-4-one	Get Report 
+ISOAMYL ALCOHOL	123-51-3	C5H12O	Fermentation amyl alcohol; Fusel oil; Isobutyl carbinol; Isopentyl alcohol; 3-Methyl-1-butanol; Primary isoamyl alcohol	Get Report 
+N-BUTYL ACETATE	123-86-4	C6H12O2	Butyl acetate; n-Butyl ester of acetic acid; Butyl ethanoate	Get Report 
+DIOXANE	123-91-1	C4H8O2	"Diethylene dioxide; Diethylene ether; Dioxan; p-Dioxane; 1,4-Dioxane"	Get Report 
+ISOAMYL ACETATE	123-92-2	C7H14O2	Banana oil; Isopentyl acetate; 3-Methyl-1-butanol acetate; 3-Methylbutyl ester of acetic acid; 3-Methylbutyl ethanoate	Get Report 
+ADIPIC ACID	124-04-9	C6H10O4		Get Report 
+"1,6-HEXANE DIAMINE"	124-09-4	C6H16N2		Get Report 
+CARBON DIOXIDE	124-38-9	CO2	Carbonic acid gas; Dry ice	Get Report 
+DIMETHYLAMINE	124-40-3	C2H7N	Dimethylamine (anhydrous); N-Methylmethanamine	Get Report 
+TRIBUTYL PHOSPHATE	126-73-8	C12H27O4P	Butyl phosphate; TBP; Tributyl ester of phosphoric acid; Tri-n-butyl phosphate	Get Report 
+METHACRYLONITRILE	126-98-7	C4H5N	"2-Cyanopropene-1, 2-Cyano-1-propene; Isoprene cyanide; Isopropenylnitrile; Methacrylonitrile; à-Methylacrylonitrile; 2-Methylpropenenitrile"	Get Report 
+CHLOROPRENE	126-99-8	C4H5Cl	"2-Chloro-1,3-butadiene; Chlorobutadiene; Chloroprene"	Get Report 
+FERROVANADIUM DUST	12604-58-9	FeV	Ferrovanadium	Get Report 
+1-CHLORO-2-PROPANOL	127-00-4	C3H7ClO	sec-Propylene chlorohydrin; alpha-Propylene chlorohydrin; 1-Chloroisopropyl alcohol; 1-Chloro-2-hydroxypropane	Get Report 
+PERCHLOROETHYLENE	127-18-4	C2Cl4	Perchlorethylene; Perchloroethylene; Perk; Tetrachlorethylene	Get Report 
+DIMETHYLACETAMIDE	127-19-5	C4H9NO	"N,N-Dimethyl acetamide; DMAC"	Get Report 
+BUTYLATED HYDROXYTOLUENE	128-37-0	C15H24O	"2,6-Di-tert-butyl-p-cresol; BHT; Butylated hydroxytoluene; Dibutylated hydroxytoluene; 4-Methyl-2,6-di-tert-butyl phenol"	Get Report 
+1-HYDROXYANTHRA-QUINONE	129-43-1	C14H8O3		Get Report 
+"XYLIDINE, ALL ISOMERS"	1300-73-8	C8H11N	"Aminodimethylbenzene; Aminoxylene; Dimethylaminobenzene; Dimethylaniline; Xylidine isomers (e.g., 2,4-Dimethylaniline)"	Get Report 
+EMERY	1302-74-5	Al2O3	Aluminum oxide; Aluminum trioxide; Corundum; Impure corundum; Natural aluminum oxide	Get Report 
+GALLIUM ARSENIDE	1303-00-0	AsGa		Get Report 
+ARSENIC PENTOXIDE	1303-28-2	As2O5		Get Report 
+BORON OXIDE	1303-86-2	B2O3	Boric anhydride; Boric oxide; Boron trioxide	Get Report 
+"BORATES, TETRA, SODIUM SALTS, DECAHYDRATE"	1303-96-4	Na2B4O7 . 10H2O	Borax; Borax decahydrate; Sodium borate decahydrate; Sodium tetraborate decahydrate	Get Report 
+"BISMUTH TELLURIDE, Se DOPED, as Bi2Te3"	1304-82-1	Bi2Te3.Se	Bismuth sesquitelluride; Bismuth telluride; Bismuth tritelluride; Tellurobismuthite	Get Report 
+"BISMUTH TELLURIDE, UNDOPED, as Bi2Te3"	1304-82-1	Bi2Te3	Bismuth sesquitelluride; Bismuth telluride; Bismuth tritelluride; Tellurobismuthite	Get Report 
+CALCIUM HYDROXIDE	1305-62-0	CaH2O2	Calcium hydrate; Caustic lime; Hydrated lime; Slaked lime	Get Report 
+CALCIUM OXIDE	1305-78-8	CaO	Burned lime; Burnt lime; Lime; Pebble lime; Quick lime; Unslaked lime	Get Report 
+"CADMIUM OXIDE FUME, as Cd"	1306-19-0	CdO/Cd	Cadmium monoxide; Cadmium oxide fume	Get Report 
+TERBUFOS	13071-79-9	C9H21O2PS3		Get Report 
+ROUGE	1309-37-1	Fe2O3	Ferric oxide; Iron(III) oxide	Get Report 
+"IRON OXIDE, DUST & FUME, as Fe"	1309-37-1	Fe2O3	Ferric oxide; Iron(III) oxide	Get Report 
+"MAGNESIUM OXIDE, FUME"	1309-48-4	MgO	Magnesia fume	Get Report 
+"ANTIMONY TRIOXIDE, as Sb"	1309-64-4	O3Sb2	Antimony metal; Antimony powder; Stibium	Get Report 
+DIMETHYL PHTHALATE	131-11-3	C10H10O4	"Dimethyl ester of 1,2-benzenedicarboxylic acid; DMP"	Get Report 
+POTASSIUM HYDROXIDE	1310-58-3	HKO	Caustic potash; Lye; Potassium hydrate	Get Report 
+SODIUM HYDROXIDE	1310-73-2	HNaO	Caustic soda; Lye; Soda lye; Sodium hydrate	Get Report 
+CYHEXATIN	13121-70-5	(C6H11)3SnOH	TCHH; Tricyclohexylhydroxystannane; Tricyclohexylhydroxytin; Tricyclohexylstannium hydroxide; Tricyclohexyltin hydroxide	Get Report 
+"ZINC OXIDE, FUME"	1314-13-2	ZnO	Zinc peroxide	Get Report 
+"ZINC OXIDE, DUST"	1314-13-2	ZnO	Zinc peroxide	Get Report 
+"VANADIUM, RESPIRABLE DUST & FUME, as V2O5"	1314-62-1	O5V2	Divanadium pentoxide dust; Vanadic anhydride dust; Vanadium oxide dust; Vanadium pentaoxide dust Other synonyms vary depending upon the specific vanadium compound.	Get Report 
+"VANADIUM, METAL AND CARBIDE"	1314-62-1	Mixture		Get Report 
+"PHOSPHORUS PENTASULFIDE, FREE FROM YELLOW AND WHITE PHOSPHORUS"	1314-80-3	P2S5/P4S10	Phosphorus persulfide; Phosphorus sulfide; Sulfur phosphide	Get Report 
+MANGANESE TETROXIDE	1317-35-7	Mn3O4	Manganese oxide; Manganomanganic oxide; Trimanganese tetraoxide; Trimanganese tetroxide	Get Report 
+CALCIUM CARBONATE	1317-65-3	CaCO3	Calcium salt of carbonic acid; Limestone; Marble	Get Report 
+LIMESTONE	1317-65-3	CaCO3	Calcium salt of carbonic acid	Get Report 
+"SILICA, CRYSTALLINE TRIPOLI"	1317-95-9	SiO2	Tripoli	Get Report 
+CRESOLS	1319-77-3	C7H8O	"ortho(meta or para)-Cresol; 2(3 or 4)-Cresol, o(m or p)-Cresylic acid; 1-Hydroxy-2(3 or 4)-methylbenzene; 2(3 or 4)-Hydroxytoluene; 2(3 or 4) -Methyl phenol"	Get Report 
+PENTACHLORONAPHTHENE	1321-64-8	C10H3Cl5	"Halowax 1013; 1,2,3,4,5-Pentachloronaphthalene"	Get Report 
+TRICHLORONAPHTHALENE	1321-65-9	C10H5Cl3	Halowax; Nibren wax; Seekay wax	Get Report 
+DIVINYL BENZENE	1321-74-0	C10H10	"Diethyl benzene; DVB; Vinylstyrene [Note: Commercial product contains all 3 isomers, but m-isomer predominates. Usually contains an inhibitor to prevent polymerization.] 1 ppm = 5.33 mg/m3 NIOSH REL: TWA 10 ppm (50 mg/m3)"	Get Report 
+ARSENIC TRIOXIDE PRODUCTION	1327-53-3	As2O3		Get Report 
+CAPTAN	133-06-2	C9H8Cl3NO2S	"Captane; N-Trichloromethylmercapto-4-cyclohexene-1,2-dicarboximide"	Get Report 
+"XYLENE, ALL ISOMERS"	1330-20-7	C8H10	"1,2(3 or 4)-Dimethylbenzene; ortho(meta or para)-Xylene; o(m or p)-Xylol"	Get Report 
+"BORATES, TETRA, SODIUM SALTS, ANHYDROUS"	1330-43-4	B4Na2O7	Anhydrous borax; Borax dehydrated; Disodium salt of boric acid; Disodium tetrabromate; Fused borax; Sodium borate (anhydrous); Sodium tetraborate	Get Report 
+"ASBESTOS, ALL FORMS"	1332-21-4	Hydrated mineral silicates	Actinolite; Actinolite asbestos; Amosite (cummingtonite-grunerite); Anthophyllite; Anthophyllite asbestos; Chrysotile; Crocidolite (Riebeckite); Tremolite; Tremolite asbestos	Get Report 
+"ASBESTOS, FORMS OTHER THAN AMOSITE, CHRYSOTILE, CROCIDOLITE"	1332-21-4	Hydrated mineral silicates	Actinolite; Actinolite asbestos; Amosite (cummingtonite-grunerite); Anthophyllite; Anthophyllite asbestos; Chrysotile; Crocidolite (Riebeckite); Tremolite; Tremolite asbestos	Get Report 
+KAOLIN	1332-58-7	Mixture	China clay; Clay; Hydrated aluminum silicate; Hydrite; Porcelain clay	Get Report 
+HYDROGEN	1333-74-0	H2		Get Report 
+CHROMIC ACID AND CHROMATES	1333-82-0	C2H4O2.1/3Cr (CrO3)	"Chromic acid (CrO3): Chromic anhydride; Chromic oxide; Chromium(VI) oxide (1:3), Chromium trioxide Synonyms of chromates (i.e., chromium(VI) compounds) such as zinc chromate vary depending upon the specific compound."	Get Report 
+CARBON BLACK	1333-86-4	C	Acetylene black; Channel black; Furnace black; Lamp black; Thermal black	Get Report 
+HEXACHLORONAPHTHALENE	1335-87-1	C10H2Cl6	Halowax 1014	Get Report 
+TETRACHOLORNAPHTHALENE	1335-88-2	C10H4Cl4	Halowax; Nibren wax; Seekay wax	Get Report 
+METHYL ETHYL KETONE PEROXIDE	1338-23-4	C8H16O4 + C10H10O4	2-Butanone peroxide; Ethyl methyl ketone peroxide; MEKP; MEK peroxide; Methyl ethyl ketone hydroperoxide	Get Report 
+GYPSUM	13397-24-5	CaSO4 . 2H2O	Calcium(II) sulfate dihydrate; Gypsum stone; Hydrated calcium sulfate; Mineral white	Get Report 
+1-NAPHTHYLAMINE	134-32-7	C10H9N	1-Aminonaphthalene; 1-Naphthylamine	Get Report 
+ALUMINUM OXIDE	1344-28-1	Al2O3	alpha-Alumina; Alumina; Aluminum trioxide [Note: alpha-Alumina is the main component of technical grade alumina. Corundum is natural Al2O3. Emery is an impure crystalline variety of Al2O3.]	Get Report 
+CALCIUM SILICATE	1344-95-2	CaSiO3	Calcium hydrosilicate; Calcium metasilicate; Calcium monosilicate; Calcium salt of silicic acid; Calsium silicate (synthetic); Wollastonite (mineral)	Get Report 
+NICKEL CARBONYL	13463-39-3	C4NiO4	Nickel tetracarbonyl; Tetracarbonyl nickel	Get Report 
+"IRON PENTACARBONYL, as Fe"	13463-40-6	C5FeO5	Iron carbonyl; Pentacarbonyl iron	Get Report 
+TITANIUM DIOXIDE	13463-67-7	O2Ti	Rutile; Titanium oxide; Titanium peroxide	Get Report 
+3-CARENE (delta-3-CARENE)	13466-78-9	C10H16	Isodiprene	Get Report 
+"TELLURIUM METAL AND COMPOUNDS, as Te"	13494-80-9	Te	Aurum paradoxum; Metallum problematum	Get Report 
+N-PHENYL-2-NAPHTHYLAMINE	135-88-6	C16H13N	2-Anilinonaphthalene; -Naphthylphenylamine; PBNA; 2-Phenylaminonaphthalene; Phenyl- -naphthylamine	Get Report 
+"ZINC CHROMATES, as Cr"	13530-65-9	CrH2O4.Zn	"Synonyms of chromates (i.e., chromium(VI) compounds) such as zinc chromate vary depending upon the specific compound."	Get Report 
+SESONE	136-78-7	C6H3Cl2OCH2CH2OSO3Na	"Crag herbicide No. 1; 2-(2,4-Dichlorophenoxy)ethyl sodium sulfate; Sesone"	Get Report 
+METHYL 2-CYANOACRYLATE	137-05-3	C5H5NO2	Mecrylate; Methyl cyanoacrylate; Methyl alpha-cyanoacrylate; Methyl ester of 2-cyanoacrylic acid	Get Report 
+THIRAM	137-26-8	C6H12N2S4	bis(Dimethylthiocarbamoyl) disulfide; Tetramethylthiuram disulfide	Get Report 
+"CALCIUM CHROMATE, as Cr"	13765-19-0	Cr	"Synonyms of chromates (i.e., chromium(VI) compounds) such as zinc chromate vary depending upon the specific compound."	Get Report 
+BUTYL LACTATE	138-22-7	C7H14O3	Butyl ester of 2-hydroxypropanoic acid; Butyl ester of lactic acid; Butyl lactate	Get Report 
+ENFLURANE	13838-16-9	CHF2OCF2CHClF	"2-Chloro-1-(difluoromethoxy)-1,1,2-trifluoroethane; 2-Chloro-1,1,2-trifluoroethyl difluoromethyl ether; Ethrane"	Get Report 
+PROTEOLYTIC ENZYMES (SUBTILISINS)	1395-21-7	Mixture	Bacillus subtilis; Bacillus subtilis BPN; Bacillus subtilis Carlsburg; Proteolytic enzymes; Subtilisin BPN; Subtilisin Carlsburg [Note: Commercial proteolytic enzymes are used in laundry detergents.]	Get Report 
+BENZYL ACETATE	140-11-4	C9H10O2		Get Report 
+ETHYL ACRYLATE	140-88-5	C5H8O2	Ethyl acrylate (inhibited); Ethyl ester of acrylic acid; Ethyl propenoate	Get Report 
+N-BUTYL ACRYLATE	141-32-2	C7H12O2	Butyl ester of acrylic acid; Butyl 2-propenoate	Get Report 
+ETHANOLAMINE	141-43-5	C2H7NO	2-Aminoethanol; beta-Aminoethyl alcohol; Ethylolamine; 2-Hydroxyethylamine;Monoethanolamine	Get Report 
+DICROTOPHOS	141-66-2	C8H16NO5P	Bidrin; Carbicron; 2-Dimethyl cis-2-dimethylcarbamoyl-1-methylvinylphosphate	Get Report 
+ETHYL ACETATE	141-78-6	C4H8O2	Acetic ester; Acetic ether; Ethyl ester of acetic acid; Ethyl ethanoate	Get Report 
+MESITYL OXIDE	141-79-7	C6H10O	Isobutenyl methyl ketone; Isopropylideneacetone; Methyl isobutenyl ketone; 4-Methyl-3-penten-2-one	Get Report 
+PIPERAZINE DIHYDROCHLORIDE	142-64-3	C4H10N2.2HCl	Piperazine hydrochloride	Get Report 
+HEPTANES	142-82-5	C7H16	Heptane; normal-Heptane	Get Report 
+DECYLMERCAPTAN	143-10-2	CH3(CH2)9SH	Decylmercaptan; n-Decylmercaptan; 1-Mercaptodecane	Get Report 
+"SODIUM CYANIDE, as CN"	143-33-9	CNNa	Sodium salt of hydrocyanic acid	Get Report 
+KEPONE	143-50-0	C10Cl10O	"Chlordecone; Decachlorooctahydro-1,3,4-metheno-2H-cyclobuta(cd)-pentalen-2-one; Decachlorooctahydro-kepone-2-one; Decachlorotetrahydro-4,7-methanoindeneone"	Get Report 
+OXALIC ACID	144-62-7	C2H2O4	Ethanedioic acid; Oxalic acid (aqueous); Oxalic acid dihydrate	Get Report 
+"SILICA, CRYSTALLINE CRISTOBALITE"	14464-46-1	SiO2	Cristobalite; Tridymite	Get Report 
+FERBAM	14484-64-1	[(CH3)2NCS2]3Fe	tris(Dimethyldithiocarbamato)iron; Ferric dimethyl dithiocarbamate	Get Report 
+N-NONYLMERCAPTAN	1455-21-6	CH3(CH2)8SH	1-Mercaptononane; n-Nonyl mercaptan; Nonylthiol	Get Report 
+"M-XYLENE-ALPHA,ALPHA'-DIAMINE"	1477-55-0	C6H4(CH2NH2)2	"1,3-bis(Aminomethyl)benzene; 1,3-Benzenedimethanamine; MXDA; m-Phenylenebis(methylamine); m-Xylylenediamine"	Get Report 
+DINITOLMIDE	148-01-6	NO2)2C6H2(CH3)CONH2	"3,5-Dinitro-o-toluamide; 2-Methyl-3,5-dinitrobenzamide; Zoalene"	Get Report 
+TALC (NOT CONTAINING ASBESTOS)	14807-96-6	H2O3Si.3/4Mg	Hydrous magnesium silicate; Steatite talc	Get Report 
+TALC (CONTAINING ASBESTOS)	14807-96-6	H2O3Si.3/4Mg	Hydrous magnesium silicate; Steatite talc	Get Report 
+"SILICA, CRYSTALLINE QUARTZ"	14808-60-7	SiO2	Quartz	Get Report 
+DIMETHYL ETHOXYSILANE	14857-34-2	C4H12OSi		Get Report 
+2-ETHYLHEXANOIC ACID	149-57-5	C8H16O2		Get Report 
+CHROMIUM OXYCHLORIDE	14977-61-8	Cl2CrO2	"Chlorochromic anhydride; Chromic oxychloride; Chromium chloride oxide; Chromium dichloride dioxide; Chromium dioxide dichloride; Chromium dioxychloride; Chromium oxychloride, Dichlorodioxochromium"	Get Report 
+HYDROQUINONE MONOMETHYL ETHER	150-76-5	C7H8O2	Hydroquinone monomethyl ether; p-Hydroxyanisole; Mequinol; p-Methoxyphenol; Monomethyl ether hydroquinone; 4-methoxyphenol	Get Report 
+"POTASSIUM CYANIDE, as CN"	151-50-8	CKN	Potassium salt of hydrocyanic acid	Get Report 
+ETHYLENEIMINE	151-56-4	C2H5N	Aminoethylene; Azirane; Aziridine; Dimethyleneimine; Dimethylenimine; Ethylenimine (inhibited); Ethylimine	Get Report 
+HALOTHANE	151-67-7	C2HBrClF3	"1-Bromo-1-chloro-2,2,2-trifluoroethane; 2-Bromo-2-chloro-1,1,1-trifluoroethane; 1,1,1-Trifluoro-2-bromo-2-chloroethane; 2,2,2-Trifluoro-1-bromo-1-chloroethane"	Get Report 
+"SILICA, CRYSTALLINE TRIDYMITE"	15468-32-3	SiO2	Cristobalite; Tridymite	Get Report 
+"CALCIUM CYANAMIDE, WITH MORE THAN 0.1% CALCIUM CARBIDE"	156-62-7	CH2N2.Ca	Calcium carbimide; Cyanamide; Lime nitrogen; Nitrogen lime	Get Report 
+CARBOFURAN	1563-66-2	C12H15NO3	"2,3-Dihydro-2,2-dimethyl-7-benzofuranyl methylcarbamate; Furacarb; Furadan"	Get Report 
+CYCLOHEXYLMERCAPTAN	1569-69-3	C6H12S	Cyclohexylmercaptan; Cyclohexylthiol	Get Report 
+ETHYLIDENE NORBORNENE	16219-75-3	C9H12	"ENB; 5-Ethylidenebicyclo(2.2.1)-hept-2-ene; 5-Ethylidene-2-norbornene Note: Due to its reactivity, ENB may be stabilized with tert-butyl catechol.]"	Get Report 
+METHYL TERT-BUTYL ETHER	1634-04-4	C5H12O		Get Report 
+N-HEPTYLMERCAPTAN	1639-09-4	CH3[CH2]6SH	Heptyl mercaptan; n-Heptyl mercaptan	Get Report 
+METHOMYL	16752-77-5	C5H10N2O2S	Lannate; Methyl N-((methylamino)carbonyl)oxy)ethanimidothioate; S-Methyl-N-(methylcarbamoyloxy)thioacetimidate	Get Report 
+"COBALT HYDROCARBONYL, as Co"	16842-03-8	HCo(CO)4	Hydrocobalt tetracarbonyl; Tetracarbonylhydridocobalt; Tetracarbonylhydrocobalt	Get Report 
+DIMETHYLAMINOPROPYLNITRILE	1738-25-6	(CH3)2NCH2CH2CN	"3-(Dimethylamino)propionitrile; N,N-Dimethylamino-3-propionitrile [Note: a component (95%) of NAIX Catalyst ESN, along with bis (2-(dimethylamino)ethyl) ether (5%)]"	Get Report 
+"2,3,7,8-TETRACHLORODIBENZO-P-DIOXIN"	1746-01-6	C12H4Cl4O2	"Dioxin; Dioxine; TCDBD; TCDD; 2,3,7,8-TCDD [Note: Formed during past production of 2,4,5-trichlorophenol, 2,4,5-T & 2(2,4,5-trichlorophenoxy)propionic acid.]"	Get Report 
+DECABORANE	17702-41-9	B10H14	Decaboron tetradecahydride	Get Report 
+BENOMYL	17804-35-2	C14H18N4O3	Methyl 1-(butylcarbamoyl)-2-benzimidazolecarbamate	Get Report 
+"TIN (IV) OXIDE, as Sn"	18282-10-5	SnO2	Stannic dioxide; Stannic oxide; White tin oxide	Get Report 
+ATRAZINE	1912-24-9	C8H14ClN5	"2-Chloro-4-ethylamino-6-isopropylamino-s-triazine; 6-Chloro-N-ethyl-N'- (1-methylethyl)-1,3,5-triazine-2,4-diamine"	Get Report 
+PICLORAM	2/1/1918	C6H3Cl3N2O2	"4-Amino-3,5,6-trichloropicolinic acid; 4-Amino-3,5,6-trichloro-2-picolinic acid; ATCP; Tordon"	Get Report 
+DIBORANE	19287-45-7	B2H6	Boroethane; Boron hydride; Diboron hexahydride	Get Report 
+NITRAPYRIN	1929-82-4	C6H3Cl4N	"2-Chloro-6-(trichloro-methyl)pyridine; Nitrapyrin; N-serve; 2,2,2,6-Tetrachloro-2-picoline"	Get Report 
+PENTABORANE	19624-22-7	B5H9	Pentaboron nonahydride	Get Report 
+O-CHLOROSTYRENE	2039-87-4	C8H7Cl	2-Chlorostyrene; ortho-Chlorostyrene; 1-Chloro-2-ethenylbenzene	Get Report 
+BENZO[B]FLUORANTHENE	205-99-2	C20H12		Get Report 
+PARAQUAT METHOSULFATE	2074-50-2	C12H14N2.2CH3O4S		Get Report 
+"OSMIUM TETROXIDE, as Os"	20816-12-0	O4Os	Osmic acid anhydride; Osmium oxide	Get Report 
+EPN	2104-64-5	C14H14NO4PS	Ethyl p-nitrophenyl benzenethionophosphonate; O-Ethyl O-(4-nitrophenyl) phenylphosphonothioate	Get Report 
+METRIBUZIN	21087-64-9	C8H14N40S	"4-Amino-6-(1,1-dimethylethyl)-3-(methylthio)-1,2,4-triazin-5(4H)-one"	Get Report 
+CESIUM HYDROXIDE	21351-79-1	CsHO	Cesium hydrate; Cesium hydroxide dimer	Get Report 
+"TIN (II) OXIDE, as Sn"	21651-19-4	SnO	Stannous oxide; Tin protoxide	Get Report 
+ALLYL PROPYL DISULFIDE	2179-59-1	C6H12S2	"4,5-Dithia-1-octene; Onion oil; 2-Propenyl propyl disulfide; Propyl allyl disulfide"	Get Report 
+CHRYSENE	218-01-9	C18H12		Get Report 
+FENAMIPHOS	22224-92-6	C13H22NO3PS	Ethyl 3-methyl-4-(methylthio)phenyl-(1-methylethyl)phosphoramidate; Nemacur; Phenamiphos	Get Report 
+OCTACHLORONAPHTHALENE	2234-13-1	C10Cl8	"Halowax1051; 1,2,3,4,5,6,7,8-Octachloronaphthalene; Perchloronaphthalene"	Get Report 
+DIGLYCIDYL ETHER	7/5/2238	C6H10O3	"Diallyl ether dioxide; DGE; Di(2,3-epoxypropyl) ether; 2-Epoxypropyl ether; bis(2,3-Epoxypropyl) ether"	Get Report 
+"METHYL MERCURY, as Hg"	22967-92-6	Hg		Get Report 
+CAPTAFOL	6/1/2425	C10H9Cl14NO2S	"Captofol; Difolatan; N-((1,1,2,2-Tetrachloroethyl)thio)-4-cyclohexene-1,2-dicarboximide"	Get Report 
+N-BUTYL GLYCIDYL ETHER	8/6/2426	C7H14O2	"BGE; 1,2-Epoxy-3-butoxypropane"	Get Report 
+"TRIS(2,3-EPOXYPROPYL)ISOCYANURATE"	2451-62-9	C12H15N3O6		Get Report 
+VINYL TOLUENE	25013-15-4	C9H10	Ethenylmethylbenzene; Methylstyrene; Tolyethylene	Get Report 
+DIBUTYLPHENYL PHOSPHATE	2528-36-1	C14H23O4P		Get Report 
+DINITROTOLUENE	25321-14-6	C7H6N2O4	Dinitrotoluol; DNT; Methyldinitrobenzene [Note: various isomers of DNT exist]	Get Report 
+SULFUR HEXAFLUORIDE	2551-62-4	F6S	Sulfur fluoride [Note: May contain highly toxic sulfur pentafluoride as an impurity.]	Get Report 
+"TRIMETHYLBENZENE, MIXED ISOMERS"	25551-13-7	C9H12		Get Report 
+2-HYDROXYPROPYL ACRYLATE	25584-83-2	CH2=CHCOOCH2CHOHCH3	HPA; beta-Hydroxypropyl acrylate; Propylene glycol monoacrylate	Get Report 
+METHYLCYCLOHEXANOL	25639-42-3	C7H14O	Hexahydrocresol; Hexahydromethylphenol	Get Report 
+TERPHENYLS	26140-60-3	C6H5C6H4C6H5	"o(m or p)-Diphenylbenzene; 1,2(3 or 4)-Diphenylbenzene; 2(3 or 4)-Phenylbiphenyl; 1,2(3 or 4)-Terphenyl; ortho(meta or para)-Terphenyl; o(m or p)-Triphenyl"	Get Report 
+PLASTER OF PARIS	26499-65-0	CaSO4.(0.5)H2O	Calcium sulfate hemihydrate; Dried calcium sulfate; Gypsum hemihydrate; Hemihydrate gypsum	Get Report 
+SODIUM AZIDE	26628-22-8	N3Na	Azide; Azium; Sodium salt of hydrazoic acid	Get Report 
+ISOOCTYL ALCOHOL	26952-21-6	C8H18O	Isooctanol; Oxooctyl alcohol	Get Report 
+O-CHLOROBENZYLIDENE MALONONITRILE	2698-41-1	C10H5ClN2	2-Chlorobenzalmalonitrile; CS; OCBM	Get Report 
+SULFURYL FLUORIDE	2699-79-8	F2O2S	Sulfur difluoride dioxide; Vikane	Get Report 
+DIQUAT	2764-72-9	C12H12N2		Get Report 
+CYCLOPENTANE	287-92-3	C5H10	Pentamethylene	Get Report 
+OCTADECYLMERCAPTAN	2885-00-9	CH3(CH2)17SH	1-Mercaptooctadecane; Octadecyl mercaptan; Stearyl mercaptan	Get Report 
+1-HEXADECANETHIOL	2917-26-2	CH3[CH2]15SH	Cetyl mercaptan; Hexadecanethiol-1; n-Hexadecanethiol; Hexadecyl mercaptan	Get Report 
+CHLORPYRIFOS	2921-88-2	C9H11Cl3NO3PS	"Chlorpyrifos-ethyl; O,O-Diethyl O-3,5,6-trichloro-2-pyridyl phosphorothioate; Dursban"	Get Report 
+CLOPIDOL	2971-90-6	C7H7Cl2NO	"Coyden; 3,5-Dichloro-2,6-dimethyl-4-pyridinol"	Get Report 
+METHYL PARATHION	298-00-0	C8H10NO5PS	"Azophos; O,O-Dimethyl-O-p-nitrophenylphosphorothioate; Parathion methyl"	Get Report 
+PHORATE	298-02-2	C7H17O2PS3	"O,O-Diethyl S-(ethylthio)methylphosphorodithioate; O,O-Diethyl S-ethylthiomethylthiothionophosphate; Thimet; Timet"	Get Report 
+DISULFOTON	298-04-4	C8H19O2PS3	"O,O-Diethyl S-2-(ethylthio)-ethyl phosphorodithioate; Di-Syston; Thiodemeton"	Get Report 
+RONNEL	299-84-3	(CH30)2P(S)OC6H2Cl3	"O,O-Dimethyl O-(2,4,5-trichlorophenyl) phosphorothioate; Fenchlorophos"	Get Report 
+CRUFOMATE	299-86-5	C12H19ClNO3P	4-t-Butyl-2-chlorophenylmethyl methylphosphoramidate; Dowco 132; Ruelene	Get Report 
+NALED	300-76-5	C4H7Br2Cl2O4P	"Dibrom; 1,2-Dibromo-2,2-dichloroethyl dimethyl phosphate; Naled"	Get Report 
+HYDRAZINE	302-01-2	H4N2	Diamine; Hydrazine (anhydrous); Hydrazine base	Get Report 
+BIS(2-DIMETHYLAMINOETHYL) ETHER	3033-62-3	C8H20N2O	"NIAX A99; NIAX Catalyst A1; 2,2'-Oxybis(N,N-dimethyl ethylamine)"	Get Report 
+ALDRIN	309-00-2	C12H8Cl6	"1,2,3,4,10,10-Hexachloro-1,4,4a,5,8,8a-hexahydro-endo-1,4-exo-5,8-dimethanonaphthalene; HHDN; Octalene"	Get Report 
+CHLORINATED DIPHENYL OXIDE	31242-93-0	C12H10-nClnO	"Synonyms depend on the degree of chlorination of diphenyl oxide [(C6H5)2O], ranging from monochlorodiphenyl oxide [(C6H4Cl)O(C6H5)] to decachlorodiphenyl"	Get Report 
+BROMACIL	314-40-9	C9H13BrN2O2	5-Bromo-3-sec-butyl-6-methyluracil; 5-Bromo-6-methyl-3-(1-methylpropyl)uracil	Get Report 
+"1,5-NAPHTHENE DIISOCYANATE"	3173-72-6	C10H6(NCO)2	"1,5-Diisocyanatonaphthalene; 1,5-Naphthalene diisocyanate; 1,5-Naphthalene ester of isocyanic acid; NDI"	Get Report 
+"2,2-BIS-(BROMOMETHYL)-1,3-PROPANEDIOL"	3296-90-0	C5H10Br2O2	"Dibromoneopentyl glycol; Dibromopentaerythritol; Pentaerythritol dibromide; Pentaerythritol dibromohydrin; Dibromohydrin pentaerythritol; 1,3-Dibromo-2,2-dimethylolpropane; 2,2-Dibromomethyl-1,3-propanediol; NCI-C55516"	Get Report 
+DIURON	330-54-1	C9H10Cl2N2O	"3-(3,4-Dichlorophenyl)-1,1-dimethylurea; Direx; Karmex"	Get Report 
+DIAZINON	333-41-5	C12H21N2O3PS	"Basudin; Diazide; O,O-Diethyl-O-2-isopropyl-4-methyl-6-pyrimidinyl-phosphorothioate; Spectracide"	Get Report 
+TETRAMETHYLSUCCINONITRILE	3333-52-6	C8H12N2	Tetramethyl succinodinitrile; TMSN	Get Report 
+DIAZOMETHANE	334-88-3	CH2N2	Azimethylene; Azomethylene; Diazirine	Get Report 
+TEMEPHOS	3383-96-8	S[C6H4OP(S)(OCH3)2]2	"Abate; Temefos; O,O,O'O'-Tetramethyl O,O'-thiodi-p-phenylene phosphorothioate"	Get Report 
+DIPROPYLENE GLYCOL METHYL ETHER	34590-94-8	C7H16O3	Dipropylene glycol monomethyl ether; Dowanol50B	Get Report 
+CARBONYL FLUORIDE	353-50-4	CF2O	Carbon difluoride oxide; Carbon fluoride oxide; Carbon oxyfluoride; Carbonyl difluoride; Fluoroformyl fluoride; Fluorophosgene	Get Report 
+SULPROFOS	35400-43-2	C12H19O2PS3	Bolstar; O-Ethyl O-(4-methylthio)phenyl S-propylphosphorodithioate	Get Report 
+TETRAETHYL DITHIOPYROPHOSPHATE	3689-24-5	C8H20O5P2S2	Bladafum; Dithion; Sulfotep; Tetraethyl dithionopyrophosphate; Tetraethyl dithiopyrophosphate; Thiotepp	Get Report 
+PERFLUOROISOBUTYLENE	382-21-8	C4F8		Get Report 
+AMMONIUM PERFLUOROOCTANONE	3825-26-1	C8HF15O2.H3N		Get Report 
+"ZINC BERYLLIUM SILICATE, as Be"	39413-47-3	Be	Beryllium metal: Beryllium Other synonyms vary depending upon the specific beryllium compound.	Get Report 
+ISOPROPYL GLYCIDYL ETHER	4016-14-2	C6H12O2	"1,2-Epoxy-3-isopropoxypropane; IGE; Isopropoxymethyl oxirane"	Get Report 
+FLUROXENE	406-90-6	CF3CH2OCH=CH2	"2,2,2-Trifluoroethoxyethene; 2,2,2-Trifluoroethyl vinyl ether"	Get Report 
+SILICON CARBIDE	409-21-2	SiC	Carbon silicide; Carborundum; Silicon monocarbide	Get Report 
+ISOPHORONE DIISOCYANATE	4098-71-9	C12H18N2O2	"IPDI; 3-Isocyanatomethyl-3,5,5-trimethylcyclohexyl-isocyanate; Isophorone diamine diisocyanate"	Get Report 
+CROTONALDEHYDE	4170-30-3	C4H6O	"2-Butenal; Crotonaldehyde, inhibited; beta-Methyl acrolein; Propylene aldehyde"	Get Report 
+CYANAMIDE	420-04-2	NH2CN	Amidocyanogen; Carbimide; Carbodiimide; Cyanogen nitride; Hydrogen cyanamide [Note: Cyanamide is also a synonym for Calcium cyanamide.] [NIOSH]	Get Report 
+CYANOGEN	460-19-5	C2N2	Carbon nitride; Dicyan; Dicyanogen; Ethanedinitrile; Oxalonitrile	Get Report 
+KETENE	463-51-4	CH2CO	Carbomethene; Ethenone; Keto-ethylene	Get Report 
+"2,2-DIMETHYLPROPANE"	463-82-1	C5H12		Get Report 
+PARAQUAT	4685-14-7	CH3(C5H4N)2CH3 . 2Cl	"1,1'-Dimethyl-4,4'-bipyridinium dichloride; N,N'-Dimethyl-4,4'-bipyridinium dichloride; Paraquat chloride; Paraquat dichloride"	Get Report 
+TETRYL	479-45-8	C7H5N5O8	"N-Methyl-N,2,4,6-tetranitroaniline; Nitramine; 2,4,6-Tetryl; 2,4,6-Trinitrophenyl-N-methylnitramine"	Get Report 
+FORMALIN (as FORMALDEHYDE)	50-00-0	CH2O	Methanal; Methyl aldehyde; Methylene oxide	Get Report 
+FORMALDEHYDE	50-00-0	CH2O	Methanal; Methyl aldehyde;Methylene oxide	Get Report 
+DDT	50-29-3	C14H9Cl5	"p,p'-DDT; Dichlorodiphenyltrichloroethane; 1,1,1-Trichloro-2,2-bis(p-chlorophenyl)ethane"	Get Report 
+BENZO[A]PYRENE	50-32-8	C20H12	"Synonyms vary depending upon the specific compound (e.g., pyrene; phenanthrene; acridine; chrysene; anthracene & benzo(a)pyrene)."	Get Report 
+ACETYLSALICYLIC ACID	50-78-2	C9H8O4	Acetal; o-Acetoxybenzoic acid; 2-Acetoxybenzoic acid; Aspirin	Get Report 
+2-AMINOPYRIDINE	504-29-0	C5H6N2	à-Aminopyridine; à-Pyridylamine	Get Report 
+2-2-DICHLORODIETHYL-SULFIDE (MUSTARD GAS)	505-60-2	C4H8Cl2S		Get Report 
+CYANOGEN CHLORIDE	506-77-4	CClN	Chlorcyan; Chlorine cyanide; Chlorocyanide; Chlorocyanogen; Cyanogen chloride inhibited	Get Report 
+TETRANITROMETHANE	509-14-8	CN4O8	Tetan; TNM	Get Report 
+"1,1-METHYLENE BIS(4-CYCLOHEXYLISOCYANATE)"	5124-30-1	C15H22N2O2	"Dicyclohexylmethane 4,4'-diisocyanate; DMDI; bis(4-Isocyanatocyclohexyl)methane; HMDI; Hydrogenated MDI; Reduced MDI; Saturated MDI"	Get Report 
+TRICHLORPHON	52-68-6	C4H8Cl3O4P		Get Report 
+O-DINITROBENZENE	528-29-0	C6H4N2O4	"ortho-Dinitrobenzene; 1,2-Dinitrobenzene"	Get Report 
+2-ACETYLAMINOFLUORENE	53-96-3	C15H13NO	AAF; 2-AAF; 2-Acetaminofluorene; N-Acetyl-2-aminofluorene; FAA; 2-FAA; 2-Fluorenylacetamide	Get Report 
+CHLOROACETOPHENONE	532-27-4	C8H7ClO	2-Chloroacetophenone; Chloromethyl phenyl ketone; Mace; Phenacyl chloride; Phenyl chloromethyl ketone; Tear gas	Get Report 
+1-UNDECANETHIOL	5332-52-5	CH3(CH2)10SH	Undecyl mercaptan	Get Report 
+"4,6-DINITRO-O-CRESOL"	534-52-1	C7H6N2O5	"4,6-Dinitro-o-cresol; 3,5-Dinitro-2-hydroxytoluene; 4,6-Dinitro-2-methyl phenol; DNC; DNOC"	Get Report 
+CHLORODIPHENYL (42% CHLORINE)	53469-21-9	C6H4ClC6H3Cl2 (approx)	Aroclor1242; PCB; Polychlorinated biphenyl	Get Report 
+NICOTINE	54-11-5	C10H14N2	3-(1-Methyl-2-pyrrolidyl)pyridine	Get Report 
+SODIUM ETHYMERCURITHIOSALICYLATE	54-64-8	C9H9HgO2S.Na		Get Report 
+"1,2-DICHLOROETHYLENE, ALL ISOMERS"	540-59-0	C2H2Cl2	Acetylene dichloride; cis-Acetylene dichloride; trans-Acetylene dichloride; sym-Dichloroethylene	Get Report 
+TERT-BUTYL ACETATE	540-88-5	C6H12O2	tert-Butyl ester of acetic acid	Get Report 
+ETHYLAMYL KETONE	541-85-5	C2H5COCH2CH(CH3)CH2CH3	Amyl ethyl ketone; Ethyl amyl ketone; 3-Methyl-5-heptanone	Get Report 
+ISOBUTYL NITRITE	542-56-3	C4H9NO2		Get Report 
+"1,3-DICHLOROPROPENE"	542-75-6	C3H4Cl2	"3-Chloroallyl chloride; DCP; 1,3-Dichloro-1-propene; 1,3-Dichloropropylene; Telone"	Get Report 
+"DICHLORODIMETHYL ETHER, SYMMETRICAL"	542-88-1	C2H4Cl2O	BCME; bis-CME; Chloromethyl ether; Dichlorodimethyl ether; Dichloromethyl ether; Oxybis(chloromethane)	Get Report 
+CYCLOPENTADIENE	542-92-7	C5H6	"1,3-Cyclopentadiene"	Get Report 
+MAGNESITE	546-93-0	MgCO3	Carbonate magnesium; Hydromagnesite; Magnesium carbonate; Magnesium(II) carbonate	Get Report 
+FENTHION	55-38-9	C10H15O3PS2	"Baytex; Entex; O,O-Dimethyl O-3-methyl-4-methylthiophenyl phosphorothioate"	Get Report 
+NITROGLYCERIN	55-63-0	C3H5N3O9	"Glyceryl trinitrate; NG; 1,2,3-Propanetriol trinitrate; Trinitroglycerine"	Get Report 
+TRIMELLITIC ANHYDRIDE	552-30-7	C9H4O5	"1,2,4-Benzenetricarboxylic anhydride; 4-Carboxyphthalic anhydride; TMA; TMAN; Trimellic acid anhydride"	Get Report 
+GLYCIDOL	556-52-5	C3H6O2	"2,3-Epoxy-1-propanol; Epoxypropyl alcohol; Glycide; Hydroxymethyl ethylene oxide; 2-Hydroxymethyl oxiran; 3-Hydroxypropylene oxide"	Get Report 
+ZINC STEARATE	557-05-1	C18H35O2.1/2Zn	Dibasic zinc stearate; Zinc salt of stearic acid; Zinc distearate	Get Report 
+CARBON TETRABROMIDE	558-13-4	CBr4	Carbon bromide; Methane tetrabromide; Tetrabromomethane	Get Report 
+CARBON TETRACHLORIDE	56-23-5	CCl4	Carbon chloride; Carbon tet; Freon10; Halon104; Tetrachloromethane	Get Report 
+PARATHION	56-38-2	C10H14NO5PS	"O,O-Diethyl-O(p-nitrophenyl) phosphorothioate; Diethyl parathion; Ethyl parathion; Parathion-ethyl"	Get Report 
+BENZ[A]ANTHRACENE	56-55-3	C18H12		Get Report 
+CHLORAMPHENICOL	56-75-7	C11H12Cl2N2O5	Anacetin; Chlorocid; Chloromycetin	Get Report 
+GLYCERINE MIST	56-81-5	C3H8O3	"Glycerin (anhydrous); Glycerol; Glycyl alcohol; 1,2,3-Propanetriol; Trihydroxypropane"	Get Report 
+ETHION	563-12-2	C9H22O4P2S4	"O,O,O',O'-Tetraethyl S,S'-methylene di(phosphorodithioate)"	Get Report 
+3-METHYLBUTAN-2-ONE	563-80-4	C5H10O	2-Acetyl propane; Isopropyl methyl ketone; 3-Methyl-2-butanone; 3-Methyl butan-2-one; MIPK	Get Report 
+"1,1-DIMETHYLHYDRAZINE"	57-14-7	C2H8N2	Dimazine; DMH; UDMH; Unsymmetrical dimethylhydrazine	Get Report 
+STRYCHNINE	57-24-9	C21H22N2O2	Nux vomica; Strynchnos	Get Report 
+SUCROSE	57-50-1	C12H22O11	Beet sugar; Cane sugar; Confectioner's sugar; Granulated sugar; Rock candy; Saccarose; Sugar; Table sugar	Get Report 
+BETA-PROPIOLACTONE	57-57-8	C3H4O2	"BPL; Hydroacrylic acid, beta-lactone; 3-Hydroxy-beta-lactone; 3-Hydroxy-propionic acid; beta-Lactone; 2-Oxetanone; 3-Propiolacetone"	Get Report 
+CHLORDANE	57-74-9	C10H6Cl8	"Chlordan; Chlordano; 1,2,4,5,6,7,8,8-Octachloro-3a,4,7,7a-tetrahydro-4,7-methanoindane"	Get Report 
+SULFUR PENTAFLUORIDE	5714-22-7	S2F10	Disulfur decafluoride; Sulfur decafluoride	Get Report 
+LINDANE	58-89-9	C6H6Cl6	"BHC; HCH; gamma-Hexachlorocyclohexane; gamma isomer of 1,2,3,4,5,6-Hexachlorocyclohexane"	Get Report 
+2-NITRONAPHTHALENE	581-89-5	C10H7NO2	beta-Nitronaphthalene	Get Report 
+O-METHYLCYCLOHEXANONE	583-60-8	CH3C6H9O	2-Methylcyclohexanone	Get Report 
+"TOLUENE-2,4-DIISOCYANATE"	584-84-9	C9H6N2O2	"TDI; 2,4-TDI; 2,4-Toluene diisocyanate"	Get Report 
+METHYL BUTYL KETONE	591-78-6	C6H12O	Butyl methyl ketone; MBK; Methyl butyl ketone; Methyl n-butyl ketone	Get Report 
+CALCIUM CYANIDE	592-01-8	C2CaN2		Get Report 
+1-HEXENE	592-41-6	C6H12		Get Report 
+VINYL BROMIDE	593-60-2	C2H3Br	Bromoethene; Bromoethylene; Monobromoethylene; Vinyl bromide; inhibited	Get Report 
+METHYL ACETYLENE-PROPADIENE MIXTURE (MAPP)	59355-75-8	C3H4	MAPP gas; Methyl acetylene-allene mixture; Methyl acetylene-propadiene mixture (stabilized); Propadiene-methyl acetylene; Propyne-allene mixture; Propyne-propadiene mixture	Get Report 
+PERCHLOROMETHYL MERCAPTAN	594-42-3	CCl4S	PCM; PMM; Trichloromethane sulfenyl chloride; Trichloromethyl sulfur chloride	Get Report 
+"1,1-DICHLORO-1-NITROETHANE"	594-72-9	C2H3Cl2NO2	Dichloronitroethane	Get Report 
+2-CHLOROPROPIONIC ACID	598-78-7	C3H5ClO2		Get Report 
+4-DIMETHYLAMINOAZOBENZENE	60-11-7	C14H15N3	"Butter yellow; DAB; p-Dimethylaminoazobenzene; N,N-Dimethyl-4-aminoazobenzene; Methyl yellow"	Get Report 
+DIETHYL ETHER	60-29-7	C4H10O	Diethyl ether; Diethyl oxide; Ethyl oxide; Ether; Solvent ether	Get Report 
+METHYLHYDRAZINE	60-34-4	CH6N2	MMH; Monomethylhydrazine	Get Report 
+DIELDRIN	60-57-1	C12H8Cl6O	"HEOD; 1,2,3,4,10,10-Hexachloro-6,7-epoxy-1,4,4a,5,6,7,8,8a-octahydro-1,4-endo,exo-5,8-dimethanonaphthalene"	Get Report 
+1-CHLORO-1-NITROPROPANE	600-25-9	C3H6ClNO2	Korax; Lanstan	Get Report 
+TRIPHENYLAMINE	603-34-9	C18H15N	"N,N-Diphenylaniline; N,N-Diphenylbenzenamine"	Get Report 
+"2,6 DINITROTOLUENE"	606-20-2	C7H6N2O4	Dinitrotoluol; DNT; Methyldinitrobenzene	Get Report 
+"SILICA, FUSED"	60676-86-0	O2Si		Get Report 
+AMITROLE	61-82-5	C2H4N4	"Aminotriazole; 3-Aminotriazole; 2-Amino-1,3,4-triazole; 3-Amino-1,2,4-triazole"	Get Report 
+"2,4-DIAMINOANISOLE AND ITS SALTS"	615-05-4	C7H10N20	"1,3-Diamino-4-methoxybenzene; 4-Methoxy-1,3-benzene-diamine; 4-Methoxy-m-phenylene-diamine Synonyms of salts vary depending upon the specific compound."	Get Report 
+HYDROGENATED TERPHENYLS	61788-32-7	(C6Hn)3	Hydrogenated diphenylbenzenes; Hydrogenated phenylbiphenyls; Hydrogenated triphenyls	Get Report 
+DIATOMACEOUS EARTH	61790-53-2	SiO2	Diatomaceous earth; Diatomaceous silica; Diatomite; Precipitated amorphous silica; Silica gel; Silicon dioxide (amorphous)	Get Report 
+"3,5 DINITROTOLUENE"	618-85-9	CH3C6H3(NO2)2	Dinitrotoluol; DNT;Methyldinitrobenzene	Get Report 
+ANILINE	62-53-3	C6H7N	Aminobenzene; Aniline oil; Benzenamine; Phenylamine	Get Report 
+THIOUREA	62-56-6	CH4N2S		Get Report 
+DICHLORVOS	62-73-7	C4H7Cl2O4P	"DDVP; 2,2-Dichlorovinyl dimethyl phosphate"	Get Report 
+SODIUM FLUOROACETATE	62-74-8	C2H3FO2.Na	SFA; Sodium monofluoroacetate	Get Report 
+N-NITROSODIMETHYLAMINE	62-75-9	C2H6N2O	"Dimethylnitrosamine; N,N-Dimethylnitrosamine; DMNA; N-Methyl-N-nitroso-methanamine; NDMA; N-Nitroso-N,N-dimethylamine, Nitrosodimethylamine"	Get Report 
+3-PENTYLACETATE	620-11-1			Get Report 
+2-METHYLBUTYL ACETATE	624-41-9	C7H14O2		Get Report 
+METHYL ISOCYANATE	624-83-9	C2H3NO	Methyl ester of isocyanic acid; MIC	Get Report 
+"1,1-DIMETHYLPROPYLACETATE"	625-16-1	C7H14O2	tert-Amyl acetate; Pentylacetate	Get Report 
+M-PHTHALODINITRILE	626-17-5	C6H4(CN)2	"1,3-Benzenedicarbonitrile; m-Dicyanobenzene; 1,3-Dicyanobenzene; Isophthalodinitrile; m-PDN"	Get Report 
+SEC-AMYL ACETATE	626-38-0	C7H14O2	1-Methylbutyl acetate; 2-Pentanol acetate; 2-Pentyl ester of acetic acid	Get Report 
+N-PROPYL NITRATE	627-13-4	C3H7NO3	Propyl ester of nitric acid	Get Report 
+N-AMYL ACETATE	628-63-7	C7H14O2	Amyl acetic ester; Amyl acetic ether; 1-Pentanol acetate; Pentyl ester of acetic acid; Primary amyl acetate	Get Report 
+ETHYLENE GLYCOL DINITRATE	628-96-6	O2NOCH2CH2ONO2	"EGDN; 1,2-Ethanediol dinitrate; Ethylene dinitrate; Ethylene nitrate; Glycol dinitrate; Nitroglycol"	Get Report 
+CARBARYL	63-25-2	C12H11NO2	alpha-Naphthyl N-methyl-carbamate; 1-Naphthyl N-Methyl-carbamate; Sevin	Get Report 
+CARBON MONOXIDE	630-08-0	CO	"Carbon oxide; Flue gas, Monoxide"	Get Report 
+"1,1,1,2-TETRACHLOROETHANE"	630-20-6	C2H2Cl4		Get Report 
+ETHYL-T-BUTYL ETHER	637-92-3	C6H14O	ETBE	Get Report 
+PHENYL PHOSPHINE	638-21-1	C6H7P	Fenylfosfin; PF; Phosphaniline	Get Report 
+ETHANOL	64-17-5	C2H6O	Alcohol; Cologne spirit; Ethanol; EtOH; Grain alcohol	Get Report 
+FORMIC ACID	64-18-6	CH2O2	Formic acid (85-95% in aqueous solution); Hydrogen carboxylic acid; Methanoic acid	Get Report 
+ACETIC ACID	64-19-7	C2H4O2	Acetic acid (aqueous); Ethanoic acid; Glacial acetic acid (pure compound); Methanecarboxylic acid	Get Report 
+PROPYLENE GLYCOL DINITRATE	6423-43-4	CH3CNO2OHCHNO2OH	"PGDN; Propylene glycol-1,2-dinitrate; 1,2-Propylene glycol dinitrate"	Get Report 
+"1,3-DIOXOLANE"	646-06-0	C3H6O2		Get Report 
+COAL TAR PITCH VOLATILES	65996-93-2	Mixture	"Synonyms vary depending upon the specific compound (e.g., pyrene; phenanthrene; acridine; chrysene; anthracene & benzo(a)pyrene)."	Get Report 
+PORTLAND CEMENT	65997-15-1	Mixture	Cement; Hydraulic cement; Portland cement silicate	Get Report 
+METHANOL	67-56-1	CH4O	Carbinol; Columbian spirits; Methanol; Pyroligneous spirit; Wood alcohol; Wood naphtha; Wood spirit	Get Report 
+ISOPROPANOL	67-63-0	C3H8O	Dimethyl carbinol; IPA; Isopropanol; 2-Propanol; sec-Propyl alcohol; Rubbing alcohol; isopropyl alcohol	Get Report 
+ACETONE	67-64-1	C3H6O	Dimethyl ketone; Ketone propane; 2-Propanone	Get Report 
+CHLOROFORM	67-66-3	CHCl3	Methane trichloride; Trichloromethane	Get Report 
+HEXACHLOROETHANE	67-72-1	C2Cl6	Carbon hexachloride; Ethane hexachloride; Perchloroethane	Get Report 
+THIOGLYCOLIC ACID	68-11-1	C2H4O2S	Acetyl mercaptan; Mercaptoacetate; Mercaptoacetic acid; 2-Mercaptoacetic acid; 2-Thioglycolic acid; Thiovanic acid	Get Report 
+DIMETHYLFORMAMIDE	68-12-2	C3H7NO	"Dimethyl formamide; N,N-Dimethylformamide; DMF"	Get Report 
+HEXAMETHYLPHOSPHORAMIDE	680-31-9	C6H18N3OP	Hexamethylphosphoric triamide; Hexamethylphosphorotriamide; HMPA; Tris(dimethylamino)phosphine oxide	Get Report 
+METHYL (ORTHO)SILICATE	681-84-5	C4H12O4Si	Methyl orthosilicate; Tetramethoxysilane; Tetramethyl ester of silicic acid; Tetramethyl silicate	Get Report 
+HEXAFLUOROACETONE	684-16-2	C3F6O	"Hexafluoro-2-propanone; 1,1,1,3,3,3-Hexafluoro-2-propanone; HFA; Perfluoroacetone"	Get Report 
+L.P.G. (LIQUIFIED PETROLEUM GAS)	68476-85-7	C3H8/C3H6/C4H10/C4H8	Bottled gas; Compressed petroleum gas; Liquefied hydrocarbon gas; LPG	Get Report 
+VEGETABLE OIL MISTS	68956-68-3	Mixutre	Vegetable mist	Get Report 
+SILICA FUME	69012-64-2	No formula	Silica-Amorphous Fume [released during manufacture of elemental silican and silicon alloys-ACGIH]	Get Report 
+MONOCROTOPHOS	6923-22-4	C7H14NO5P	3-Hydroxy-N-methylcrotonamide dimethylphosphate; Monocron	Get Report 
+ETHYL CYANOACRYLATE	7085-85-0	C6H7NO2	Ethyl 2-cyanoacrylate	Get Report 
+N-PROPANOL	71-23-8	C3H8O	Ethyl carbinol; 1-Propanol; n-Propanol; Propyl alcohol	Get Report 
+BUTANOL	71-36-3	C4H10O	1-Butanol; n-Butanol; Butyl alcohol; 1-Hydroxybutane; n-Propyl carbinol	Get Report 
+BENZENE	71-43-2	C6H6	Benzol; Phenyl hydride	Get Report 
+"1,1,1-TRICHLOROETHANE"	71-55-6	C2H3Cl3	"Chlorothene; 1,1,1-Trichloroethane; 1,1,1-Trichloroethane (stabilized)"	Get Report 
+ENDRIN	72-20-8	C12H8Cl6O	"1,2,3,4,10,10-Hexachloro-6,7-epoxy-1,4,4a,5,6,7,8,8a-octahydro-1,4-endo,endo-5,8-dimethanonaphthalene; Hexadrin"	Get Report 
+METHOXYCHLOR	72-43-5	C16H15Cl3O2	"p,p'-Dimethoxydiphenylftrichloroethane; DMDT; Methoxy-DDT; 2,2-bis(p-Methoxyphenyl)-1,1,1-trichloroethane; 1,1,1-Trichloro-2,2-bis-(p-methoxyphenyl)ethane"	Get Report 
+METHANE	74-82-8	CH4		Get Report 
+METHYL BROMIDE	74-83-9	CH3Br	Bromomethane; Monobromomethane	Get Report 
+ETHANE	74-84-0	C2H6		Get Report 
+ETHYLENE	74-85-1	C2H4		Get Report 
+ACETYLENE	74-86-2	C2H2	Ethine; Ethyne	Get Report 
+METHYL CHLORIDE	74-87-3	CH3Cl	Chloromethane; Monochloromethane	Get Report 
+METHYL IODIDE	74-88-4	CH3I	Iodomethane; Monoiodomethane	Get Report 
+METHYLAMINE	74-89-5	CH5N	Aminomethane; Methylamine (anhydrous); Methylamine (aqueous); Monomethylamine	Get Report 
+HYDROGEN CYANIDE	74-90-8	CHN	Formonitrile; Hydrocyanic acid; Prussic acid	Get Report 
+METHYL MERCAPTAN	74-93-1	CH4S	Mercaptomethane; Methanethiol; Methyl sulfhydrate	Get Report 
+ETHYL BROMIDE	74-96-4	C2H5Br	Bromoethane; Monobromoethane	Get Report 
+BROMOCHLOROMETHANE	74-97-5	CH2BrCl	"Bromochloromethane; CB; CBM, Fluorocarbon 1011; Halon1011; Methyl chlorobromide"	Get Report 
+PROPANE	74-98-6	C3H8	Bottled gas; Dimethyl methane; n-Propane; Propyl hydride	Get Report 
+1-PROPYNE	74-99-7	C3H4	Allylene; Propine; Propyne; 1-Propyne	Get Report 
+SULFOMETURON-METHYL	74222-97-2	C15H16N4O5S		Get Report 
+"ALUMINUM, PYROPHORIC POWDERS AND WELDING FUME, as Al"	7429-90-5	Al	Aluminium; Aluminum metal; Aluminum powder; Elemental aluminum	Get Report 
+"ALUMINUM, as Al"	7429-90-5	Al	Aluminium; Aluminum metal; Aluminum powder; Elemental aluminum	Get Report 
+"ALUMINUM, SOLUBLE SALTS AND ALKYLS, NOT OTHERWISE CLASSIFIED, as Al"	7429-90-5	Al	Aluminium; Aluminum metal; Aluminum powder; Elemental aluminum	Get Report 
+"IRON SALTS, SOLUBLE, as Fe"	7439-89-6	Fe	FeSO4: Ferrous sulfate; Iron(II) sulfate FeCl2: Ferrous chloride; Iron(II) chloride Fe(NO3)3: Ferric nitrate; Iron(III) nitrate Fe(SO4)3: Ferric sulfate; Iron(III) sulfate FeCl3: Ferric chloride; Iron(III) chloride	Get Report 
+"LEAD (INORGANIC, DUSTS & FUMES), as Pb"	7439-92-1	Pb	Lead metal; Plumbum	Get Report 
+"MANGANESE (COMPOUNDS AND DUST), as Mn"	7439-96-5	Mn	Manganese metal: Colloidal manganese; Manganese-55 Synonyms of other compounds vary depending upon the specific manganese compound.	Get Report 
+"MANGANESE (FUME), as Mn"	7439-96-5	Mn	Manganese metal: Colloidal manganese; Manganese-55 Synonyms of other compounds vary depending upon the specific manganese compound.	Get Report 
+"MERCURY (ALKYL COMPOUNDS), as Hg"	7439-97-6	Hg	Synonyms vary depending upon the specific (organo) alkyl mercury compound.	Get Report 
+"MERCURY, ELEMENTAL AND INORGANIC COMPOUNDS, as Hg"	7439-97-6	Hg	"Mercury metal: Colloidal mercury; Metallic mercury; Quicksilver Synonyms of ""other"" Hg compounds vary depending upon the specific compound."	Get Report 
+"MERCURY (ARYL COMPOUNDS), as Hg"	7439-97-6	Hg	"Mercury metal: Colloidal mercury; Metallic mercury; Quicksilver Synonyms of ""other"" Hg compounds vary depending upon the specific compound."	Get Report 
+"MOLYBDENUM, SOLUBLE COMPOUNDS, as Mo"	7439-98-7	Mo	Molybdenum metal	Get Report 
+"MOLYBDENUM, METAL AND INSOLUBLE COMPOUNDS, as Mo"	7439-98-7	Mo	Molybdenum metal	Get Report 
+NEON	1/9/7440	Ne		Get Report 
+NICKEL METAL	7440-02-0	Ni	Nickel metal: Elemental nickel; Nickel catalyst	Get Report 
+"NICKEL, INSOLUBLE COMPOUNDS, as Ni"	7440-02-0	Ni	Synonyms of other nickel compounds vary depending upon the specific compound.	Get Report 
+"NICKEL, SOLUBLE COMPOUNDS as Ni"	7440-02-0	Ni	Synonyms of other nickel compounds vary depending upon the specific compound.	Get Report 
+PLATINUM METAL	6/4/7440	Pt	Platinum black; Platinum metal; Platinum sponge	Get Report 
+"PLATINUM SOLUBLE SALTS, as Pt"	6/4/7440	Pt	Synonyms vary depending upon the specific soluble platinum salt.	Get Report 
+"POTASSIUM, METAL ALLOYS"	9/7/7440	K		Get Report 
+"RHODIUM, SOLUBLE COMPOUNDS, as Rh"	7440-16-6	Rh	Synonyms vary depending upon the specific soluble rhodium compound.	Get Report 
+"RHODIUM METAL AND INSOLUBLE COMPOUNDS, as Rh"	7440-16-6	Rh	Rhodium metal: Elemental rhodium. Synonyms of other insoluble rhodium compounds vary depending upon the specific compound.	Get Report 
+SILICON	7440-21-3	Si	Elemental silicon	Get Report 
+"SILVER, SOLUBLE COMPOUNDS, as Ag"	7440-22-4	Sg	Synonyms of soluble silver compounds such as Silver nitrate (AgNO3) vary depending upon the specific compound.	Get Report 
+"SILVER METAL DUST, as Ag"	7440-22-4	Ag	Silver metal: Argentum	Get Report 
+"TANTALUM METAL AND OXIDE DUST, as Ta"	7440-25-7	Ta	Tantalum metal: Tantalum-181 Synonyms of other tantalum dusts (including oxide dusts) vary depending upon the specific compound.	Get Report 
+"THALLIUM, SOLUBLE COMPOUNDS, as Tl"	7440-28-0	Tl	Synonyms vary depending upon the specific soluble thallium compound.	Get Report 
+"TIN METAL AND INORGANIC COMPOUNDS, EXCEPT SnH4 AND OXIDES, as Sn"	7440-31-5	Sn	Metallic tin; Tin flake; Tin metal; Tin powder	Get Report 
+"TIN, ORGANIC COMPOUNDS as Sn"	7440-31-5	Sn	Synonyms vary depending upon the specific organic tin compound. [Note: Also see specific listing for Cyhexatin.]	Get Report 
+"TUNGSTEN METAL AND INSOLUBLE COMPOUNDS, as W"	7440-33-7	W	Tungsten metal; Wolfram	Get Report 
+"TUNGSTEN, SOLUBLE COMPOUNDS, as W"	7440-33-7	W	Synonyms vary depending upon the specific soluble tungsten compound.	Get Report 
+"ANTIMONY METAL AND COMPOUNDS, as Sb"	7440-36-0	Sb	Antimony metal; Antimony powder; Stibium	Get Report 
+ARGON	7440-37-1	Ar		Get Report 
+"ARSENIC, ORGANIC COMPOUNDS as As"	7440-38-2	As	Synonyms vary depending upon the specific organic arsenic compound.	Get Report 
+"ARSENIC METAL AND INORGANIC COMPOUNDS, as As"	7440-38-2	As	Arsenic metal: Arsenia Other synonyms vary depending upon the specific As compound.	Get Report 
+"BARIUM, SOLUBLE COMPOUNDS EXCEPT BARIUM SULFATE, as Ba"	7440-39-3	Ba		Get Report 
+"BERYLLIUM METAL AND COMPOUNDS, as Be"	7440-41-7	Be	Beryllium metal: Beryllium Other synonyms vary depending upon the specific beryllium compound.	Get Report 
+"CADMIUM METAL AND COMPOUNDS, as Cd"	7440-43-9	Cd	Cadmium metal: Cadmium. Other synonyms vary depending upon the specific cadmium compound	Get Report 
+GRAPHITE (SYNTHETIC)	7440-44-0	C	Activated carbon [Note: Also see specific listing for Graphite (natural).]	Get Report 
+"CHROMIUM(VI) COMPOUNDS, as Cr, WATER INSOLUBLE"	7440-47-3	Cr	"Synonyms of chromates (i.e., chromium(VI) compounds) such as zinc chromate vary depending upon the specific compound."	Get Report 
+"CHROMIUM(III) COMPOUNDS, as Cr"	7440-47-3	Cr	Synonyms vary depending upon the specific Chromium(III) compound. [Note: Chromium(III) compounds include soluble chromic salts.]	Get Report 
+CHROMIUM METAL	7440-47-3	Cr	Chrome; Chromium	Get Report 
+"CHROMIUM(II) COMPOUNDS, as Cr"	7440-47-3	Cr	Synonyms vary depending upon the specific Chromium(II) compound. [Note: Chromium(II) compounds include soluble chromous salts.]	Get Report 
+"CHROMIUM(VI) COMPOUNDS, as Cr, WATER SOLUBLE"	7440-47-3	Cr	"Synonyms of chromates (i.e., chromium(VI) compounds) such as zinc chromate vary depending upon the specific compound."	Get Report 
+COBALT METAL AND INORGANIC COMPOUNDS as Co	7440-48-4	Co	Cobalt metal dust; Cobalt metal fume	Get Report 
+"COPPER, FUME, as Cu"	7440-50-8	Cu	Copper metal dusts; Copper metal fumes	Get Report 
+"COPPER, DUSTS AND MISTS, as Cu"	7440-50-8	Cu	Copper metal dusts; Copper metal fumes	Get Report 
+HAFNIUM AND COMPOUNDS	7440-58-6	Hf	Celtium; Elemental hafnium; Hafnium metal	Get Report 
+HELIUM	7440-59-7	He		Get Report 
+"URANIUM, SOLUBLE COMPOUNDS, as U"	7440-61-1	U	Synonyms vary depending upon the specific soluble uranium compound.	Get Report 
+"URANIUM METAL AND INSOLUBLE COMPOUNDS, as U"	7440-61-1	U	Uranium metal: Uranium I Synonyms of other insoluble uranium compounds vary depending upon the specific compound.	Get Report 
+"YTTRIUM METAL AND COMPOUNDS, as Y"	7440-65-5	Y	Yttrium metal	Get Report 
+"ZIRCONIUM METAL AND COMPOUNDS, as Zr"	7440-67-7	Zr	Zirconium metal: Zirconium Synonyms of other zirconium compounds vary depending upon the specific compound.	Get Report 
+"INDIUM METAL AND COMPOUNDS, as In"	7440-74-6	In	Indium metal	Get Report 
+SULFUR DIOXIDE	9/5/7446	O2S	Sulfurous acid anhydride; Sulfurous oxide; Sulfur oxide	Get Report 
+"LEAD PHOSPHATE, as Pb"	7446-27-7	Pb		Get Report 
+ETHYL CHLORIDE	75-00-3	C2H5Cl	Chloroethane; Hydrochloric ether; Monochloroethane; Muriatic ether	Get Report 
+VINYL CHLORIDE	75-01-4	C2H3Cl	Chloroethene; Chloroethylene; Ethylene monochloride; Monochloroethene; Monochloroethylene; VC; Vinyl chloride monomer (VCM)	Get Report 
+VINYL FLUORIDE	75-02-5	C2H3F	"Fluoroethene; Fluoroethylene; Monofluoroethylene; Vinyl fluoride monomer; Vinyl fluoride, inhibited"	Get Report 
+ETHYLAMINE	75-04-7	C2H7N	Aminoethane; Ethylamine (anhydrous); Monoethylamine	Get Report 
+ACETONITRILE	75-05-8	C2H3N	Cyanomethane; Ethyl nitrile; Methyl cyanide	Get Report 
+ACETALDEHYDE	75-07-0	C2H4O	Acetic aldehyde; Ethanal; Ethyl aldehyde	Get Report 
+ETHYL MERCAPTAN	75-08-1	C2H6S	Ethanethiol; Ethyl sulfhydrate; Mercaptoethane	Get Report 
+METHYLENE CHLORIDE	75-09-2	CH2Cl2	Dichloromethane; Methylene dichloride	Get Report 
+FORMAMIDE	75-12-7	CH3NO	Carbamaldehyde; Methanamide	Get Report 
+CARBON DISULFIDE	75-15-0	CS2	Carbon bisulfide	Get Report 
+ETHYLENE OXIDE	75-21-8	C2H4O	"Dimethylene oxide; 1,2-Epoxy ethane; Oxirane"	Get Report 
+BROMOFORM	75-25-2	CHBr3	Methyl tribromide; Tribromomethane	Get Report 
+ISOBUTANE	75-28-5	C4H10	2-Methylpropane	Get Report 
+ISOPROPYLAMINE	75-31-0	C3H9N	2-Aminopropane; Monoisopropylamine; 2-Propylamine; sec-Propylamine	Get Report 
+"1,1-DICHLOROETHANE"	75-34-3	C2H4Cl2	"Asymmetrical dichloroethane; Ethylidene chloride; 1,1-Ethylidene dichloride"	Get Report 
+VINYLIDENE CHLORIDE	75-35-4	C2H2Cl2	"1,1-DCE; 1,1-Dichloroethene; 1,1-Dichloroethylene; VDC; Vinylidene chloride monomer; Vinylidene chloride, inhibited; Vinylidene dichloride"	Get Report 
+"1,1-DIFLUOROETHYLENE"	75-38-7	C2H2F2	"Difluoro-1,1-ethylene; 1,1-Difluoroethene; 1,1-Difluoroethylene; Halocarbon 1132A; VDF; Vinylidene difluoride"	Get Report 
+DICHLOROFLUOROMETHANE	75-43-4	CHCl2F	Dichlorofluoromethane; Fluorodichloromethane; Freon21; Genetron21; Halon112; Refrigerant 21	Get Report 
+PHOSGENE	75-44-5	CCl2O	Carbon oxychloride; Carbonyl chloride; Carbonyl dichloride; Chloroformyl chloride	Get Report 
+CHLORODIFLUOROMETHANE	75-45-6	CHClF2	"Difluorochloromethane; Fluorocarbon-22, Freon22; Genetron22; Monochlorodifluoromethane; Refrigerant 22"	Get Report 
+IODOFORM	75-47-8	CHI3	Triiodomethane	Get Report 
+TRIMETHYLAMINE	75-50-3	C3H9N	"N,N-Dimethylmethanamine; TMA [Note: May be used in an aqueous solution (typically 25%, 30%, or 40% TMA.]"	Get Report 
+NITROMETHANE	75-52-5	CH3NO2	Nitrocarbol	Get Report 
+PROPYLENEIMINE	75-55-8	C3H7N	2-Methylaziridine; 2-Methylethyleneimine; Propyleneimine; Propylene imine (inhibited); Propylenimine	Get Report 
+PROPYLENE OXIDE	75-56-9	C3H6O	"1,2-Epoxy propane; Methyl ethylene oxide; Methyloxirane; Propene oxide; 1,2-Propylene oxide"	Get Report 
+DIBROMODIFLUOROMETHANE	75-61-6	CBr2F2	Difluorodibromomethane; Freon12B2; Halon1202	Get Report 
+BROMOTRIFLUOROMETHANE	75-63-8	CBrF3	Bromotrifluoromethane; Fluorocarbon 1301; Freon13B1; Halocarbon 13B1; Halon1301; Monobromotrifluoromethane; Refrigerant 13B1; Trifluoromonobromomethane	Get Report 
+TERT-BUTYL ALCOHOL	75-65-0	C4H10O	2-Methyl-2-propanol; Trimethyl carbinol	Get Report 
+TRICHLOROFLUOROMETHANE	75-69-4	CCl3F	Fluorotrichloromethane; Freon 11; Monofluorotrichloromethane; Refrigerant 11; Trichloromonofluoromethane	Get Report 
+DICHLORODIFLUOROMETHANE	75-71-8	CCl2F2	Difluorodichloromethane; Fluorocarbon 12; Freon12; Genetron12; Halon122; Propellant 12; Refrigerant 12	Get Report 
+"TETRAMETHYL LEAD, as Pb"	75-74-1	C4H12Pb	Lead tetramethyl; Tetramethylplumbane; TML	Get Report 
+"2,2-DIMETHYLBUTANE"	75-83-2	C6H14	"Diethylmethylmethane; Diisopropyl; 2,2-Dimethylbutane; 2,3-Dimethylbutane; Isohexane; 2-Methylpentane; 3-Methylpentane"	Get Report 
+ACETONE CYANOHYDRIN	75-86-5	C4H7NO	Cyanohydrin-2-propanone; 2-Cyano-2-propanol; à-Hydroxyisobutyronitrile; 2-Hydroxy-2-methyl-propionitrile; 2-Methyllactonitrile	Get Report 
+"2,2-DICHLOROPROPIONIC ACID"	75-99-0	C3H4Cl2O2	"Dalapon; 2,2-Dichloropropanoic acid; à,à-Dichloropropionic acid"	Get Report 
+IODINE	7553-56-2	I2	Iodine crystals; Molecular iodine	Get Report 
+DICHLOROACETYLENE	7572-29-4	C2Cl2	DCA; Dichloroethyne	Get Report 
+LITHIUM HYDRIDE	7580-67-8	HLi	Lithium monohydride	Get Report 
+PENTACHLOROETHANE	76-01-7	C2HCl5	Ethane pentachloride; Pentalin	Get Report 
+TRICHLOROACETIC ACID	76-03-9	C2HCl3O2	TCA; Trichloroethanoic acid	Get Report 
+CHLOROPICRIN	76-06-2	CCl3NO2	Nitrochloroform; Nitrotrichloromethane; Trichloronitromethane	Get Report 
+"1,1,1,2-TETRACHLORO-2,2-DIFLUOROETHANE"	76-11-9	CCl3CClF2	"2,2-Difluoro-1,1,1,2-tetrachloroethane; Freon (R) 112a; Halocarbon 112a; Refrigerant 112a"	Get Report 
+"1,1,2,2-TETRACHLORO-1,2-DIFLUOROETHANE"	76-12-0	CCl2FCCl2F	"1,2-Difluoro-1,1,2,2-tetrachloroethane; Freon112; Halocarbon 112; Refrigerant 112"	Get Report 
+"1,1,2-TRICHLORO-1,2,2-TRIFLUOROETHANE"	76-13-1	C2Cl3F3	Chlorofluorocarbon-113; CFC-113; Freon113; Genetron113; Halocarbon 113; Refrigerant 113; TTE	Get Report 
+"1,2-DICHLORO-1,1,2,2-TETRAFLUOROETHANE"	76-14-2	C2Cl2F4	"1,2-Dichlorotetrafluoroethane; Freon114; Genetron114; Halon242; Refrigerant 114"	Get Report 
+CHLOROPENTAFLUOROETHANE	76-15-3	C2ClF5	Fluorocarbon-115; Freon115; Genetron115; Halocarbon 115; Monochloropentafluoroethane	Get Report 
+CAMPHOR	76-22-2	C10H16O	2-Camphonone; Gum camphor; Laurel camphor; Synthetic camphor	Get Report 
+METHOXYFLURANE	76-38-0	C3H4Cl2F2O	"2,2-Dichloro-1,1-difluoroethyl methyl ether; 2,2-Dichloro-1,1-difluoro-1-methoxyethane; Methoflurane; Methoxyfluorane; Penthrane"	Get Report 
+HEPTACHLOR	76-44-8	C10H5Cl7	"1,4,5,6,7,8,8-Heptachloro-3a,4,7,7a-tetrahydro-4,7-methanoindene"	Get Report 
+PERCHLORYL FLUORIDE	7616-94-6	ClFO3	Chlorine fluoride oxide; Chlorine oxyfluoride; Trioxychlorofluoride	Get Report 
+"2-AMINO-3-METHYLIMIDAZO[4,5-f] QUINOLINE"	76180-96-6	C11H10N4	"2-Amino-3-methyl-3h-imidazo(4,5-f)quinoline; Iq; 3-Methyl-3h-imidazo(4,5-f)quinolin-2-amine; 3h-Imidazo(4,5-f)quinolin-2-amine"	Get Report 
+"SILICA, AMORPHOUS"	7631-86-9	SiO2	Diatomaceous earth; Diatomaceous silica; Diatomite; Precipitated amorphous silica; Silica gel; Silicon dioxide (amorphous)	Get Report 
+SODIUM BISULFITE	7631-90-5	H2O3S.Na	Monosodium salt of sulfurous acid; Sodium acid bisulfite; Sodium bisulphite; Sodium hydrogen sulfite	Get Report 
+BORON TRIFLUORIDE	7/2/7637	BF3	Boron fluoride; Trifluoroborane	Get Report 
+"1,4-DICHLORO-2-BUTENE"	764-41-0	C4H6Cl2		Get Report 
+ZINC CHLORIDE FUME	7646-85-7	Cl2Zn	Zinc dichloride fume	Get Report 
+HYDROGEN CHLORIDE	7647-01-0	ClH	"Anhydrous hydrogen chloride; Aqueous hydrogen chloride (i.e., Hydrochloric acid, Muriatic acid)"	Get Report 
+PHOSPHORIC ACID	7664-38-2	H3O4P	Orthophosphoric acid; Phosphoric acid (aqueous); White phosphoric acid	Get Report 
+"HYDROGEN FLUORIDE, as F"	7664-39-3	FH	"Anhydrous hydrogen fluoride; Aqueous hydrogen fluoride (i.e., Hydrofluoric acid); HF-A"	Get Report 
+AMMONIA	7664-41-7	NH3	Anhydrous ammonia; Aqua ammonia; Aqueous ammonia [Note: Often used in an aqueous solution.]	Get Report 
+SULFURIC ACID	7664-93-9	H2O4S	Battery acid; Hydrogen sulfate; Oil of vitriol; Sulfuric acid (aqueous)	Get Report 
+N-ISOPROPYLANILINE	768-52-5	C9H13N	N-IPA; Isopropylaniline; N-(1-Methylethyl)-benzenamine; N-Phenylisopropylamine	Get Report 
+SODIUM METABISULFITE	7681-57-4	H2O5S2.2Na	Disodium pyrosulfite; Sodium metabisulphite; Sodium pyrosulfite	Get Report 
+NITRIC ACID	7697-37-2	HNO3	Aqua fortis; Engravers acid; Hydrogen nitrate; Red fuming nitric acid (RFNA); White fuming nitric acid (WFNA)	Get Report 
+HEXACHLOROCYCLOPENTADIENE	77-47-4	C5Cl6	"HCCPD; Hexachloro-1,3-cyclopentadiene; 1,2,3,4,5,5-Hexachloro-1,3-cyclopentadiene; Perchlorocyclopentadiene"	Get Report 
+DICYCLOPENTADIENE	77-73-6	C10H12	"Bicyclopentadiene; DCPD; 1,3-Dicyclopentadiene dimer; 3a,4,7,7a-Tetrahydro-4,7-methanoindene"	Get Report 
+DIMETHYL SULFATE	77-78-1	C2H6O4S	Dimethyl ester of sulfuric acid; Dimethylsulfate; Methyl sulfate	Get Report 
+THIONYL CHLORIDE	9/7/7719	Cl2OS	Sulfinyl chloride; Sulfur chloride oxide; Sulfurous dichloride; Sulfurous oxychloride; Thionyl dichloride	Get Report 
+PHOSPHORUS TRICHLORIDE	12/2/7719	Cl3P	Phosphorus chloride	Get Report 
+HYDROGEN PEROXIDE	7722-84-1	H2O2	High-strength hydrogen peroxide; Hydrogen dioxide; Hydrogen peroxide (aqueous); Hydroperoxide; Peroxide	Get Report 
+TETRASODIUM PYROPHOSPHATE	7722-88-5	Na4P2O7	Pyrophosphate; Sodium pyrophosphate; Tetrasodium diphosphate; Tetrasodium pyrophosphate (anhydrous); TSPP	Get Report 
+"PHOSPHORUS, YELLOW"	7723-14-0	P4	Elemental phosphorus; White phosphorus	Get Report 
+BROMINE	7726-95-6	Br2	Molecular bromine	Get Report 
+POTASSIUM PERSULFATE	7727-21-1	H2O8S2.2K		Get Report 
+BARIUM SULFATE	7727-43-7	BaSO4	Artificial barite; Barite; Barium salt of sulfuric acid; Barytes (natural)	Get Report 
+AMMONIUM PERSULFATE	7727-54-0	H3N.1/2H2O8S2		Get Report 
+ASBESTOS - ACTINOLITE	77536-66-4	Hydrated mineral silicate		Get Report 
+ASBESTOS - TREMOLITE	77536-68-6	Hydrated mineral silicate		Get Report 
+LEAD CHROMATE	7758-97-6	CrH2O4.Pb	"Synonyms of chromates (i.e., chromium(VI) compounds) such as zinc chromate vary depending upon the specific compound."	Get Report 
+AMMONIUM SULFAMATE	7773-06-0	H3NO3S.H3N	"Ammate herbicide; Ammonium amidosulfonate; AMS, Monoammonium salt of sulfamic acid; Sulfamate"	Get Report 
+SODIUM PERSULFATE	7775-27-1	H2O8S2.2Na		Get Report 
+CALCIUM SULFATE	7778-18-9	Ca.H2OS	Anhydrous calcium sulfate; Anhydrous gypsum; Anhydrous sulfate of lime; Calcium salt of sulfuric acid	Get Report 
+"ARSENOUS ACID, ARSENIC ACID & ITS SALTS"	7778-39-4	AsH3O4		Get Report 
+CALCIUM ARSENATE	7778-44-1	AsH3O4.3/2Ca	Calcium salt (2:3) of arsenic acid; Cucumber dust; Tricalcium arsenate; Tricalcium ortho-arsenate	Get Report 
+FLUORINE	7782-41-4	F2	Fluorine-19	Get Report 
+"SELENIUM AND COMPOUNDS, as Se"	7782-49-2	Se	Elemental selenium; Selenium alloy	Get Report 
+CHLORINE	7782-50-5	Cl2	Molecular chlorine	Get Report 
+GERMANE	7782-65-2	GeH4	Germane; Germanium hydride; Germanium tetrahydride; Germanomethane; Monogermane [Note: Used chiefly for the production of high purity germanium for use in semiconductors.]	Get Report 
+HYDROGEN SULFIDE	6/4/7783	H2S	Hydrosulfuric acid; Sewer gas; Sulfuretted hydrogen	Get Report 
+"HYDROGEN SELENIDE, as Se"	7/5/7783	H2Se	Selenium dihydride; Selenium hydride	Get Report 
+OXYGEN DIFLUORIDE	7783-41-7	F2O	Difluorine monoxide; Fluorine monoxide; Oxygen fluoride	Get Report 
+NITROGEN TRIFLUORIDE	7783-54-2	F3N	Nitrogen fluoride; Trifluoramine; Trifluorammonia	Get Report 
+SULFUR TETRAFLUORIDE	7783-60-0	F4S	Tetrafluorosulfurane	Get Report 
+"SELENIUM HEXAFLUORIDE, as Se"	7783-79-1	F6Se	Selenium fluoride	Get Report 
+"TELLURIUM HEXAFLUORIDE, as Te"	7783-80-4	F6Te	Tellurium fluoride	Get Report 
+"LEAD ARSENATE, as Pb(AsO4)2"	7784-40-9	AsH3O4.2/3Pb	"[Note: OSHA considers ""Inorganic Arsenic"" to mean copper acetoarsenite & all inorganic compounds containing arsenic except ARSINE.]"	Get Report 
+ARSINE	7784-42-1	AsH3	Arsenic hydride; Arsenic trihydride; Arseniuretted hydrogen; Arsenous hydride; Hydrogen arsenide	Get Report 
+MEVINPHOS	7786-34-7	C7H13O6P	2-Carbomethoxy-1-methylvinyl dimethyl phosphate; Mevinphos [Note: Commercial product is a mixture of the cis- & trans-isomers.]	Get Report 
+"STRONTIUM CHROMATE, as Cr"	6/2/7789	CrH2O4.Sr		Get Report 
+BROMINE PENTAFLUORIDE	7789-30-2	BrF5	Bromine fluoride	Get Report 
+CHLORINE TRIFLUORIDE	7790-91-2	ClF3	Chlorine fluoride; Chlorotrifluoride	Get Report 
+GRAPHITE (NATURAL)	7792-42-5	C	Black lead; Mineral carbon; Plumbago; Silver graphite; Stove black [Note: Also see specific listing for Graphite (synthetic).]	Get Report 
+"TETRAETHYL LEAD, as Pb"	78-00-2	C8H20Pb	Lead tetraethyl; TEL; Tetraethylplumbane	Get Report 
+ETHYL SILICATE	78-10-4	C8H20O4Si	Ethyl orthosilicate; Ethyl silicate (condensed); Tetraethoxysilane; Tetraethyl orthosilicate; Tetraethyl silicate	Get Report 
+TRICRESYL PHOSPHATE	78-30-8	C21H21O4P	TCP; TOCP; Tri-o-cresyl ester of phosphoric acid; Tri-o-cresyl phosphate; Triorthocresyl phosphate	Get Report 
+DIOXATHION	78-34-2	C12H26O6P2S4	"Delnav; p-Dioxane-2,3-diyl ethyl phosphorodithioate; Dioxane phosphate; 2,3-p-Dioxanethiol S,S-bis(O,O-diethyl phosphoro-dithioate); Navadel"	Get Report 
+ISOPHORONE	78-59-1	C9H14O	"Isoacetophorone; 3,5,5-Trimethyl-2-cyclohexenone; 3,5,5-Trimethyl-2-cyclo-hexen-1-one"	Get Report 
+ISOPENTANE	78-78-4	C5H12		Get Report 
+ISOBUTYLNITRILE	78-82-0	C4H7N	Isopropyl cyanide; 2-Methylpropanenitrile; 2-Methylpropionitrile	Get Report 
+ISOBUTANOL	78-83-1	C4H10O	IBA; Isobutanol; Isopropylcarbinol; 2-Methyl-1-propanol	Get Report 
+"1,2-DICHLOROPROPANE"	78-87-5	C3H6Cl2	"Dichloro-1,2-propane; 1,2-Dichloropropane"	Get Report 
+2-CHLORO-1-PROPANOL	78-89-7	C3H7ClO	2-Chloropropyl alcohol; Propylenechlorohydrin; 2-Chloroisopropyl alcohol; 2-Chloropropanol; Propylene Chlorohydrin; 1-Hydroxy-2-chloropropane; beta-Chloropropyl alcohol	Get Report 
+SEC-BUTYL ALCOHOL	78-92-2	C4H10O	2-Butanol; Butylene hydrate; 2-Hydroxybutane; Methyl ethyl carbinol	Get Report 
+ETHYL METHYL KETONE	78-93-3	C4H8O	Ethyl methyl ketone; MEK; Methyl acetone; Methyl ethyl ketone	Get Report 
+METHYL VINYL KETONE	78-94-4	C4H6O		Get Report 
+CHLOROACETONE	78-95-5	C3H5ClO		Get Report 
+PHOSPHINE	7803-51-2	H3P	Hydrogen phosphide; Phosphorated hydrogen; Phosphorus hydride; Phosphorus trihydride	Get Report 
+STIBINE	7803-52-3	H3Sb	Antimony hydride; Antimony trihydride; Hydrogen antimonide	Get Report 
+SILANE	7803-62-5	H4Si	Monosilane; Silane; Silicane	Get Report 
+"1,1,2-TRICHLOROETHANE"	79-00-5	C2H3Cl3	Ethane trichloride; beta -Trichloroethane; Vinyl trichloride	Get Report 
+TRICHLOROETHYLENE	79-01-6	C2HCl3	Ethylene trichloride; TCE; Trichloroethene; Trilene	Get Report 
+CHLOROACETYL CHLORIDE	79-04-9	C2H2Cl2O	Chloroacetic acid chloride; Chloroacetic chloride; Monochloroacetyl chloride	Get Report 
+ACRYLAMIDE	79-06-1	C3H5NO	Acrylamide monomer; Acrylic amide; Propenamide; 2-Propenamide	Get Report 
+PROPIONIC ACID	79-09-4	C3H6O2	Carboxyethane; Ethanecarboxylic acid; Ethylformic acid; Metacetonic acid; Methyl acetic acid; Propanoic acid	Get Report 
+ACRYLIC ACID	79-10-7	C3H4O2	"Acroleic acid; Acrylic Acid, inhibited; Aqueous acrylic acid (technical grade is 94%); Ethylenecarboxylic acid; Glacial acrylic acid (98% in aqueous solution); 2-Propenoic acid"	Get Report 
+METHYL ACETATE	79-20-9	C3H6O2	Methyl ester of acetic acid; Methyl ethanoate	Get Report 
+NITROETHANE	79-24-3	C2H5NO2	Nitroetan	Get Report 
+ACETYLENE TETRABROMIDE	79-27-6	C2H2Br4	"Symmetrical tetrabromoethane; TBE; Tetrabromoacetylene; Tetrabromoethane; 1,1,2,2-Tetrabromoethane"	Get Report 
+"2,3-DIMETHYLBUTANE"	79-29-8	C6H14	"Diethylmethylmethane; Diisopropyl; 2,2-Dimethylbutane; 2,3-Dimethylbutane; Isohexane; 2-Methylpentane; 3-Methylpentane"	Get Report 
+TETRACHLOROETHANE	79-34-5	C2H2Cl4	Acetylene tetrachloride; Symmetrical tetrachloroethane	Get Report 
+METHACRYLIC ACID	79-41-4	C4H6O2	Methacrylic acid (glacial); Methacrylic acid (inhibited); alpha-Methacrylic acid; 2-Methylacrylic acid; 2-Methylpropenoic acid	Get Report 
+DICHLOROACETIC ACID	79-43-6	C2H2Cl2O2		Get Report 
+DIMETHYLCARBAMOYLCHLORIDE	79-44-7	C3H6ClNO	"Chloroformic acid dimethylamide; Dimethylcarbamic chloride; N,N-Dimethylcarbamoyl chloride; DMCC"	Get Report 
+2-NITROPROPANE	79-46-9	C3H7NO2	Dimethylnitromethane; iso-Nitropropane; 2-NP	Get Report 
+"P, P' OXYBIS(BENZENESULFONYL HYDRAZIDE)"	80-51-3	C12H14N4O5S2	"p,p'-Oxybis(benzene-sulfonyl hydrazide)"	Get Report 
+PINENE	80-56-8			Get Report 
+METHYL METHACRYLATE	80-62-6	C5H8O2	"Methacrylate monomer; Methyl ester of methacrylic acid; Methyl methacrylate monomer, unihibited; Methyl-2-methyl-2-propenoate"	Get Report 
+TOXAPHENE	8001-35-2	C10H10Cl8	Chlorinated camphene; Chlorocamphene; Octachlorocamphene; Polychlorocamphene	Get Report 
+PARAFFIN WAX FUME	8002-74-2	CnH2n+2	Paraffin fume; Paraffin scale fume	Get Report 
+PYRETHRUM	8003-34-7	No formula	"Cinerin I or II; Jasmolin I or II; Pyrethrin I or II; Pyrethrins; Pyrethrum I or II [Note: Pyrethrum is a variable mixture of Cinerin, Jasmolin, and Pyrethrin.]"	Get Report 
+GASOLINE	8006-61-9	Mixture	Motor fuel; Motor spirits; Natural gasoline; Petrol [Note: A complex mixture of volatile hydrocarbons (paraffins; cycloparaffins & aromatics).]	Get Report 
+TURPENTINE	8006-64-2	C10H16 (approx)	Gumspirits; Gum turpentine; Spirits of turpentine; Steam distilled turpentine; Sulfate wood turpentine; Turps; Wood turpentine	Get Report 
+KEROSENE	8008-20-6	Mixture	Fuel Oil No. 1; Range oil	Get Report 
+"OIL MISTS, MINERAL"	8012-95-1	Mixture	Heavy mineral oil mist; Paraffin oil mist; White mineral oil mist	Get Report 
+METHYL DEMETON	8022-00-2	C6H15O3PS2	"Demeton methyl; O,O-Dimethyl 2-ethylmercaptoethyl thiophosphate; Metasystox; Methyl mercaptophos; Methyl systox"	Get Report 
+NAPHTHA (COAL TAR)	8030-30-6	Mixture	Crude solvent coal tar naphtha; High solvent naphtha; Naphtha	Get Report 
+VM&P NAPHTHA	8032-32-4	Mixture	Ligroin; Painters naphtha; Petroleum ether; Petroleum spirit; Refined solvent naphtha; Varnish makers' & painters' naphtha	Get Report 
+STODDARD SOLVENT	8052-41-3	Mixture	Dry cleaning safety solvent; Mineral spirits; Petroleum solvent; Spotting naphtha	Get Report 
+ASPHALT FUMES	8052-42-4	Mixture	Asphalt: Asphaltum; Bitumen (European term); Petroleum asphalt; Petroleum bitumen; Road asphalt; Roofing asphalt	Get Report 
+DEMETON	8065-48-3	C8H19O3PS2.C8H19O3PS2	O-O-Diethyl-O(and S)-2-(ethylthio)ethyl phosphorothioate mixture; Systox	Get Report 
+WARFARIN	81-81-2	C19H16O4	3-(alpha-Acetonyl)-benzyl-4-hydroxycoumarin; 4-Hydroxy-3-(3-oxo-1-phenyl butyl)-2H-1-benzopyran-2-one; WARF	Get Report 
+PENTACHLORONITROBENZENE	82-68-8	C6Cl5NO2	Quintozene	Get Report 
+HEXAMETHYLENE DIISOCYANATE	822-06-0	C8H12N2O2	"1,6-Diisocyanatohexane; HDI; Hexamethylene-1,6-diisocyanate; 1,6-Hexamethylene diisocyanate; HMDI"	Get Report 
+PINDONE	83-26-1	C14H14O3	"tert-Butyl valone; 1,3-Dioxo-2-pivaloy-lindane; Pival; Pivalyl; 2-Pivalyl-1,3-indandione"	Get Report 
+ROTENONE	83-79-4	C23H22O6	"1,2,12,12a-Tetrahydro-8,9-dimethoxy-2-(1-methyl-ethenyl)-[1]benzopyrano [3,4-b]furo[2,3-h][1] benzopyran-6(6aH)-one"	Get Report 
+DIETHYL PHTHALATE	84-66-2	C12H14O4	DEP; Diethyl ester of phthalic acid; Ethyl phthalate	Get Report 
+N-BUTYL PHTHALATE	84-74-2	C16H22O4	"DBP; Dibutyl 1,2-benzene-dicarboxylate; Di-n-butyl phthalate"	Get Report 
+PHTHALIC ANHYDRIDE	85-44-9	C8H4O3	"1,2-Benzenedicarboxylic anhydride; PAN; Phthalic acid anhydride"	Get Report 
+AZINPHOS METHYL	86-50-0	C10H12N3O3PS2	"O,O-Dimethyl-S-4-oxo-1,2,3-benzotriazin-3(4H)-ylmethyl phosphorodithioate; Guthion; Methyl azinphos"	Get Report 
+1-NITRONAPHTHALENE	86-57-7	C10H7NO2		Get Report 
+ANTU	86-88-4	C11H10N2S	à-Naphthyl thiocarbamide; 1-Naphthyl thiourea; à-Naphthyl thiourea	Get Report 
+HEXACHLOROBUTADIENE	87-68-3	C4Cl6	"HCBD; Hexachloro-1,3-butadiene; 1,3-Hexachlorobutadiene; Perchlorobutadiene"	Get Report 
+PENTACHLOROPHENOL	87-86-5	C6HCl5O	"PCP; Penta; 2,3,4,5,6-Pentachlorophenol"	Get Report 
+N-VINYL-2-PYRROLIDONE	88-12-0	(C6H9NO)x		Get Report 
+O-NITROTOLUENE	88-72-2	C7H7NO2	o-Methylnitrobenzene; 2-Methylnitrobenzene; ortho-Nitrotoluene; 2-Nitrotoluene	Get Report 
+2-CHLORONITROBENZENE	88-73-3	C6H4ClNO2	o-Chloronitrobenzene; 1-Chloro-2-nitrobenzene; 2-Chloro-1-nitrobenzene o-Nitrochlorobenzene; Chloro-o-nitrobenzene; ONCB; 2-CNB; o-Nitrochlorobenzene	Get Report 
+PICRIC ACID	88-89-1	C6H3N3O7	"Phenol trinitrate; 2,4,6-Trinitrophenol"	Get Report 
+O-SEC-BUTYLPHENOL	89-72-5	C10H14O	2-sec-Butylphenol; 2-(1-Methylpropyl)phenol	Get Report 
+O-ANISIDINE	90-04-0	C7H9NO	ortho-Aminoanisole; 2-Anisidine; o-Methoxyaniline [Note: o-Anisidine has been used as a basis for many dyes.]	Get Report 
+CELLULOSE	9004-34-6	(C6H1005)n	Hydroxycellulose; Pyrocellulose	Get Report 
+STARCH	9005-25-8	(C6H10O5)n	Corn starch; Rice starch; Sorghum gum; à-Starch; Starch gum; Tapioca starch	Get Report 
+"2,6-TOLUENE-DIISOCYANATE"	91-08-7	C9H6N2O2		Get Report 
+NAPHTHALENE	91-20-3	C10H8	Naphthalin; Tar camphor; White tar	Get Report 
+BETA-NAPHTHYLAMINE	91-59-8	C10H9N	2-Aminonaphthalene; 2-Naphthylamine	Get Report 
+"3,3'-DICHLOROBENZIDINE"	91-94-1	C12H10Cl2N2	"4,4'-Diamino-3,3'-dichlorobiphenyl; Dichlorobenzidine base; o,o'-Dichlorobenzidine; 3,3'-Dichlorobiphenyl-4,4'-diamine; 3,3'-Dichloro-4,4'-biphenyldiamine; 3,3'-Dichloro-4,4'-diaminobiphenyl"	Get Report 
+DEMETON-S-METHYL	919-86-8	C6H15O3PS2		Get Report 
+BIPHENYL	92-52-4	C12H10	Biphenyl; Diphenyl; Phenyl benzene	Get Report 
+4-AMINOBIPHENYL	92-67-1	C12H11N	4-Aminobiphenyl; p-Aminobiphenyl; p-Aminodiphenyl; 4-Phenylaniline	Get Report 
+PHENOTHIAZINE	92-84-2	C12H9NS	Dibenzothiazine; Fenothiazine; Thiodiphenylamine	Get Report 
+BENZIDINE	92-87-5	C12H12N2	"Benzidine-based dyes; 4,4'-Bianiline; 4,4'-Biphenyldiamine; 1,1'-Biphenyl-4,4'-diamine; 4,4'-Diaminobiphenyl; p-Diaminodiphenyl"	Get Report 
+4-NITROBIPHENYL	92-93-3	C6H5C6H4NO2	p-Nitrobipheny; p-Nitrodiphenyl; 4-Nitrodiphenyl; p-Phenylnitrobenzene; 4-Phenylnitrobenzene; PNB	Get Report 
+METHYLEUGENOL	93-15-2	C11H14O2		Get Report 
+"2,4,5-TRICHLOROPHENOXYACETIC ACID"	93-76-5	C8H5Cl3O3	"2,4,5-T"	Get Report 
+PERLITE	93763-70-3	C4F8	Expanded perlite	Get Report 
+BENZOYL PEROXIDE	94-36-0	C14H10O4	Benzoperoxide; Dibenzoyl peroxide	Get Report 
+"2,4-DICHLOROPHENOXYACETIC ACID"	94-75-7	C8H6Cl2O3	"Dichlorophenoxyacetic acid; 2,4-D"	Get Report 
+FONOFOS	944-22-9	C10H15OPS2	Dyfonate; Dyphonate; O-Ethyl-S-phenyl ethylphosphorothioate; Fonophos	Get Report 
+INDENE	95-13-6	C9H8	Indonaphthene	Get Report 
+O-XYLENE	95-47-6	C8H10	"1,2-Dimethylbenzene; ortho-Xylene; o-Xylol"	Get Report 
+O-CRESOL	95-48-7	C7H8O	ortho-Cresol; 2-Cresol; o-Cresylic acid; 1-Hydroxy-2-methylbenzene; 2-Hydroxytoluene; 2-Methyl phenol	Get Report 
+O-CHLOROTOLUENE	95-49-8	C7H7Cl	1-Chloro-2-methylbenzene; 2-Chloro-1-methylbenzene; 2-Chlorotoluene; o-Tolyl chloride	Get Report 
+O-DICHLOROBENZENE	95-50-1	C6H4Cl2	"o-DCB; 1,2-Dichlorobenzene; ortho-Dichlorobenzene; o-Dichlorobenzol"	Get Report 
+2-CHLOROANILINE	95-51-2	C6H6ClN	1-amino-2-Chlorobenzene; 2-chlorobenzenamine; 2-Chlorophenylamine; o-Chloroaniline	Get Report 
+O-TOLUIDINE	95-53-4	C7H9N	o-Aminotoluene; 2-Aminotoluene; 1-Methyl-2-aminobenzene; o-Methylaniline; 2-Methylaniline; ortho-Toluidine	Get Report 
+"1,2-PHENYLENEDIAMINE"	95-54-5	C6H8N2		Get Report 
+4-CHLORO-2-METHYLANILINE AND ITS HYDROCHLORIDE SALT	95-69-2	C7H8ClN	4-Chloro-o-Toluidine; 2-Amino-5-chlorotoluene; 5-Chloro-2-aminotoluene; 4-Chloro-2-methylbenzeneamine; 4-Chloro-2-toluidine; 4-Chloro-6-methylaniline; Fast Red TR; Fast Red TR 11; Fast Red TR Base; P-Chloro-o-toluidine	Get Report 
+"TOLUENE-2,4-DIAMINE"	95-80-7	C7H10N2	Diaminotoluene; Methylphenylene diamine; TDA; Toluenediamine isomers; Tolylenediamine	Get Report 
+"1,2-EPOXYETHYLBENZENE"	96-09-3	C8H8O		Get Report 
+"1,2-DIBROMO-3-CHLOROPOPANE"	96-12-8	C3H5Br2Cl	"1-Chloro-2,3-dibromopropane; DBCP; Dibromochloropropane"	Get Report 
+"2,3-DIBROMO-1-PROPANOL"	96-13-9	C3H6Br2O		Get Report 
+3-METHYLPENTANE	96-14-0	C6H14	"Diethylmethylmethane; Diisopropyl; 2,2-Dimethylbutane; 2,3-Dimethylbutane; Isohexane; 2-Methylpentane; 3-Methylpentane"	Get Report 
+"1,2,3-TRICHLOROPROPANE"	96-18-4	C3H5Cl3	Allyl trichloride; Glycerol trichlorohydrin; Glyceryl trichlorohydrin; Trichlorohydrin	Get Report 
+DIETHYL KETONE	96-22-0	C5H10O	DEK; Dimethylacetone; Ethyl ketone; Metacetone; 3-Pentanone; Propione	Get Report 
+METHYL ACRYLATE	96-33-3	C4H6O2	"Methoxycarbonylethylene; Methyl acrylate, inhibited; Methyl ester of acrylic acid; Methyl propenoate"	Get Report 
+ETHYLENE THIOUREA	96-45-7	C3H6N2S	"1,3-Ethylene-2-thiourea; N,N-Ethylenethiourea; ETU; 2-Imidazolidine-2-thione"	Get Report 
+"4,4'-THIOBIS(6-TERT-BUTYL-M-CRESOL)"	96-69-5	C22H30O2S	"4,4'-Thiobis(3-methyl-6-tert-butylphenol); 1,1'-Thiobis(2-methyl-4-hydroxy-5-tert-butylbenzene)"	Get Report 
+TETRAETHYLTHIURAM DISULFIDE	97-77-8	C10H20N2S4	Antabuse; bis(Diethylthiocarbamoyl) disulfide; Disulfiram; Ro-Sulfiram; TETD	Get Report 
+FURFURYL ALCOHOL	98-00-0	C5H6O2	2-Furylmethanol; 2-Hydroxymethylfuran	Get Report 
+FURFURAL	98-01-1	C5H4O2	Fural; 2-Furancarboxaldehyde; Furfuraldehyde; 2-Furfuraldehyde	Get Report 
+BENZOTRICHLORIDE	98-07-7	C7H5Cl3		Get Report 
+P-TERT-BUTYLTOLUENE	98-51-1	C11H16	4-tert-Butyltoluene; 1-Methyl-4-tert-butylbenzene	Get Report 
+CUMENE	98-82-8	C9H12	Cumol; Isopropyl benzene; 2-Phenyl propane	Get Report 
+ISOPROPENYLBENZENE	98-83-9	C9H10	AMS; Isopropenyl benzene; 1-Methyl-1-phenylethylene; 2-Phenyl propylene	Get Report 
+ACETOPHENONE	98-86-2	C8H8O		Get Report 
+BENZOYL CHLORIDE	98-88-4	C7H5ClO		Get Report 
+NITROBENZENE	98-95-3	C6H5NO2	Essence of mirbane; Nitrobenzol; Oil of mirbane	Get Report 
+M-NITROTOLUENE	99-08-1	C7H7NO2	m-Methylnitrobenzene; 3-Methylnitrobenzene; meta-Nitrotoluene; 3-Nitrotoluene	Get Report 
+M-DINITROBENZENE	99-65-0	C6H4N2O4	"meta-Dinitrobenzene; 1,3-Dinitrobenzene"	Get Report 
+P-NITROTOLUENE	99-99-0	C7H7NO2	p-Methylnitrobenzene; 4-Methylnitrobenzene; para-Nitrotoluene; 4-Nitrotoluene	Get Report 
+TERT-AMYL METHYL ETHER (TAME)	994-05-8	C6H14O		Get Report 
+"NICKEL SULFIDE ROASTING, DUST AND FUME, as Ni"	NO CAS	NiS		Get Report 
+"GRAIN DUST (OAT, WHEAT, BARLEY)"	NO CAS	No forumla	"None [Note: Grain dust consists of 60-75% organic materials (cereal grains) & 25-40% inorganic materials (soil), and includes fertilizers, pesticides & microorganisms.]"	Get Report 
+SOAPSTONE (CONTAINING LESS THAN 1% QUARTZ)	NO CAS	3MgO-4SiO2-H2O	Massive talc; Soapstone silicate; Steatite	Get Report 
+WELDING FUMES NOT OTHERWISE CLASSIFIED	NO CAS	Mixture	Synonyms vary depending upon the specific component of the welding fumes.	Get Report 
+"WOOD DUST, BEECH OR OAK"	NO CAS	No formula		Get Report 
+"WOOD DUST, HARD WOOD"	NO CAS	No formula	Hard wood dust	Get Report 
+"WOOD DUST, SOFT WOOD"	NO CAS	No formula	Soft wood dust	Get Report 
+"ROSIN CORE SOLDER PYROLYSIS PRODUCTS, as FORMALDEHYDE"	NO CAS	CH2O		Get Report 
+MINERAL WOOL FIBERS	NO CAS	No formula	Manmade mineral fibers; Rock wool; Slag wool; Synthetic vitreous fibers	Get Report 
+COKE OVEN EMISSIONS	NO CAS	Mixture	Synonyms vary depending upon the specific constituent.	Get Report 
+SYNTHETIC VITREOUS FIBERS (CONTINUOUS FILAMENT GLASS FIBERS)	NO CAS	Mixture	Manmade mineral fibers; Rock wool; Slag wool; Synthetic vitreous fibers	Get Report 
+FLOUR DUST	NO CAS	No forumla		Get Report 
+COAL DUST	NO CAS	No forumla	Anthracite coal dust; Bituminous coal dust; Lignite coal dust	Get Report 
+STEARATES	NO CAS			Get Report 
+"CYANIDES, as CN"	NO CAS	varies		Get Report 
+COTTON DUST (RAW)	NO CAS	No formula	Raw cotton dust	Get Report 
+"HEXANE ISOMERS, EXCLUDING N-HEXANE"	NO CAS	C6H14	Irriation eyes; skin respiratory system; headache; giddiness; dizzyness	Get Report 
