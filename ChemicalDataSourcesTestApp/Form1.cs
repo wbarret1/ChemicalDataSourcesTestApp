@@ -125,8 +125,17 @@ namespace ChemicalDataSourcesTestApp
 
         private void findButton_Click(object sender, EventArgs e)
         {
+            this.pictureBox1.Visible = false;
+            this.pictureBox2.Visible = false;
+            this.pictureBox3.Visible = false;
+            this.pictureBox4.Visible = false;
+            this.pictureBox5.Visible = false;
+            this.pictureBox6.Visible = false;
+            this.pictureBox7.Visible = false;
+            this.label22.Text = string.Empty;
             this.label2.Visible = false;
-            this.label2.Visible = false;
+            this.toolTip1.SetToolTip(this.label2, string.Empty);
+            this.label22.Visible = false;
             this.label4.Visible = false;
             this.label5.Visible = false;
             this.label6.Visible = false;
@@ -144,6 +153,9 @@ namespace ChemicalDataSourcesTestApp
             this.label18.Visible = false;
             this.label19.Visible = false;
             this.label20.Visible = false;
+            this.nfpaFlammabilityLabel.Visible = false;
+            this.nfpaHealthLabel.Visible = false;
+            this.nfpaInstabilityLabel.Visible = false;
 
             if (string.IsNullOrEmpty(this.chemicalTextBox.Text)) return;
             m_CompoundName = this.chemicalTextBox.Text;
@@ -153,15 +165,25 @@ namespace ChemicalDataSourcesTestApp
                 TimeSpan.FromSeconds(1));
             if (m1.Groups.Count > 1)
             {
-                m_casNo = m1.Groups[0].Value;
-                string url = "http://actorws.epa.gov/actorws/actor/2015q3/preferredName.json?casrn=" + m_casNo;
-                System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
-                System.Net.WebResponse response = request.GetResponse();
-                System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream());
-                //string output = reader.ReadToEnd();
-                System.Runtime.Serialization.Json.DataContractJsonSerializer jSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(Rootobject));
-                Rootobject chemicalName = (Rootobject)jSerializer.ReadObject(response.GetResponseStream());
-                m_CompoundName = chemicalName.DataRow.preferredName;
+                if (this.validateCasNumber(m1.Groups[0].Value))
+                {
+                    m_casNo = m1.Groups[0].Value;
+                    string url = "http://actorws.epa.gov/actorws/actor/2015q3/preferredName.json?casrn=" + m_casNo;
+                    System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+                    System.Net.WebResponse response = request.GetResponse();
+                    System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream());
+                    //string output = reader.ReadToEnd();
+                    System.Runtime.Serialization.Json.DataContractJsonSerializer jSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(Rootobject));
+                    Rootobject chemicalName = (Rootobject)jSerializer.ReadObject(response.GetResponseStream());
+                    m_CompoundName = chemicalName.DataRow.preferredName;
+                }
+                else
+                {
+                    this.label2.Text = "The CAS Number you entered " + m1.Groups[0].Value + " was not valid. Please check it and re-enter it.";
+                    this.toolTip1.SetToolTip(this.label2, "The CAS number did not comply with its format. Either the value was not properly formatted (2 to 7 digits followed by a dash followed by two digits followed by a dash, folloed by one digit), or the digits checksum did not match.");
+                    this.label2.Visible = true;
+                    return;
+                }
             }
             else
             {
@@ -170,6 +192,62 @@ namespace ChemicalDataSourcesTestApp
             this.listBox1.Items.Clear();
             this.AddChemicalInformation(m_CompoundName, m_casNo);
             string[] pictograms = EuropeanChemicalInventory.Pictograms(m_casNo);
+        }
+
+        bool validateCasNumber(string casNo)
+        {
+            // split the CAS Number into parts separated by a dash...
+            string[] parts = casNo.Split('-');
+            // check that there were three pieces of the cas number...if not, the cas number is improperly formatted and return false
+            if (parts.Length != 3) return false;
+
+            // Check to see if a numbers were submitted...
+            int part1 = 0;
+            if (!int.TryParse(parts[0], out part1))
+            {
+                // if not, return false
+                return false;
+            }
+            // Check to see if a numbers were submitted...
+            int part2 = 0;
+            if (!int.TryParse(parts[1], out part2))
+            {
+                // if not, return false
+                return false;
+            }
+            // Check to see if a numbers were submitted...
+            int part3 = 0;
+            if (!int.TryParse(parts[2], out part3))
+            {
+                // if not, return false
+                return false;
+            }
+
+            //initialize the checksum
+            int checksum = 0;
+
+            // handle part 2...
+            checksum = (part2 % 10);
+            checksum = checksum + (part2 / 10)*2;
+
+            // now handle part 1, it can have between 2 and 7 digits...
+            int n = 3;
+            while (part1 > 10)
+            {
+                checksum = checksum + (part1 % 10) * n++;
+                part1 = part1 / 10;
+            }
+            checksum = checksum + part1*n;
+
+            // number is valid if the last digit equals the remainder from dividing 
+            // the checksum by 10.
+            if (checksum % 10 == part3)
+            {
+                // throw exception if the checksum does not work...
+                return true;
+            }
+            return false;
+
         }
 
         private void findCompound(ref string compoundName, ref string CasNo)
@@ -214,8 +292,10 @@ namespace ChemicalDataSourcesTestApp
             this.GetPUGInformation(compoundName, casNo);
             this.GetICSCInformation(compoundName, casNo);
             this.GetTOXNETInformation(compoundName, casNo);
-            this.label2.Text = "CAS Number: " + casNo;
+            this.label2.Text = "Chemical Name: " + compoundName;
             this.label2.Visible = true;
+            this.label22.Text = "CAS Number: " + casNo;
+            this.label22.Visible = true;
             this.label11.Text = "Molecular Formula = " + this.m_molecularFormula;
             this.label11.Visible = true;
             this.label4.Text = "Boiling Point = " + this.bpValue + " " + this.bpUnit;
@@ -241,30 +321,35 @@ namespace ChemicalDataSourcesTestApp
             if (pictograms.Length > 0)
             {
                 this.pictureBox3.Image = this.imageList2.Images[pictograms[0]];
+                this.pictureBox3.Visible = true;
                 this.label13.Visible = true;
                 this.label13.Text = pictograms[0];
             }
             if (pictograms.Length > 1)
             {
                 this.pictureBox4.Image = this.imageList2.Images[pictograms[1]];
+                this.pictureBox4.Visible = true;
                 this.label14.Visible = true;
                 this.label14.Text = pictograms[1];
             }
             if (pictograms.Length > 2)
             {
                 this.pictureBox5.Image = this.imageList2.Images[pictograms[2]];
+                this.pictureBox5.Visible = true;
                 this.label15.Visible = true;
                 this.label15.Text = pictograms[2];
             }
             if (pictograms.Length > 3)
             {
                 this.pictureBox6.Image = this.imageList2.Images[pictograms[3]];
+                this.pictureBox6.Visible = true;
                 this.label16.Visible = true;
                 this.label16.Text = pictograms[3];
             }
             if (pictograms.Length > 4)
             {
                 this.pictureBox7.Image = this.imageList2.Images[pictograms[4]];
+                this.pictureBox7.Visible = true;
                 this.label17.Visible = true;
                 this.label17.Text = pictograms[4];
             }
