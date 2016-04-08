@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace ChemicalDataSourcesTestApp
 {
-
     struct NistFormationEnthlpyOrEntropy
     {
         public string quantity;
@@ -147,29 +146,11 @@ namespace ChemicalDataSourcesTestApp
 
             if (string.IsNullOrEmpty(this.chemicalTextBox.Text)) return;
             m_CompoundName = this.chemicalTextBox.Text;
-            string pattern = "(?<1>\\d+-\\d{2}-\\d)";
-            System.Text.RegularExpressions.Match m1 = System.Text.RegularExpressions.Regex.Match(m_CompoundName, pattern,
-                System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                TimeSpan.FromSeconds(1));
-            if (m1.Groups.Count > 1)
-            {
-                m_casNo = m1.Groups[0].Value;
-                string url = "http://actorws.epa.gov/actorws/actor/2015q3/preferredName.json?casrn=" + m_casNo;
-                System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
-                System.Net.WebResponse response = request.GetResponse();
-                System.IO.StreamReader reader = new System.IO.StreamReader(response.GetResponseStream());
-                //string output = reader.ReadToEnd();
-                System.Runtime.Serialization.Json.DataContractJsonSerializer jSerializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(typeof(Rootobject));
-                Rootobject chemicalName = (Rootobject)jSerializer.ReadObject(response.GetResponseStream());
-                m_CompoundName = chemicalName.DataRow.preferredName;
-            }
-            else
-            {
-                this.findCompound(ref m_CompoundName, ref m_casNo);
-            }
             this.listBox1.Items.Clear();
+            this.findCompound(ref m_CompoundName, ref m_casNo);
             this.AddChemicalInformation(m_CompoundName, m_casNo);
             string[] pictograms = EuropeanChemicalInventory.Pictograms(m_casNo);
+
         }
 
         private void findCompound(ref string compoundName, ref string CasNo)
@@ -1605,17 +1586,5 @@ namespace ChemicalDataSourcesTestApp
             System.Diagnostics.Process.Start(europeanChemicalList.Link(m_casNo));
             return;
         }
-    }
-
-    public class Rootobject
-    {
-        public Datarow DataRow { get; set; }
-    }
-
-    public class Datarow
-    {
-        public int genericChemicalId { get; set; }
-        public string preferredName { get; set; }
-        public string casrn { get; set; }
     }
 }
