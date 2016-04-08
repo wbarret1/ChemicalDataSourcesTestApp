@@ -823,6 +823,15 @@ namespace ChemicalDataSourcesTestApp
             pugRest.Rootobject pugChem = (pugRest.Rootobject)pugSerializer.ReadObject(response.GetResponseStream());
             m_CID = pugChem.PC_Compounds[0].id.id.cid;
 
+            numCarbon = 0;
+            numHydrogen = 0;
+            numNitrogen = 0;
+            numChlorine = 0;
+            numSodium = 0;
+            numOxygen = 0;
+            numPhosphorous = 0;
+            numSulfur = 0;
+
             foreach (int atom in pugChem.PC_Compounds[0].atoms.element)
             {
                 if (atom == 6) numCarbon = numCarbon + 1;
