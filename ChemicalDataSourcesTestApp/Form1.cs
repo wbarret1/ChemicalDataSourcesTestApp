@@ -125,6 +125,7 @@ namespace ChemicalDataSourcesTestApp
 
         private void findButton_Click(object sender, EventArgs e)
         {
+            this.listBox1.Items.Clear();
             this.pictureBox1.Visible = false;
             this.pictureBox2.Visible = false;
             this.pictureBox3.Visible = false;
@@ -185,11 +186,7 @@ namespace ChemicalDataSourcesTestApp
                     return;
                 }
             }
-            else
-            {
-                this.findCompound(ref m_CompoundName, ref m_casNo);
-            }
-            this.listBox1.Items.Clear();
+            this.findCompound(ref m_CompoundName, ref m_casNo);
             this.AddChemicalInformation(m_CompoundName, m_casNo);
             string[] pictograms = EuropeanChemicalInventory.Pictograms(m_casNo);
         }
@@ -262,6 +259,7 @@ namespace ChemicalDataSourcesTestApp
                 // Synonyms means more than one name for the same chemical/CAS Number.
                 Synonym synonym = (Synonym)serializer.Deserialize(XMLReader);
                 CasNo = synonym.Chemical[0].CAS;
+                this.listBox1.BeginUpdate();
                 foreach (SynonymChemical chemical in synonym.Chemical)
                 {
                     this.listBox1.Items.Add(chemical.Name);
@@ -271,6 +269,7 @@ namespace ChemicalDataSourcesTestApp
                         return;
                     }
                 }
+                this.listBox1.EndUpdate();
                 return;
             }
             serializer = new System.Xml.Serialization.XmlSerializer(typeof(SpellAid));
@@ -305,6 +304,7 @@ namespace ChemicalDataSourcesTestApp
             this.label6.Text = "Flash Point = " + this.flashPtValue + " " + this.flashPtUnit;
             this.label6.Visible = true;
             this.pictureBox1.Image = Form1.PUGGetCompoundImage(compoundName, casNo);
+            this.pictureBox1.Visible = true;
             if (nfpaHealth != string.Empty)
             {
                 this.pictureBox2.Visible = true;
@@ -317,6 +317,7 @@ namespace ChemicalDataSourcesTestApp
                 this.pictureBox2.SendToBack();
             }
             this.label12.Text = "Signal Word: " + EuropeanChemicalInventory.SignalWord(m_casNo);
+            this.label12.Visible = true;
             string[] pictograms = EuropeanChemicalInventory.Pictograms(casNo);
             if (pictograms.Length > 0)
             {
@@ -1006,7 +1007,7 @@ namespace ChemicalDataSourcesTestApp
         void GetTOXNETInformation(string compoundName, string casNo)
         {
             // http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?./temp/~oiB60G:1
-            string uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2";
+            string uriString = "https://toxgate.nlm.nih.gov/cgi-bin/sis/search2";
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
             string postData = "queryxxx=" + casNo;
             postData += "&chemsyn=1";
@@ -1326,7 +1327,7 @@ namespace ChemicalDataSourcesTestApp
         void GetToxData(string compoundName, string casNo)
         {
             // http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?./temp/~oiB60G:1
-            string uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2";
+            string uriString = "https://toxgate.nlm.nih.gov/cgi-bin/sis/search2";
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
             request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
             string postData = "queryxxx=" + casNo;
@@ -1350,7 +1351,7 @@ namespace ChemicalDataSourcesTestApp
             System.Xml.XmlDocument document = new System.Xml.XmlDocument();
             document.Load(new System.IO.StringReader(s1));
             string tempFileName = document.FirstChild["TemporaryFile"].InnerText;
-            uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?" + tempFileName;
+            uriString = "https://toxgate.nlm.nih.gov/cgi-bin/sis/search2/f?" + tempFileName;
 
             // EcoTox
             request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:etxv");
@@ -1575,7 +1576,7 @@ namespace ChemicalDataSourcesTestApp
 
         private void ToxnetHSDBButton_Click_1(object sender, EventArgs e)
         {
-            string uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2";
+            string uriString = "https://toxgate.nlm.nih.gov/cgi-bin/sis/search2";
             System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
             request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString);
             string postData = "queryxxx=" + m_casNo;
@@ -1602,7 +1603,7 @@ namespace ChemicalDataSourcesTestApp
             {
                 // Synonyms means more than one name for the same chemical/CAS Number.
                 QueryResult result = (QueryResult)serializer.Deserialize(XMLReader);
-                uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?" + result.TemporaryFile;
+                uriString = "https://toxgate.nlm.nih.gov/cgi-bin/sis/search2/f?" + result.TemporaryFile;
                 string[] ids = result.Id.Split(' ');
                 System.Diagnostics.Process.Start("http://toxgate.nlm.nih.gov/cgi-bin/sis/search2/r?dbs+hsdb:@term+@DOCNO+" + ids[0]);
             }

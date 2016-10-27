@@ -37,7 +37,7 @@ namespace ChemicalDataSourcesTestApp
         static public string ChemicalIdentification(string CASNumber)
         {
             foreach (inventoryChemical data in chemicals)
-                if (CASNumber == data.CASNumber) return data.InternationalChemicalIndentification;
+                if (CASNumber == data.CASNumber) return data.InternationalChemicalIdentification;
             return string.Empty;
         }
 
@@ -68,7 +68,7 @@ namespace ChemicalDataSourcesTestApp
     class inventoryChemical
     {
         string m_indexNumber;
-        string m_internationalChemicalIndentification;
+        string m_internationalChemicalIdentification;
         string m_ECNo;
         string m_CasNo;
         string[] m_ClassificationHazCatCode;
@@ -87,7 +87,7 @@ namespace ChemicalDataSourcesTestApp
             char tab = '\t';
             string[] splits = line.Split(tab);
             m_indexNumber = splits[0];
-            m_internationalChemicalIndentification = splits[1];
+            m_internationalChemicalIdentification = splits[1];
             m_ECNo = splits[2];
             m_CasNo = splits[3];
             m_Pictograms = new List<string>();
@@ -115,11 +115,11 @@ namespace ChemicalDataSourcesTestApp
                 return m_CasNo;
             }
         }
-        public string InternationalChemicalIndentification
+        public string InternationalChemicalIdentification
         {
             get
             {
-                return m_internationalChemicalIndentification;
+                return m_internationalChemicalIdentification;
             }
         }
 
@@ -162,6 +162,10 @@ namespace ChemicalDataSourcesTestApp
         //        }
         //    }
         //}
+
+
+
+
 
     }
     class europeanChemicalList
@@ -239,6 +243,8 @@ namespace ChemicalDataSourcesTestApp
         string[] m_rPhrases;
         string[] m_SPhrases;
         string[] m_IndicationOfDanger;
+        string[] m_HazardCodes;
+        string[] m_HazardTexts;
 
         public europeanListChemical(string line)
         {
@@ -259,13 +265,26 @@ namespace ChemicalDataSourcesTestApp
             System.IO.StringReader reader = new System.IO.StringReader(new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd());
             HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
             document.Load(reader);
-            System.Xml.XPath.XPathNavigator navigator = document.CreateNavigator();
-            System.Xml.XPath.XPathNavigator node = navigator.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[2]");
-            m_rPhrases = node.Value.Trim().Split(' ');
-            node = navigator.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[3]");
-            m_SPhrases = node.Value.Trim().Split(' ');
-            node = navigator.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/table[1]/div[1]/div[2]/table[1]/tbody[1]/tr[1]/td[4]");
-            m_IndicationOfDanger = node.Value.Trim().Split(' ');
+            //System.Xml.XPath.XPathNavigator navigator = document.CreateNavigator();
+            HtmlAgilityPack.HtmlNode mainNode = document.GetElementbyId("p_p_id_dissclinventory_WAR_dissclinventoryportlet_");
+            HtmlAgilityPack.HtmlNode clpTableNode = mainNode.ChildNodes[1].ChildNodes[9].ChildNodes[3].ChildNodes[1].ChildNodes[1].ChildNodes[3].ChildNodes[1].ChildNodes[4].ChildNodes[1];
+            HtmlAgilityPack.HtmlNode dataNode = clpTableNode.ChildNodes[0].ChildNodes[11];
+            HtmlAgilityPack.HtmlNode currentNode = dataNode.ChildNodes[5];
+            int numCodes = (dataNode.ChildNodes.Count - 5) / 2;
+            m_HazardCodes = new string[numCodes];
+            m_HazardTexts = new string[numCodes];
+            for (int i = 0; i < numCodes; i++)
+            {
+                m_HazardTexts[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[3].InnerText.Trim();
+                m_HazardCodes[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[1].InnerText.Trim();
+            }
+            HtmlAgilityPack.HtmlNode dsdTableNode = mainNode.ChildNodes[1].ChildNodes[9].ChildNodes[3].ChildNodes[1].ChildNodes[1].ChildNodes[3].ChildNodes[1].ChildNodes[4].ChildNodes[4].ChildNodes[1].ChildNodes[3].ChildNodes[1].ChildNodes[1].ChildNodes[3];
+            HtmlAgilityPack.HtmlNode rPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[3];
+            m_rPhrases = rPhraseNode.InnerText.Trim().Split(' ');
+            HtmlAgilityPack.HtmlNode sPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[5];
+            m_SPhrases = sPhraseNode.InnerText.Trim().Split(' ');
+            HtmlAgilityPack.HtmlNode indicationOfDangerNode = dsdTableNode.ChildNodes[1].ChildNodes[7];
+            m_IndicationOfDanger = indicationOfDangerNode.InnerText.Trim().Split(' ');
             finished = true;
         }
 
@@ -336,6 +355,22 @@ namespace ChemicalDataSourcesTestApp
             {
                 if (!finished) FinishCompund();
                 return m_IndicationOfDanger;
+            }
+        }
+        public string[] HazardCodes
+        {
+            get
+            {
+                if (!finished) FinishCompund();
+                return m_HazardCodes;
+            }
+        }
+        public string[] HazardTexts
+        {
+            get
+            {
+                if (!finished) FinishCompund();
+                return m_HazardTexts;
             }
         }
     }

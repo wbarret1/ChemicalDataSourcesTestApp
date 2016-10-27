@@ -104,6 +104,7 @@
             // 
             // chemicalTextBox
             // 
+            this.chemicalTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.chemicalTextBox.Location = new System.Drawing.Point(259, 21);
             this.chemicalTextBox.Name = "chemicalTextBox";
             this.chemicalTextBox.Size = new System.Drawing.Size(208, 20);
@@ -142,6 +143,7 @@
             this.listBox1.Location = new System.Drawing.Point(20, 120);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(298, 160);
+            this.listBox1.Sorted = true;
             this.listBox1.TabIndex = 7;
             // 
             // nioshCDSCButton
