@@ -265,11 +265,9 @@ namespace ChemicalDataSourcesTestApp
             System.IO.StringReader reader = new System.IO.StringReader(new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd());
             HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
             document.Load(reader);
-            //System.Xml.XPath.XPathNavigator navigator = document.CreateNavigator();
             HtmlAgilityPack.HtmlNode mainNode = document.GetElementbyId("p_p_id_dissclinventory_WAR_dissclinventoryportlet_");
-            HtmlAgilityPack.HtmlNode clpTableNode = mainNode.ChildNodes[1].ChildNodes[9].ChildNodes[3].ChildNodes[1].ChildNodes[1].ChildNodes[3].ChildNodes[1].ChildNodes[4].ChildNodes[1];
-            HtmlAgilityPack.HtmlNode dataNode = clpTableNode.ChildNodes[0].ChildNodes[11];
-            HtmlAgilityPack.HtmlNode currentNode = dataNode.ChildNodes[5];
+            mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]");
+            HtmlAgilityPack.HtmlNode dataNode = mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/td[1]/table[2]");
             int numCodes = (dataNode.ChildNodes.Count - 5) / 2;
             m_HazardCodes = new string[numCodes];
             m_HazardTexts = new string[numCodes];
@@ -278,7 +276,7 @@ namespace ChemicalDataSourcesTestApp
                 m_HazardTexts[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[3].InnerText.Trim();
                 m_HazardCodes[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[1].InnerText.Trim();
             }
-            HtmlAgilityPack.HtmlNode dsdTableNode = mainNode.ChildNodes[1].ChildNodes[9].ChildNodes[3].ChildNodes[1].ChildNodes[1].ChildNodes[3].ChildNodes[1].ChildNodes[4].ChildNodes[4].ChildNodes[1].ChildNodes[3].ChildNodes[1].ChildNodes[1].ChildNodes[3];
+            HtmlAgilityPack.HtmlNode dsdTableNode = mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]");
             HtmlAgilityPack.HtmlNode rPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[3];
             m_rPhrases = rPhraseNode.InnerText.Trim().Split(' ');
             HtmlAgilityPack.HtmlNode sPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[5];

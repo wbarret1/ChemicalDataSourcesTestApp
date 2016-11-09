@@ -106,6 +106,7 @@ namespace ChemicalDataSourcesTestApp
         string entropy = string.Empty;
         string cp = string.Empty;
         string wgk = string.Empty;
+        string icscNumber;
 
 
         //string url = string.Empty;
@@ -265,7 +266,7 @@ namespace ChemicalDataSourcesTestApp
                     this.listBox1.Items.Add(chemical.Name);
                     if (CasNo != chemical.CAS)
                     {
-                        System.Windows.Forms.MessageBox.Show(compoundName + "has a synonym with a different CAS Number.");
+                        System.Windows.Forms.MessageBox.Show(compoundName + " has a synonym with a different CAS Number.");
                         return;
                     }
                 }
@@ -863,7 +864,9 @@ namespace ChemicalDataSourcesTestApp
 
         void GetICSCInformation(string compoundName, string casNo)
         {
-            string icscNumber = string.Empty;
+            this.nioshCDSCButton.Enabled = false;
+            this.internationalChemSafetyDataCardutton.Enabled = false;
+            icscNumber = string.Empty;
 
             System.Collections.Generic.List<string> ICSCnumbers = new System.Collections.Generic.List<string>(0);
             System.Collections.Generic.List<string> caNoss = new System.Collections.Generic.List<string>(0);
@@ -876,7 +879,7 @@ namespace ChemicalDataSourcesTestApp
                     string[] split = nextLine.Split('*');
                     ICSCnumbers.Add(split[0]);
                     caNoss.Add(split[1].Remove(0, 1));
-                    if (split[1].Remove(0, 1) == casNo) icscNumber = split[0];
+                    if (split[1].Remove(0, 1) == casNo) this.icscNumber = split[0];
                     nextLine = strReader.ReadLine();
                 }
             }
@@ -885,8 +888,11 @@ namespace ChemicalDataSourcesTestApp
                 obj.GetType();
             }
 
-            if (!string.IsNullOrEmpty(icscNumber))
+            if (!string.IsNullOrEmpty(this.icscNumber))
             {
+                this.nioshCDSCButton.Enabled = true;
+                this.internationalChemSafetyDataCardutton.Enabled = true;
+
                 m_iloChemicalSafetyCardURL = "http://www.ilo.org/dyn/icsc/showcard.display?p_lang=en&p_card_id=" + icscNumber + "&p_version=1";
                 m_NioshChemicalSafetyCardURL = "http://www.cdc.gov/niosh/ipcsneng/neng" + icscNumber + ".html";
 
@@ -1535,35 +1541,9 @@ namespace ChemicalDataSourcesTestApp
 
         private void nioshCDSCButton_Click(object sender, EventArgs e)
         {
-            string icscNumber = string.Empty;
-
-            System.Collections.Generic.List<string> ICSCnumbers = new System.Collections.Generic.List<string>(0);
-            System.Collections.Generic.List<string> caNoss = new System.Collections.Generic.List<string>(0);
-            try
+            if (!string.IsNullOrEmpty(this.icscNumber))
             {
-                System.IO.StringReader strReader = new System.IO.StringReader(Properties.Resources.ICSCnumberByCAS);
-                string nextLine = strReader.ReadLine();
-                while (!string.IsNullOrEmpty(nextLine))
-                {
-                    string[] split = nextLine.Split('*');
-                    ICSCnumbers.Add(split[0]);
-                    caNoss.Add(split[1].Remove(0, 1));
-                    if (split[1].Remove(0, 1) == m_casNo)
-                    {
-                        icscNumber = split[0];
-                        break;
-                    }
-                    nextLine = strReader.ReadLine();
-                }
-            }
-            catch (System.Exception obj)
-            {
-                obj.GetType();
-            }
-
-            if (!string.IsNullOrEmpty(icscNumber))
-            {
-                System.Diagnostics.Process.Start("http://www.cdc.gov/niosh/ipcsneng/neng" + icscNumber + ".html");
+                System.Diagnostics.Process.Start("http://www.cdc.gov/niosh/ipcsneng/neng" + this.icscNumber + ".html");
                 return;
             }
             System.Windows.Forms.MessageBox.Show("There is no NIOSH Chemical Safety Data Card for " + m_CompoundName);
@@ -1611,38 +1591,11 @@ namespace ChemicalDataSourcesTestApp
 
         private void internationalChemSafetyDataCardutton_Click(object sender, EventArgs e)
         {
-            string icscNumber = string.Empty;
-
-            System.Collections.Generic.List<string> ICSCnumbers = new System.Collections.Generic.List<string>(0);
-            System.Collections.Generic.List<string> caNoss = new System.Collections.Generic.List<string>(0);
-            try
-            {
-                System.IO.StringReader strReader = new System.IO.StringReader(Properties.Resources.ICSCnumberByCAS);
-                string nextLine = strReader.ReadLine();
-                while (!string.IsNullOrEmpty(nextLine))
-                {
-                    string[] split = nextLine.Split('*');
-                    ICSCnumbers.Add(split[0]);
-                    caNoss.Add(split[1].Remove(0, 1));
-                    if (split[1].Remove(0, 1) == m_casNo)
-                    {
-                        icscNumber = split[0];
-                        break;
-                    }
-                    nextLine = strReader.ReadLine();
-                }
-            }
-            catch (System.Exception obj)
-            {
-                obj.GetType();
-            }
-
             if (!string.IsNullOrEmpty(icscNumber))
             {
                 System.Diagnostics.Process.Start("http://www.ilo.org/dyn/icsc/showcard.display?p_lang=en&p_card_id=" + icscNumber + "&p_version=1");
                 return;
             }
-            System.Windows.Forms.MessageBox.Show("There is no International Chemical Safety Data Card for " + m_CompoundName);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
