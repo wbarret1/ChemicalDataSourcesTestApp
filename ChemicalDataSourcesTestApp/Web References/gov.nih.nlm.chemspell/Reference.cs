@@ -23,10 +23,10 @@ namespace ChemicalDataSourcesTestApp.gov.nih.nlm.chemspell {
     
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Web.Services.WebServiceBindingAttribute(Name="SpellAidSoapBinding", Namespace="http://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="SpellAidSoapBinding", Namespace="https://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws")]
     public partial class SpellAidService : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback getSugListOperationCompleted;
@@ -78,7 +78,7 @@ namespace ChemicalDataSourcesTestApp.gov.nih.nlm.chemspell {
         public event mainCompletedEventHandler mainCompleted;
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws", ResponseNamespace="http://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="https://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws", ResponseNamespace="https://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws")]
         [return: System.Xml.Serialization.SoapElementAttribute("return")]
         public string getSugList(string name, string src) {
             object[] results = this.Invoke("getSugList", new object[] {
@@ -110,7 +110,7 @@ namespace ChemicalDataSourcesTestApp.gov.nih.nlm.chemspell {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="http://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws", ResponseNamespace="http://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws")]
+        [System.Web.Services.Protocols.SoapRpcMethodAttribute("", RequestNamespace="https://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws", ResponseNamespace="https://chemspell.nlm.nih.gov/axis/SpellAid.jws/axis/SpellAid.jws")]
         public void main(string[] args) {
             this.Invoke("main", new object[] {
                         args});
@@ -157,11 +157,11 @@ namespace ChemicalDataSourcesTestApp.gov.nih.nlm.chemspell {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void getSugListCompletedEventHandler(object sender, getSugListCompletedEventArgs e);
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     public partial class getSugListCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
@@ -183,7 +183,7 @@ namespace ChemicalDataSourcesTestApp.gov.nih.nlm.chemspell {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1586.0")]
     public delegate void mainCompletedEventHandler(object sender, System.ComponentModel.AsyncCompletedEventArgs e);
 }
 

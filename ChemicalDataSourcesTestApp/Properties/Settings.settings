@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ChemicalDataSourcesTestApp_gov_nih_nlm_chemspell_SpellAidService" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://chemspell.nlm.nih.gov/axis/SpellAid.jws</Value>
+      <Value Profile="(Default)">https://chemspell.nlm.nih.gov/axis/SpellAid.jws</Value>
     </Setting>
     <Setting Name="ChemicalDataSourcesTestApp_gov_nih_nlm_ncbi_pubchem_PUG" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://pubchem.ncbi.nlm.nih.gov/pug_soap/pug_soap.cgi</Value>

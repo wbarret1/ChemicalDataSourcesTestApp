@@ -26,7 +26,7 @@ namespace ChemicalDataSourcesTestApp.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://chemspell.nlm.nih.gov/axis/SpellAid.jws")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://chemspell.nlm.nih.gov/axis/SpellAid.jws")]
         public string ChemicalDataSourcesTestApp_gov_nih_nlm_chemspell_SpellAidService {
             get {
                 return ((string)(this["ChemicalDataSourcesTestApp_gov_nih_nlm_chemspell_SpellAidService"]));

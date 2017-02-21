@@ -41,6 +41,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -181,10 +182,10 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
-    <WebReferenceUrl Include="http://chemspell.nlm.nih.gov/axis/SpellAid.jws%3fwsdl">
+    <WebReferenceUrl Include="https://chemspell.nlm.nih.gov/axis/SpellAid.jws%3fwsdl">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\gov.nih.nlm.chemspell\</RelPath>
-      <UpdateFromURL>http://chemspell.nlm.nih.gov/axis/SpellAid.jws%3fwsdl</UpdateFromURL>
+      <UpdateFromURL>https://chemspell.nlm.nih.gov/axis/SpellAid.jws%3fwsdl</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
       <CachedDynamicPropName>
@@ -227,7 +228,6 @@
     <Content Include="species.txt" />
     <Content Include="tri_chemical_list_for_ry15_11_5_2015_1.txt" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
