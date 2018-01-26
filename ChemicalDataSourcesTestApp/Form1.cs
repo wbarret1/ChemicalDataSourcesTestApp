@@ -91,22 +91,31 @@ namespace ChemicalDataSourcesTestApp
         int numOxygen = 0;
         int numPhosphorous = 0;
         int numSulfur = 0;
-        string m_HeatOfCombustion = string.Empty;
+        double m_HeatOfCombustion = Double.NaN;
         string m_HeatOfCombustionUnit = string.Empty;
         string m_HeatOfCombustionConditions = string.Empty;
         string m_HeatOfCombustionReference = string.Empty;
-        string m_HeatOfVaporization = string.Empty;
+        double m_HeatOfVaporization = Double.NaN;
         string m_HeatOfVaporizationUnit = string.Empty;
         string m_heatOfVaporizationConditions = string.Empty;
         string m_heatOfVaporizationReference = string.Empty;
         string m_hsdbDocumentURL = string.Empty;
         string m_iloChemicalSafetyCardURL = string.Empty;
         string m_NioshChemicalSafetyCardURL = string.Empty;
+        string m_pH = string.Empty;
+        string m_pHReference = string.Empty;
         string enthalpy = string.Empty;
         string entropy = string.Empty;
         string cp = string.Empty;
         string wgk = string.Empty;
         string icscNumber;
+        List<string> nonHuman = new List<string>();
+        List<string> nonHumanRefs = new List<string>();
+        List<string> nonHumanRefLinks = new List<string>();
+        List<string> ecoTox = new List<string>();
+        List<string> ecoToxRefs = new List<string>();
+        List<string> ecoToxRefLinks = new List<string>();
+
 
 
         //string url = string.Empty;
@@ -226,7 +235,7 @@ namespace ChemicalDataSourcesTestApp
 
             // handle part 2...
             checksum = (part2 % 10);
-            checksum = checksum + (part2 / 10)*2;
+            checksum = checksum + (part2 / 10) * 2;
 
             // now handle part 1, it can have between 2 and 7 digits...
             int n = 3;
@@ -235,7 +244,7 @@ namespace ChemicalDataSourcesTestApp
                 checksum = checksum + (part1 % 10) * n++;
                 part1 = part1 / 10;
             }
-            checksum = checksum + part1*n;
+            checksum = checksum + part1 * n;
 
             // number is valid if the last digit equals the remainder from dividing 
             // the checksum by 10.
@@ -250,41 +259,91 @@ namespace ChemicalDataSourcesTestApp
 
         private void findCompound(ref string compoundName, ref string CasNo)
         {
-            gov.nih.nlm.chemspell.SpellAidService service = new gov.nih.nlm.chemspell.SpellAidService();
-            string response = service.getSugList(compoundName, "All databases");
-            response = response.Replace("&", "&amp;");
-            var XMLReader = new System.Xml.XmlTextReader(new System.IO.StringReader(response));
-            System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(Synonym));
-            if (serializer.CanDeserialize(XMLReader))
+            string url = "https://chemspell.nlm.nih.gov/spell/restspell/restSpell/getQuery4JSON?query=" + compoundName;
+            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(url);
+            System.Net.WebResponse response = request.GetResponse();
+            string responseString = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
+            List<SynonymChemical> synonyms = null;
+            if (responseString.StartsWith("Synonym List:"))
             {
-                // Synonyms means more than one name for the same chemical/CAS Number.
-                Synonym synonym = (Synonym)serializer.Deserialize(XMLReader);
-                CasNo = synonym.Chemical[0].CAS;
+                synonyms = this.ExtractSynonyms(responseString.Remove(0, 13));
+                CasNo = synonyms[0].CAS;
+                bool casSame = true;
                 this.listBox1.BeginUpdate();
-                foreach (SynonymChemical chemical in synonym.Chemical)
+                foreach (SynonymChemical chemical in synonyms)
                 {
                     this.listBox1.Items.Add(chemical.Name);
                     if (CasNo != chemical.CAS)
                     {
-                        System.Windows.Forms.MessageBox.Show(compoundName + " has a synonym with a different CAS Number.");
-                        return;
+                        casSame = false;
                     }
                 }
+                if (!casSame) System.Windows.Forms.MessageBox.Show("Not all synomymns have the same CAS CAS Number.");
                 this.listBox1.EndUpdate();
                 return;
             }
-            serializer = new System.Xml.Serialization.XmlSerializer(typeof(SpellAid));
-            if (serializer.CanDeserialize(XMLReader))
-            {
-                SpellAid aid = (SpellAid)serializer.Deserialize(XMLReader);
-                Form3 selector = new Form3();
-                selector.chemicals = aid;
-                selector.ShowDialog();
-                compoundName = selector.SelectedChemical;
-                this.findCompound(ref compoundName, ref CasNo);
-                return;
-            }
+            synonyms = this.ExtractSynonyms(responseString.Remove(0, 26));
+            Form3 selector = new Form3();
+            selector.chemicals = synonyms.ToArray(); ;
+            selector.ShowDialog();
+            compoundName = selector.SelectedChemical;
             CasNo = string.Empty;
+            this.findCompound(ref compoundName, ref CasNo);
+
+            // They broke this with their new web service.
+            //gov.nih.nlm.chemspell.SpellAidService service = new gov.nih.nlm.chemspell.SpellAidService();
+            //string response = service.getSugList(compoundName, "All databases");
+            //response = response.Replace("&", "&amp;");
+            //var XMLReader = new System.Xml.XmlTextReader(new System.IO.StringReader(response));
+            //System.Xml.Serialization.XmlSerializer serializer = new System.Xml.Serialization.XmlSerializer(typeof(Synonym));
+            //if (serializer.CanDeserialize(XMLReader))
+            //{
+            //    // Synonyms means more than one name for the same chemical/CAS Number.
+            //    Synonym synonym = (Synonym)serializer.Deserialize(XMLReader);
+            //    CasNo = synonym.Chemical[0].CAS;
+            //    this.listBox1.BeginUpdate();
+            //    foreach (SynonymChemical chemical in synonym.Chemical)
+            //    {
+            //        this.listBox1.Items.Add(chemical.Name);
+            //        if (CasNo != chemical.CAS)
+            //        {
+            //            System.Windows.Forms.MessageBox.Show(compoundName + " has a synonym with a different CAS Number.");
+            //            return;
+            //        }
+            //    }
+            //    this.listBox1.EndUpdate();
+            //    return;
+            //}
+            //serializer = new System.Xml.Serialization.XmlSerializer(typeof(SpellAid));
+            //if (serializer.CanDeserialize(XMLReader))
+            //{
+            //    SpellAid aid = (SpellAid)serializer.Deserialize(XMLReader);
+            //    Form3 selector = new Form3();
+            //    selector.chemicals = aid;
+            //    selector.ShowDialog();
+            //    compoundName = selector.SelectedChemical;
+            //    this.findCompound(ref compoundName, ref CasNo);
+            //    return;
+            //}
+        }
+
+        private List<SynonymChemical> ExtractSynonyms(string chemListString)
+        {
+            List<SynonymChemical> retVal = new List<SynonymChemical>();
+            while (chemListString.Length > 0)
+            {
+                SynonymChemical synonym = new SynonymChemical();
+                chemListString = chemListString.Remove(0, 7);
+                int length = chemListString.IndexOf('\"');
+                synonym.Name = chemListString.Substring(0, length).Trim();
+                chemListString = chemListString.Remove(0, length + 8);
+                length = chemListString.IndexOf('\"');
+                synonym.CAS = chemListString.Substring(0, length).Trim();
+                chemListString = chemListString.Remove(0, length + 2);
+                if (chemListString.StartsWith(",")) chemListString = chemListString.Remove(0, 1);
+                retVal.Add(synonym);
+            }
+            return retVal;
         }
 
         void AddChemicalInformation(string compoundName, string casNo)
@@ -355,7 +414,7 @@ namespace ChemicalDataSourcesTestApp
                 this.label17.Visible = true;
                 this.label17.Text = pictograms[4];
             }
-            this.GetEuropeanInfo(m_casNo);
+            //this.GetEuropeanInfo(m_casNo);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -451,9 +510,9 @@ namespace ChemicalDataSourcesTestApp
                 numOxygen = 0;
                 numPhosphorous = 0;
                 numSulfur = 0;
-                m_HeatOfVaporization = string.Empty;
+                m_HeatOfVaporization = double.NaN;
                 m_HeatOfVaporizationUnit = string.Empty;
-                m_HeatOfCombustion = string.Empty;
+                m_HeatOfCombustion = double.NaN;
                 m_HeatOfCombustionUnit = string.Empty;
                 enthalpy = string.Empty;
                 entropy = string.Empty;
@@ -464,7 +523,7 @@ namespace ChemicalDataSourcesTestApp
                 this.GetPUGInformation(compoundNames[i], casNos[i]);
                 this.GetICSCInformation(compoundNames[i], casNos[i]);
                 this.GetTOXNETInformation(compoundNames[i], casNos[i]);
-                this.GetToxData(compoundNames[i], casNos[i]);
+                //this.GetToxData(compoundNames[i], casNos[i]);
                 this.GetNISTLiquidData(casNos[i], ref enthalpy, ref entropy, ref cp);
                 this.GetNISTGasData(casNos[i]);
             }
@@ -1025,7 +1084,7 @@ namespace ChemicalDataSourcesTestApp
             var data = Encoding.ASCII.GetBytes(postData);
             request.Method = "POST";
             request.ContentType = "application/x-www-form-urlencoded";
-            request.ContentLength = data.Length;
+            request.ContentLength = postData.Length;
             using (var stream = request.GetRequestStream())
             {
                 stream.Write(data, 0, data.Length);
@@ -1036,295 +1095,305 @@ namespace ChemicalDataSourcesTestApp
             System.Xml.XmlDocument document = new System.Xml.XmlDocument();
             document.Load(new System.IO.StringReader(s1));
             string tempFileName = document.FirstChild["TemporaryFile"].InnerText;
-            uriString = "http://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?" + tempFileName;
+            uriString = "https://toxnet.nlm.nih.gov/cgi-bin/sis/search2/f?" + tempFileName;
 
             //// Whole Document
-            m_hsdbDocumentURL = "http://toxgate.nlm.nih.gov/cgi-bin/sis/search2/r?dbs+hsdb:@term+@DOCNO+" + document.FirstChild["Id"].InnerText.Split(' ')[0];
-
-            // Molecular Formula 
-            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:mf");
-            response = (System.Net.HttpWebResponse)request.GetResponse();
-            string mfResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
-            string pattern = "Molecular Formula:</h3>\n<br>\n\\s*(?<1>\\S+)\\s*<br><code><NOINDEX>(?<2>[^\\n]*)</NOINDEX>";
-            System.Text.RegularExpressions.Match m = System.Text.RegularExpressions.Regex.Match(mfResposne, pattern,
-                       System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                      TimeSpan.FromSeconds(1));
-            this.m_molecularFormula = m.Groups[1].Value;
-            this.m_molecularFormulareference = m.Groups[2].Value;
-
-
-            // AutoIgnition temperature 
-            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:auto");
-            response = (System.Net.HttpWebResponse)request.GetResponse();
-            string autoResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
-            pattern = "Autoignition Temperature:</h3>\n<br>\n\\s*(?<1>\\S+)\\s*Deg\\s*(?<2>\\S+)\\s*\\((?<4>\\S+)\\s*deg\\s*(?<5>\\S+)\\s*\\)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-            m = System.Text.RegularExpressions.Regex.Match(autoResposne, pattern,
-                       System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                      TimeSpan.FromSeconds(1));
-            if (m.Groups.Count == 1)
-            {
-                pattern = "Autoignition Temperature:</h3>\n<br>\n\\s*(?<1>\\S+)\\s*Deg\\s*(?<2>\\S+)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(autoResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-            }
-
-            // Chemical Properties 
+            m_hsdbDocumentURL = "https://toxgate.nlm.nih.gov/cgi-bin/sis/search2/r?dbs+hsdb:@term+@DOCNO+" + document.FirstChild["Id"].InnerText.Split(' ')[0];
+            //request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(m_hsdbDocumentURL);
+            //response = (System.Net.HttpWebResponse)request.GetResponse();
+            //string mfResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
+                 
+             // Chemical Properties 
             request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:cpp");
             response = (System.Net.HttpWebResponse)request.GetResponse();
-            string propertiesResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
-
-            // Chemical Properties 
-            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:ph");
-            response = (System.Net.HttpWebResponse)request.GetResponse();
-            propertiesResposne = new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd();
-            pattern = "pH:\\s*(?<1>\\S+)\\s*(?<2>[^\\n]*)\\s*<NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-            m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                       System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                      TimeSpan.FromSeconds(1));
-            string m_pH = m.Groups[1].Value;
-            string m_pHAdditional = m.Groups[2].Value;
-            string m_pHReference = m.Groups[3].Value;
-
-            // heat of vaporization: 
-            pattern = "Heat of Vaporization:</h3>\\s*<br>\\s*Latent:\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-            m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                       System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                      TimeSpan.FromSeconds(1));
-            if (m.Groups.Count == 1)
+            HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
+            doc.Load(response.GetResponseStream());
+            HtmlAgilityPack.HtmlNode[] propNodes = doc.DocumentNode.Elements("h3").ToArray();
+            foreach (HtmlAgilityPack.HtmlNode n in propNodes)
             {
-                pattern = "Heat of Vaporization:</h3>\\s*<br>\\s*Enthalpy of vaporization:\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-            }
-            if (m.Groups.Count == 1)
-            {
-                pattern = "Heat of Vaporization:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-            }
-            m_HeatOfVaporization = m.Groups[1].Value;
-            m_HeatOfVaporizationUnit = m.Groups[2].Value;
-            if (m_HeatOfVaporizationUnit.ToLower() == "kj/g")
-            {
-                m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 1000).ToString();
-                m_HeatOfVaporizationUnit = "kJ/kg";
-            }
-            if (m_HeatOfVaporizationUnit.ToLower() == "btu/lb")
-            {
-                m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 2.32599999962).ToString();
-                m_HeatOfVaporizationUnit = "kJ/kg";
-            }
-            if (m_HeatOfVaporizationUnit.ToLower() == "g-cal/g")
-            {
-                m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 4.184 * 1000).ToString();
-                m_HeatOfVaporizationUnit = "kJ/kg";
-            }
-            if (m_HeatOfVaporizationUnit.ToLower() == "kcal/mole")
-            {
-                m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 4.184).ToString();
-                m_HeatOfVaporizationUnit = "kJ/kg";
-            }
-            if (m_HeatOfVaporizationUnit.ToLower() == "kj/mole" || m_HeatOfVaporizationUnit.ToLower() == "kj/mol")
-            {
-                m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 1000).ToString();
-                m_HeatOfVaporizationUnit = "kJ/kg";
-            }
-            if (m_HeatOfVaporizationUnit.ToLower() == "gcal/gmole")
-            {
-                m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 4.184).ToString();
-                m_HeatOfVaporizationUnit = "kJ/kg";
-            }
-            m_heatOfVaporizationReference = m.Groups[3].Value;
-            if (m_casNo == "64-19-7")
-            {
-                m_HeatOfVaporization = "1219055.6";
-                m_HeatOfVaporizationUnit = "kJ/kg";
-                m_heatOfVaporizationReference = "[Haynes, W.M. (ed.). CRC Handbook of Chemistry and Physics. 94th Edition. CRC Press LLC, Boca Raton: FL 2013-2014, p. 6-132] **PEER REVIEWED** ";
-
-            }
-
-            // heat of combustion: 
-            pattern = "Heat of Combustion:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-            m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                       System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                      TimeSpan.FromSeconds(1));
-            if (m.Groups.Count == 1)
-            {
-                pattern = "Heat of Combustion:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<3>[^\\n]*)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-            }
-            m_HeatOfCombustion = m.Groups[1].Value;
-            m_HeatOfCombustionUnit = m.Groups[2].Value;
-            if (m_HeatOfCombustionUnit.ToLower() == "kj/g")
-            {
-                m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000).ToString();
-                m_HeatOfCombustionUnit = "kJ/kg";
-            }
-            if (m_HeatOfCombustionUnit.ToLower() == "btu/lb")
-            {
-                m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 2.32599999962).ToString();
-                m_HeatOfCombustionUnit = "kJ/kg";
-            }
-            if (m_HeatOfCombustionUnit.ToLower() == "j/kmol")
-            {
-                m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000 * 1000).ToString();
-                m_HeatOfCombustionUnit = "kJ/kg";
-            }
-            if (m_HeatOfCombustionUnit.ToLower() == "kj/mole" || m_HeatOfCombustionUnit.ToLower() == "kj/mol")
-            {
-                m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000).ToString();
-                m_HeatOfCombustionUnit = "kJ/kg";
-            }
-            if (m_HeatOfCombustionUnit.ToLower() == "kj/kg")
-            {
-                m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000).ToString();
-                m_HeatOfCombustionUnit = "kJ/kg";
-            }
-            m_HeatOfCombustionReference = m.Groups[3].Value;
-
-            // Flash Point: 
-            if (string.IsNullOrEmpty(flashPtValue))
-            {
-                // Chemical Properties 
-                pattern = "Flash Point:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*deg\\s*(?<2>\\S+),\\s*(?<5>\\S+)\\s*deg\\s*(?<6>\\S+)\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                              TimeSpan.FromSeconds(1));
-                if (m.Groups.Count == 1)
+                if (n.InnerText == "Molecular Formula:")
                 {
-                    pattern = "Flash Point:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*deg\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                                   System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                                  TimeSpan.FromSeconds(1));
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.m_molecularFormula = n1.PreviousSibling.InnerText;
+                    this.m_molecularFormulareference = n1.InnerText;
                 }
-                if (m.Groups[2].Value == "C")
+                if (n.InnerText == "pH:")
                 {
-                    flashPtValue = m.Groups[1].Value;
-                    flashPtUnit = m.Groups[2].Value;
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.m_pH = n1.PreviousSibling.InnerText;
+                    this.m_pHReference = n1.InnerText;
                 }
-                else if (m.Groups[4].Value == "F")
+                if (n.InnerText == "Heat of Vaporization:")
                 {
-                    flashPtValue = ((Convert.ToDouble(m.Groups[1].Value) - 32) * 5 / 9).ToString();
-                    flashPtUnit = "C";
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    string[] parts = n1.PreviousSibling.InnerText.Split(' ');
+                    this.m_HeatOfVaporization = Double.Parse(parts[0]);
+                    this.m_HeatOfVaporizationUnit = parts[1];
+                    this.m_heatOfVaporizationReference = n1.InnerText;
                 }
-                flashPtReference = m.Groups[3].Value;
+                if (n.InnerText == "Heat of Combustion:")
+                {
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    string[] parts = n1.PreviousSibling.InnerText.Split(' ');
+                    this.m_HeatOfCombustion = Double.Parse(parts[0]);
+                    this.m_HeatOfCombustionUnit = parts[1];
+                    this.m_HeatOfCombustionReference = n1.InnerText;
+                }
+                if (n.InnerText == "Vapor Pressure:")
+                {
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.vaporPress = n1.PreviousSibling.InnerText;
+                    this.vaporPressReference = n1.InnerText;
+                }
+                if (n.InnerText == "Boiling Point:")
+                {
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.bpValue = n1.PreviousSibling.InnerText;
+                    this.bpReference = n1.InnerText;
+                }
+                if (n.InnerText == "Melting Point:")
+                {
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.mpValue = n1.PreviousSibling.InnerText;
+                    this.mpReference = n1.InnerText;
+                }
+                if (n.InnerText == "Density/Specific Gravity:")
+                {
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.densityValue = n1.PreviousSibling.InnerText;
+                    this.densityReference = n1.InnerText;
+                }
             }
 
-            // Vapor Pressure: 
-            if (string.IsNullOrEmpty(vaporPress))
-            {
-                pattern = "Vapor Pressure:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>[^\"']*) at (?<3>\\S+) deg (?<4>\\S+)\\s*(?<5>[^\\n]*)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-                vaporPress = m.Groups[1].Value.ToLower();
-                if (vaporPress.Contains("x"))
-                {
-                    vaporPress = vaporPress.Replace("x10", "x");
-                    string[] splits = vaporPress.Split('x');
-                    vaporPress = (Convert.ToDouble(splits[0]) * Math.Pow(10, Convert.ToDouble(splits[1]))).ToString();
-                }
-                vaporPressUnit = m.Groups[2].Value;
-                vaporPressTemp = m.Groups[3].Value;
-                vaporPressTempUnit = m.Groups[4].Value;
-            }
-
-            // boilingPoint: 
-            if (string.IsNullOrEmpty(bpValue))
-            {
-                pattern = "Boiling Point:</h3>\\s*<br>\\s*(?<1>\\S+) deg (?<2>\\S+)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-                if (m.Groups.Count == 1)
-                {
-                    pattern = "Boiling Point:</h3>\\s*<br>\\s*(?<1>\\S+) deg (?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                              TimeSpan.FromSeconds(1));
-                }
-                bpValue = m.Groups[1].Value;
-                bpUnit = m.Groups[2].Value;
-                bpReference = m.Groups[3].Value;
-            }
-
-            // meltingPoint: 
-            if (string.IsNullOrEmpty(mpValue))
-            {
-                pattern = "Melting Point:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*deg\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-                mpValue = m.Groups[1].Value;
-                mpUnit = m.Groups[2].Value;
-                mpReference = m.Groups[3].Value;
-            }
-
-            // density: 
-            if (string.IsNullOrEmpty(densityValue) || string.IsNullOrEmpty(relativeDensityValue))
-            {
-                pattern = "Density/Specific Gravity:</h3>\\s*<br>\\s*Gas:\\s*(?<1>\\S+)\\s*(?<2>[^\"']*)\\s*at\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<4>[^\\n]*)</NOINDEX>";
-                m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                          TimeSpan.FromSeconds(1));
-                if (m.Groups.Count == 1)
-                {
-                    pattern = "Density/Specific Gravity:</h3>\\s*<br>\\s*Absolute density:\\s*(?<1>\\S+)\\s*(?<2>[^\"']*)\\s*at\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<4>[^\\n]*)</NOINDEX>";
-                    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                              TimeSpan.FromSeconds(1));
-                }
-                if (m.Groups.Count == 1)
-                {
-                    pattern = "Density/Specific Gravity:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>[^\"']*)\\s*at\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<4>[^\\n]*)</NOINDEX>";
-                    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
-                               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
-                              TimeSpan.FromSeconds(1));
-                }
-                densityValue = m.Groups[1].Value;
-                densityUnit = m.Groups[2].Value;
-                densityTemperature = m.Groups[3].Value;
-                densityTemperatureUnit = m.Groups[4].Value;
-                densityReference = m.Groups[5].Value;
-            }
-
-            // Chemical safety 
             request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:csha");
             response = (System.Net.HttpWebResponse)request.GetResponse();
-            System.IO.StringReader safetyReader = new System.IO.StringReader(new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd());
-
-            if (string.IsNullOrEmpty(nfpaFire))
+            doc.Load(response.GetResponseStream());
+            propNodes = doc.DocumentNode.Elements("h3").ToArray();
+            foreach (HtmlAgilityPack.HtmlNode n in propNodes)
             {
-                // NFPA: 
-                request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:nfpa");
-                response = (System.Net.HttpWebResponse)request.GetResponse();
-                string nfpaResponseString = safetyReader.ReadToEnd();
-                int index = nfpaResponseString.IndexOf("Health: ");
-                if (index > 0)
+                if (n.InnerText == "Autoignition Temperature:")
                 {
-                    nfpaHealth = nfpaResponseString.Substring(index + 8, 1);
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    //this.autoi = n1.PreviousSibling.InnerText;
+                    //this.m_molecularFormulareference = n1.InnerText;
                 }
-                index = nfpaResponseString.IndexOf("Flammability: ");
-                if (index > 0)
+                if (n.InnerText == "Flash Point:")
                 {
-                    nfpaFire = nfpaResponseString.Substring(index + 14, 1);
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    while (!n1.Name.Equals("noindex")) n1 = n1.NextSibling;
+                    this.flashPtValue = n1.PreviousSibling.InnerText;
+                    this.flashPtReference = n1.InnerText;
                 }
-                index = nfpaResponseString.IndexOf("Reactivity: ");
-                if (index > 0)
+                if (n.InnerText == "NFPA Hazard Classification:")
                 {
-                    nfpaReactivity = nfpaResponseString.Substring(index + 12, 1);
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;//text
+                    n1 = n1.NextSibling;//br
+                    n1 = n1.NextSibling;// Health text
+                    nfpaHealth = n1.InnerText.Substring(8, 1);
+                    n1 = n1.NextSibling;// Reference
+                    n1 = n1.NextSibling;//br
+                    n1 = n1.NextSibling;//code
+                    n1 = n1.NextSibling;//br
+                    n1 = n1.NextSibling;// flammability text
+                    nfpaFire = n1.InnerText.Substring(14, 1);
+                    n1 = n1.NextSibling;// Reference
+                    n1 = n1.NextSibling;//br
+                    n1 = n1.NextSibling;//code
+                    n1 = n1.NextSibling;//br
+                    n1 = n1.NextSibling;// reactivity text
+                    int index = 12;
+                    if (n1.InnerText.StartsWith("instability: ")) index = index + 1;
+                    nfpaReactivity = n1.InnerText.Substring(index, 1);
+                    n1 = n1.NextSibling;// Reference
                 }
-                if (index > 0)
+            }
+
+            //// heat of vaporization: 
+            //pattern = "Heat of Vaporization:</h3>\\s*<br>\\s*Latent:\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
+            //m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //          TimeSpan.FromSeconds(1));
+            //if (m.Groups.Count == 1)
+            //{
+            //    pattern = "Heat of Vaporization:</h3>\\s*<br>\\s*Enthalpy of vaporization:\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
+            //    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //              TimeSpan.FromSeconds(1));
+            //}
+            //if (m.Groups.Count == 1)
+            //{
+            //    pattern = "Heat of Vaporization:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<4>[^\\n]*)<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
+            //    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //              TimeSpan.FromSeconds(1));
+            //}
+            //m_HeatOfVaporization = m.Groups[1].Value;
+            //m_HeatOfVaporizationUnit = m.Groups[2].Value;
+            //if (m_HeatOfVaporizationUnit.ToLower() == "kj/g")
+            //{
+            //    m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 1000).ToString();
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfVaporizationUnit.ToLower() == "btu/lb")
+            //{
+            //    m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 2.32599999962).ToString();
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfVaporizationUnit.ToLower() == "g-cal/g")
+            //{
+            //    m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 4.184 * 1000).ToString();
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfVaporizationUnit.ToLower() == "kcal/mole")
+            //{
+            //    m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 4.184).ToString();
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfVaporizationUnit.ToLower() == "kj/mole" || m_HeatOfVaporizationUnit.ToLower() == "kj/mol")
+            //{
+            //    m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 1000).ToString();
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfVaporizationUnit.ToLower() == "gcal/gmole")
+            //{
+            //    m_HeatOfVaporization = (Convert.ToDouble(m_HeatOfVaporization) * 4.184).ToString();
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //}
+            //m_heatOfVaporizationReference = m.Groups[3].Value;
+            //if (m_casNo == "64-19-7")
+            //{
+            //    m_HeatOfVaporization = "1219055.6";
+            //    m_HeatOfVaporizationUnit = "kJ/kg";
+            //    m_heatOfVaporizationReference = "[Haynes, W.M. (ed.). CRC Handbook of Chemistry and Physics. 94th Edition. CRC Press LLC, Boca Raton: FL 2013-2014, p. 6-132] **PEER REVIEWED** ";
+
+            //}
+
+            //// heat of combustion: 
+            //pattern = "Heat of Combustion:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
+            //m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //           System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //          TimeSpan.FromSeconds(1));
+            //if (m.Groups.Count == 1)
+            //{
+            //    pattern = "Heat of Combustion:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>\\S+)\\s*(?<3>[^\\n]*)\\s*<br><code><NOINDEX>(?<3>[^\\n]*)</NOINDEX>";
+            //    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //              TimeSpan.FromSeconds(1));
+            //}
+            //m_HeatOfCombustion = m.Groups[1].Value;
+            //m_HeatOfCombustionUnit = m.Groups[2].Value;
+            //if (m_HeatOfCombustionUnit.ToLower() == "kj/g")
+            //{
+            //    m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000).ToString();
+            //    m_HeatOfCombustionUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfCombustionUnit.ToLower() == "btu/lb")
+            //{
+            //    m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 2.32599999962).ToString();
+            //    m_HeatOfCombustionUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfCombustionUnit.ToLower() == "j/kmol")
+            //{
+            //    m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000 * 1000).ToString();
+            //    m_HeatOfCombustionUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfCombustionUnit.ToLower() == "kj/mole" || m_HeatOfCombustionUnit.ToLower() == "kj/mol")
+            //{
+            //    m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000).ToString();
+            //    m_HeatOfCombustionUnit = "kJ/kg";
+            //}
+            //if (m_HeatOfCombustionUnit.ToLower() == "kj/kg")
+            //{
+            //    m_HeatOfCombustion = (Convert.ToDouble(m_HeatOfCombustion) * 1000).ToString();
+            //    m_HeatOfCombustionUnit = "kJ/kg";
+            //}
+            //m_HeatOfCombustionReference = m.Groups[3].Value;
+
+
+            //// density: 
+            //if (string.IsNullOrEmpty(densityValue) || string.IsNullOrEmpty(relativeDensityValue))
+            //{
+            //    pattern = "Density/Specific Gravity:</h3>\\s*<br>\\s*Gas:\\s*(?<1>\\S+)\\s*(?<2>[^\"']*)\\s*at\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<4>[^\\n]*)</NOINDEX>";
+            //    m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //               System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //              TimeSpan.FromSeconds(1));
+            //    if (m.Groups.Count == 1)
+            //    {
+            //        pattern = "Density/Specific Gravity:</h3>\\s*<br>\\s*Absolute density:\\s*(?<1>\\S+)\\s*(?<2>[^\"']*)\\s*at\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<4>[^\\n]*)</NOINDEX>";
+            //        m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //                   System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //                  TimeSpan.FromSeconds(1));
+            //    }
+            //    if (m.Groups.Count == 1)
+            //    {
+            //        pattern = "Density/Specific Gravity:</h3>\\s*<br>\\s*(?<1>\\S+)\\s*(?<2>[^\"']*)\\s*at\\s*(?<4>[^\\n]*)\\s*<br><code><NOINDEX>(?<4>[^\\n]*)</NOINDEX>";
+            //        m = System.Text.RegularExpressions.Regex.Match(propertiesResposne, pattern,
+            //                   System.Text.RegularExpressions.RegexOptions.IgnoreCase | System.Text.RegularExpressions.RegexOptions.Compiled,
+            //                  TimeSpan.FromSeconds(1));
+            //    }
+            //    densityValue = m.Groups[1].Value;
+            //    densityUnit = m.Groups[2].Value;
+            //    densityTemperature = m.Groups[3].Value;
+            //    densityTemperatureUnit = m.Groups[4].Value;
+            //    densityReference = m.Groups[5].Value;
+            //}
+
+            // Toxicity Data
+            request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(uriString + ":1:animal");
+            response = (System.Net.HttpWebResponse)request.GetResponse();
+            doc.Load(response.GetResponseStream());
+            propNodes = doc.DocumentNode.Elements("h3").ToArray();
+            //nonHuman = new List<string>();
+            //nonHumanRefs = new List<string>();
+            //nonHumanRefLinks = new List<string>();
+            //ecoTox = new List<string>();
+            //ecoToxRefs = new List<string>();
+            //ecoToxRefLinks = new List<string>();
+            foreach (HtmlAgilityPack.HtmlNode n in propNodes)
+            {
+                if (n.InnerText == "Non-Human Toxicity Values:")
                 {
-                    index = nfpaResponseString.IndexOf("instability: ");
-                    if (index == -1)
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    n1 = n1.NextSibling;
+                    while (!n1.NextSibling.NextSibling.Name.Equals("h3"))
                     {
-                        nfpaReactivity = nfpaResponseString.Substring(index + 13, 1);
+                        n1 = n1.NextSibling;
+                        nonHuman.Add(n1.InnerText);
+                        n1 = n1.NextSibling;
+                        n1 = n1.NextSibling;
+                        n1 = n1.NextSibling;
+                        nonHumanRefs.Add(n1.ChildNodes[0].ChildNodes[0].InnerText);
+                        string link = string.Empty;
+                        if (n1.ChildNodes[0].ChildNodes.Count > 1) link = n1.ChildNodes[0].ChildNodes[1].OuterHtml;
+                        nonHumanRefLinks.Add(link);
+                        n1 = n1.NextSibling;
+                    }
+                }
+                if (n.InnerText == "Ecotoxicity Values:")
+                {
+                    HtmlAgilityPack.HtmlNode n1 = n.NextSibling;
+                    n1 = n1.NextSibling;
+                    while (!n1.NextSibling.NextSibling.Name.Equals("h3"))
+                    {
+                        n1 = n1.NextSibling;
+                        ecoTox.Add(n1.InnerText);
+                        n1 = n1.NextSibling;
+                        n1 = n1.NextSibling;
+                        n1 = n1.NextSibling;
+                        ecoToxRefs.Add(n1.ChildNodes[0].ChildNodes[0].InnerText);
+                        string link = string.Empty;
+                        if (n1.ChildNodes[0].ChildNodes.Count > 1) link = n1.ChildNodes[0].ChildNodes[1].OuterHtml;
+                        ecoToxRefLinks.Add(link);
+                        n1 = n1.NextSibling;
                     }
                 }
             }

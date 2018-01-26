@@ -260,29 +260,29 @@ namespace ChemicalDataSourcesTestApp
 
         void FinishCompund()
         {
-            System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(m_link);
-            System.Net.WebResponse response = request.GetResponse();
-            System.IO.StringReader reader = new System.IO.StringReader(new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd());
-            HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
-            document.Load(reader);
-            HtmlAgilityPack.HtmlNode mainNode = document.GetElementbyId("p_p_id_dissclinventory_WAR_dissclinventoryportlet_");
-            mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]");
-            HtmlAgilityPack.HtmlNode dataNode = mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/td[1]/table[2]");
-            int numCodes = (dataNode.ChildNodes.Count - 5) / 2;
-            m_HazardCodes = new string[numCodes];
-            m_HazardTexts = new string[numCodes];
-            for (int i = 0; i < numCodes; i++)
-            {
-                m_HazardTexts[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[3].InnerText.Trim();
-                m_HazardCodes[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[1].InnerText.Trim();
-            }
-            HtmlAgilityPack.HtmlNode dsdTableNode = mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]");
-            HtmlAgilityPack.HtmlNode rPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[3];
-            m_rPhrases = rPhraseNode.InnerText.Trim().Split(' ');
-            HtmlAgilityPack.HtmlNode sPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[5];
-            m_SPhrases = sPhraseNode.InnerText.Trim().Split(' ');
-            HtmlAgilityPack.HtmlNode indicationOfDangerNode = dsdTableNode.ChildNodes[1].ChildNodes[7];
-            m_IndicationOfDanger = indicationOfDangerNode.InnerText.Trim().Split(' ');
+            //System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(m_link);
+            //System.Net.WebResponse response = request.GetResponse();
+            //System.IO.StringReader reader = new System.IO.StringReader(new System.IO.StreamReader(response.GetResponseStream()).ReadToEnd());
+            //HtmlAgilityPack.HtmlDocument document = new HtmlAgilityPack.HtmlDocument();
+            //document.Load(reader);
+            //HtmlAgilityPack.HtmlNode mainNode = document.GetElementbyId("p_p_id_dissclinventory_WAR_dissclinventoryportlet_");
+            //mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]");
+            //HtmlAgilityPack.HtmlNode dataNode = mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]/td[1]/table[2]");
+            //int numCodes = (dataNode.ChildNodes.Count - 5) / 2;
+            //m_HazardCodes = new string[numCodes];
+            //m_HazardTexts = new string[numCodes];
+            //for (int i = 0; i < numCodes; i++)
+            //{
+            //    m_HazardTexts[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[3].InnerText.Trim();
+            //    m_HazardCodes[i] = dataNode.ChildNodes[5 + i * 2].ChildNodes[1].InnerText.Trim();
+            //}
+            //HtmlAgilityPack.HtmlNode dsdTableNode = mainNode.SelectSingleNode("/html[1]/body[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/table[1]/div[1]/div[1]/div[2]/div[1]/table[1]/tbody[1]");
+            //HtmlAgilityPack.HtmlNode rPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[3];
+            //m_rPhrases = rPhraseNode.InnerText.Trim().Split(' ');
+            //HtmlAgilityPack.HtmlNode sPhraseNode = dsdTableNode.ChildNodes[1].ChildNodes[5];
+            //m_SPhrases = sPhraseNode.InnerText.Trim().Split(' ');
+            //HtmlAgilityPack.HtmlNode indicationOfDangerNode = dsdTableNode.ChildNodes[1].ChildNodes[7];
+            //m_IndicationOfDanger = indicationOfDangerNode.InnerText.Trim().Split(' ');
             finished = true;
         }
 

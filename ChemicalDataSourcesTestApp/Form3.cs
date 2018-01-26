@@ -23,7 +23,7 @@ namespace ChemicalDataSourcesTestApp
         }
 
 
-        public SpellAid chemicals
+        public SynonymChemical[] chemicals
         {
             set
             {
@@ -40,10 +40,10 @@ namespace ChemicalDataSourcesTestApp
             }
         }
 
-        void AddChemicalsToList(SpellAid chemicals)
+        void AddChemicalsToList(SynonymChemical[] chemicals)
         {
             int i = 0;
-            foreach (SpellAidChemical chemical in chemicals.Chemical)
+            foreach (SynonymChemical chemical in chemicals)
             {
                 ListViewItem item = new ListViewItem(chemical.Name, i++);
                 item.SubItems.Add(chemical.CAS);
